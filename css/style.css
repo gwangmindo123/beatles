@@ -147,7 +147,7 @@ footer address{line-height:2; text-align:center; font-size:17px; color:#fff;}
 
 /* New page general styles */
 .cont h2, .cont h3, .cont p{color:#fff;} /* Keep white for general cont outside of specific backgrounds */
-.cont .bg{background-color:#fff; padding:50px; max-width:1000px; max-height:700px; width:90%; height:auto; margin:auto; box-sizing:border-box; color:#3b3b3b;} /* Changed to white background, added default dark text color */
+.cont .bg{background-color:#fff; padding:50px; max-width:1000px; min-height: 100%; width:90%; height:auto; margin:auto; box-sizing:border-box; color:#3b3b3b;} /* Removed max-height, set min-height to 100% of parent .cont */
 .cont .bg h2, .cont .bg h3, .cont .bg p{color:#3b3b3b;} /* Explicitly set dark color for titles/paragraphs inside .cont .bg */
 .cont{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;} /* Make sure content fills viewport */
 
