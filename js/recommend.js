@@ -18,6 +18,16 @@ $(function(){
         song: "Ob-La-Di, Ob-La-Da",
         album: "The Beatles (White Album)",
         youtube: "https://www.youtube.com/embed/Qh4Y_j_d5tI"
+      },
+      {
+        song: "Penny Lane",
+        album: "Magical Mystery Tour",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+      },
+      {
+        song: "All You Need Is Love",
+        album: "Magical Mystery Tour",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
       }
     ],
     sad: [
@@ -35,6 +45,16 @@ $(function(){
         song: "The Long and Winding Road",
         album: "Let It Be",
         youtube: "https://www.youtube.com/embed/fT6Q1z_o4lY"
+      },
+      {
+        song: "Julia",
+        album: "The Beatles (White Album)",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+      },
+      {
+        song: "For No One",
+        album: "Revolver",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
       }
     ],
     energetic: [
@@ -52,6 +72,16 @@ $(function(){
         song: "Drive My Car",
         album: "Rubber Soul",
         youtube: "https://www.youtube.com/embed/EZoY9s8sQ1M"
+      },
+      {
+        song: "A Hard Day's Night",
+        album: "A Hard Day's Night",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+      },
+      {
+        song: "Helter Skelter",
+        album: "The Beatles (White Album)",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
       }
     ],
     calm: [
@@ -69,6 +99,16 @@ $(function(){
         song: "Here, There and Everywhere",
         album: "Revolver",
         youtube: "https://www.youtube.com/embed/sK9kMhJ_0xY"
+      },
+      {
+        song: "Something",
+        album: "Abbey Road",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+      },
+      {
+        song: "In My Life",
+        album: "Rubber Soul",
+        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
       }
     ]
   };
