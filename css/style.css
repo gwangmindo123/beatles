@@ -4,7 +4,9 @@
 /* default */
 body{font-family:'Noto Serif KR', serif;}
 #wrap{margin:0 auto; width:100%;}
-.cont{position:relative; margin:0 auto; min-height: calc(100vh - 100px); display:flex; flex-direction:column; justify-content:center; align-items:center;}
+.cont{position:relative; margin:0 auto; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+/* For fullPage.js sections to account for the fixed header */
+.section{padding-top: 100px;} 
 
 
 /* header for index.html (default) */
