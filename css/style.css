@@ -22,10 +22,10 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 
 /* section - home*/
 .cont_home{position:relative; background-color:#1a1a1a; color:#fff;}
-.cont_home h2{padding-top:85px; font-weight:600; font-size:78px; text-align:center;}
-.cont_home h2:after{content:'-'; display:block; font-size:33px; margin:40px auto;}
-.cont_home h3{font-size:33px; line-height:1.7; font-weight:300; letter-spacing:-1px; text-align:center;}
-.cont_home p{font-weight:normal; font-size:15px; text-align:center;}
+.cont_home h2{padding-top:85px; font-weight:600; font-size:78px; text-align:center; color:#fff;}
+.cont_home h2:after{content:'-'; display:block; font-size:33px; margin:40px auto; color:#fff;}
+.cont_home h3{font-size:33px; line-height:1.7; font-weight:300; letter-spacing:-1px; text-align:center; color:#fff;}
+.cont_home p{font-weight:normal; font-size:15px; text-align:center; color:#fff;}
 .cont_home .writer{bottom:107px; text-align:center; margin:0 auto; display:block; width:100%; transform:rotate(90deg);}
 .cont_home .title{top:50px; text-align:center; margin:0 auto; display:block; width:100%;}
 .cont_home .img_bg{position:absolute; left:50%; bottom:130px; width:288px; height:288px; background-color:rgba(255,255,255,0.3); transform:translateX(-50%);}
