@@ -18,14 +18,16 @@ $(function(){
 
   //function
   function sliderMove(){
-    $slider.stop().animate({left:-(nowIdx*1100)});
+    var slideWidth = $slider.find('li').outerWidth(true); // Get actual width of a single slide (li)
+    $slider.stop().animate({left:-(nowIdx*slideWidth)});
   }
 
   function frameMove(){
+    var frameWidth = $frame.find('li').outerWidth(true); // Get actual width of a single frame slide (li)
     var txt = $('.cont_2 li>a').eq(nowIdx).attr('title');
 
-    $('.cont_2 .bg .frame .txt').text(txt);
-    $frame.stop().animate({left:-(nowIdx*355)});
+    $('.cont_2 .bg .frame .current-member-name').text(txt); // Updated class name
+    $frame.stop().animate({left:-(nowIdx*frameWidth)});
   }
 
   function pageAni(topVal) {
@@ -59,11 +61,9 @@ $(function(){
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
 
-    $('.cont_1 .bg .screen').css({
-      backgroundImage : 'url('+src+')'
-    });
-
-    $('.cont_1 .bg .txt').text(cont);
+    // Updated selectors for .cont_1
+    $('.cont_1 .bg .main-album-display img.current-album-cover').attr('src', src);
+    $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
 
     nowIdx = $thumb.index(this);
     $thumb.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
@@ -113,11 +113,10 @@ $(function(){
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
 
-    $('.cont_4 .bg .screen').css({
-      backgroundImage : 'url('+src+')'
-    });
+    // Updated selectors for .cont_4
+    $('.cont_4 .bg .legacy-image-display img.main-legacy-image').attr('src', src);
+    $('.cont_4 .bg .legacy-image-display p.legacy-caption').text(cont);
 
-    $('.cont_4 .bg .txt').text(cont);
 
     nowIdx = $thmubs.index(this);
     $thmubs.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
