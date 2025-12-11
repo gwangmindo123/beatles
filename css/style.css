@@ -26,8 +26,8 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 .cont_home h2:after{content:'-'; display:block; font-size:33px; margin:40px auto;}
 .cont_home h3{font-size:33px; line-height:1.7; font-weight:300; letter-spacing:-1px; text-align:center;}
 .cont_home p{font-weight:normal; font-size:15px; text-align:center;}
-.cont_home .writer{position:absolute; left:50%; bottom:107px; transform:translateX(-50%) rotate(90deg);}
-.cont_home .title{position:absolute; left:50%; top:50px; transform:translateX(-50%);}
+.cont_home .writer{bottom:107px; text-align:center; margin:0 auto; display:block; width:100%; transform:rotate(90deg);}
+.cont_home .title{top:50px; text-align:center; margin:0 auto; display:block; width:100%;}
 .cont_home .img_bg{position:absolute; left:50%; bottom:130px; width:288px; height:288px; background-color:rgba(255,255,255,0.3); transform:translateX(-50%);}
 .cont_home .img{position:absolute; left:50%; top:100px; width:425px; height:600px; text-indent:-9999px; background-image: url(../images/intro_img_new.jpg); transform:translateX(-50%);}
 
