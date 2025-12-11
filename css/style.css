@@ -129,45 +129,7 @@ header>h1{display:none;}
 .cont_4 .bg .thumb li a:focus:after,
 .cont_4 .bg .thumb li.on a:after{opacity:0.6;}
 
-/* section - 비틀즈 퀴즈*/
-.cont_5{background-color:#b4b4b4;}
-.cont_5 .bg{position:absolute; left:50%; top:50%; margin:-400px 0 0 -600px; width:1200px; height:800px; background-color: #fff;}
-.cont_5 .bg h2{margin:50px; font-weight:600; font-size:56px; color:#283e50;}
-.cont_5 .bg h3{margin:0 0 20px 50px; color:#283e50; font-size:38px; font-weight:500;}
-.cont_5 .bg p{margin:0 0 20px 50px; color:#3b3b3b; font-size:18px; line-height:1.6;}
-.cont_5 .bg .quiz-container{margin: 0 auto; max-width: 800px; padding: 20px;}
-.quiz-question { font-size: 20px; margin-bottom: 10px; }
-.quiz-answers { margin-bottom: 20px; }
-.quiz-answers label { display: block; margin-bottom: 10px; }
-#submit-quiz { background-color: #283e50; color: #fff; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; }
-#quiz-results { margin-top: 20px; font-size: 20px; font-weight: bold; }
-
-/* section - 음악 추천*/
-.cont_6{background-color:#c8c8c8;}
-.cont_6 .bg{position:absolute; left:50%; top:50%; margin:-400px 0 0 -600px; width:1200px; height:800px; background-color: #fff;}
-.cont_6 .bg h2{margin:50px; font-weight:600; font-size:56px; color:#283e50;}
-.cont_6 .bg h3{margin:0 0 20px 50px; color:#283e50; font-size:38px; font-weight:500;}
-.cont_6 .bg p{margin:0 0 20px 50px; color:#3b3b3b; font-size:18px; line-height:1.6;}
-.recommend-container{ padding: 20px; text-align: center;}
-#mood { padding: 10px; font-size: 16px; margin-bottom: 20px;}
-#recommend-btn { background-color: #283e50; color: #fff; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; }
-#recommend-result { margin-top: 20px; }
-#recommend-result h3 { font-size: 24px; color:#283e50; }
-#recommend-result p { font-size: 18px; color:#3b3b3b; }
-#recommend-result iframe { margin-top: 20px; max-width: 100%;}
-
-
-/* section - 음악 감상*/
-.cont_7{background-color:#dcdcdc;}
-.cont_7 .bg{position:absolute; left:50%; top:50%; margin:-400px 0 0 -600px; width:1200px; height:800px; background-color: #fff;}
-.cont_7 .bg h2{margin:50px; font-weight:600; font-size:56px; color:#283e50;}
-.cont_7 .bg h3{margin:0 0 20px 50px; color:#283e50; font-size:38px; font-weight:500;}
-.cont_7 .bg .music-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 20px; }
-.music-player { text-align: center; }
-.music-player h4 { font-size: 20px; margin-bottom: 10px; color:#283e50;}
-.music-player iframe { max-width: 100%;}
-
 /* footer */
-.cont_8{height:950px; background-color:#3b3b3b;}
-footer{width:100%; height:200px; margin:0 auto; min-width:1200px; padding-top: 100px}
+.cont_5{height:950px; background-color:#3b3b3b;}
+footer{width:100%; height:200px; margin:0 auto; min-width:1200px;}
 footer address{line-height:2; text-align:center; font-size:17px; color:#fff;}
