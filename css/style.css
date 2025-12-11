@@ -197,6 +197,16 @@ body.music-page .cont{background-color:#8a8a8a;} /* Example color */
     border-radius: 10px;
 }
 
+/* Active navigation link styling */
+body.quiz-page header nav ul li:nth-child(2) a, /* Quiz link is the 2nd li */
+body.recommend-page header nav ul li:nth-child(3) a, /* Recommend link is the 3rd li */
+body.music-page header nav ul li:nth-child(4) a { /* Music link is the 4th li */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
 /* Quiz Specific Styling for prettiness and readability */
 .quiz-container {
     background-color: #f9f9f9; /* Slightly off-white background */
