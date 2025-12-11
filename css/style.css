@@ -156,12 +156,12 @@ body.recommend-page .cont{background-color:#666;} /* Example color */
 body.music-page .cont{background-color:#8a8a8a;} /* Example color */
 
 /* Ensure quiz elements are visible */
-.quiz-question { color: #fff; margin-bottom: 15px;}
-.quiz-answers label { color: #fff; cursor:pointer; }
+.quiz-question { color: #333; margin-bottom: 15px;}
+.quiz-answers label { color: #333; cursor:pointer; }
 .quiz-answers input[type="radio"] { margin-right: 10px;}
 #submit-quiz { background-color: #283e50; color: #fff; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; margin-top: 20px;}
 #submit-quiz:hover{background-color:#3e5c77;}
-#quiz-results { color: #fff; margin-top: 20px; font-size: 22px; font-weight: bold; text-align: center;}
+#quiz-results { color: #333; margin-top: 20px; font-size: 22px; font-weight: bold; text-align: center;}
 
 /* Ensure recommendation elements are visible */
 #recommend-questions p { color: #333; margin-bottom: 15px;}
