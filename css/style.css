@@ -152,9 +152,9 @@ footer address{line-height:2; text-align:center; font-size:17px; color:#fff;}
 .cont{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;} /* Make sure content fills viewport */
 
 /* Specific background for each new page to make them distinct */
-body.quiz-page .cont{background-color:#4a4a4a;} /* Example color */
-body.recommend-page .cont{background-color:#666;} /* Example color */
-body.music-page .cont{background-color:#8a8a8a;} /* Example color */
+body.quiz-page .cont{background-color:#cccccc;}
+body.recommend-page .cont{background-color:#cccccc;}
+body.music-page .cont{background-color:#cccccc;}
 
 /* Ensure quiz elements are visible */
 .quiz-question { color: #333; margin-bottom: 15px;}
