@@ -19,7 +19,7 @@ header>h1{display:none;}
 .cont_home .writer{position:absolute; left:20px; bottom:107px; transform:rotate(90deg);}
 .cont_home .title{position:absolute; right:80px; top:50px;}
 .cont_home .img_bg{position:absolute; right:380px; bottom:130px; width:288px; height:288px; background-color:rgba(255,255,255,0.3);}
-.cont_home .img{position:absolute; right:80px; top:100px; width:425px; height:600px; text-indent:-9999px; background-image: url(../images/content_2_big_2.jpg);}
+.cont_home .img{position:absolute; right:80px; top:100px; width:425px; height:600px; text-indent:-9999px; background-image: url(../images/intro_img_new.jpg);}
 
 /* section - 비틀즈의 역사*/
 .cont_0{width:100%; background-color:#333;}
