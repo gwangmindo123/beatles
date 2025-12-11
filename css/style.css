@@ -4,7 +4,7 @@
 /* default */
 body{font-family:'Noto Serif KR', serif;}
 #wrap{margin:0 auto; width:100%;}
-.cont{position:relative; margin:0 auto; min-width:1200px; min-height: calc(100vh - 100px); display:flex; flex-direction:column; justify-content:center; align-items:center;}
+.cont{position:relative; margin:0 auto; min-height: calc(100vh - 100px); display:flex; flex-direction:column; justify-content:center; align-items:center;}
 
 
 /* header for index.html (default) */
@@ -147,7 +147,7 @@ footer address{line-height:2; text-align:center; font-size:17px; color:#fff;}
 
 /* New page general styles */
 .cont h2, .cont h3, .cont p, .cont div, .cont button, .cont label, .cont select{color:#fff;}
-.cont .bg{background-color:#fff; padding:50px; position:relative; left:50%; top:50%; transform:translate(-50%, -50%); width:1000px; height:700px;} /* Changed to white background */
+.cont .bg{background-color:#fff; padding:50px; max-width:1000px; max-height:700px; width:90%; height:auto; margin:auto; box-sizing:border-box;} /* Changed to white background */
 .cont{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;} /* Make sure content fills viewport */
 
 /* Specific background for each new page to make them distinct */
