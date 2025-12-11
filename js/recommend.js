@@ -3,31 +3,82 @@ $(function(){
   // Music Recommendation Section
   // ==========================================================
   const recommendations = {
-    happy: {
-      song: "Here Comes The Sun",
-      album: "Abbey Road",
-      youtube: "https://www.youtube.com/embed/KQetemT1sWc"
-    },
-    sad: {
-      song: "Yesterday",
-      album: "Help!",
-      youtube: "https://www.youtube.com/embed/NrgmdOz227I"
-    },
-    energetic: {
-      song: "Twist and Shout",
-      album: "Please Please Me",
-      youtube: "https://www.youtube.com/embed/eFW2s1g3_9o"
-    },
-    calm: {
-      song: "Blackbird",
-      album: "The Beatles (White Album)",
-      youtube: "https://www.youtube.com/embed/Man4Xw8Xypo"
-    }
+    happy: [
+      {
+        song: "Here Comes The Sun",
+        album: "Abbey Road",
+        youtube: "https://www.youtube.com/embed/KQetemT1sWc"
+      },
+      {
+        song: "Good Day Sunshine",
+        album: "Revolver",
+        youtube: "https://www.youtube.com/embed/6xXw3cR14u0"
+      },
+      {
+        song: "Ob-La-Di, Ob-La-Da",
+        album: "The Beatles (White Album)",
+        youtube: "https://www.youtube.com/embed/Qh4Y_j_d5tI"
+      }
+    ],
+    sad: [
+      {
+        song: "Yesterday",
+        album: "Help!",
+        youtube: "https://www.youtube.com/embed/NrgmdOz227I"
+      },
+      {
+        song: "Eleanor Rigby",
+        album: "Revolver",
+        youtube: "https://www.youtube.com/embed/HuS5p4RjJ4s"
+      },
+      {
+        song: "The Long and Winding Road",
+        album: "Let It Be",
+        youtube: "https://www.youtube.com/embed/fT6Q1z_o4lY"
+      }
+    ],
+    energetic: [
+      {
+        song: "Twist and Shout",
+        album: "Please Please Me",
+        youtube: "https://www.youtube.com/embed/eFW2s1g3_9o"
+      },
+      {
+        song: "Help!",
+        album: "Help!",
+        youtube: "https://www.youtube.com/embed/Qy3H7IeK52g"
+      },
+      {
+        song: "Drive My Car",
+        album: "Rubber Soul",
+        youtube: "https://www.youtube.com/embed/EZoY9s8sQ1M"
+      }
+    ],
+    calm: [
+      {
+        song: "Blackbird",
+        album: "The Beatles (White Album)",
+        youtube: "https://www.youtube.com/embed/Man4Xw8Xypo"
+      },
+      {
+        song: "Across the Universe",
+        album: "Let It Be",
+        youtube: "https://www.youtube.com/embed/90gpY1uE91s"
+      },
+      {
+        song: "Here, There and Everywhere",
+        album: "Revolver",
+        youtube: "https://www.youtube.com/embed/sK9kMhJ_0xY"
+      }
+    ]
   };
 
   $('#recommend-btn').on('click', function(){
     const mood = $('#mood').val();
-    const result = recommendations[mood];
+    const songsForMood = recommendations[mood];
+    const randomIndex = Math.floor(Math.random() * songsForMood.length);
+    const result = songsForMood[randomIndex];
+
     const resultHtml = `
       <h3>${result.song}</h3>
       <p>앨범: ${result.album}</p>
