@@ -174,6 +174,13 @@ body.music-page .cont{background-color:#cccccc;}
 #recommend-result p { color: #333; font-size: 18px; margin-bottom: 20px;}
 
 /* Ensure music player elements are visible */
+.music-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: nowrap; /* Ensure items stay in a single row */
+}
 .music-player h4 { color: #fff; font-size: 24px; margin-bottom: 15px;}
 
 /* Style for embeds to ensure they are centered and responsive */
