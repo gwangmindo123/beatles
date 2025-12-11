@@ -22,12 +22,12 @@ $(function(){
       {
         song: "Penny Lane",
         album: "Magical Mystery Tour",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/S-rB0pHIFpQ"
       },
       {
         song: "All You Need Is Love",
         album: "Magical Mystery Tour",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/dsuxEaL_Nio"
       }
     ],
     sad: [
@@ -49,12 +49,12 @@ $(function(){
       {
         song: "Julia",
         album: "The Beatles (White Album)",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/sIqP-k1y0EU"
       },
       {
         song: "For No One",
         album: "Revolver",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/2-nFh8E8Cq4"
       }
     ],
     energetic: [
@@ -76,12 +76,12 @@ $(function(){
       {
         song: "A Hard Day's Night",
         album: "A Hard Day's Night",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/YpS8y18tT6Y"
       },
       {
         song: "Helter Skelter",
         album: "The Beatles (White Album)",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/u_J6hX2o32E"
       }
     ],
     calm: [
@@ -103,12 +103,12 @@ $(function(){
       {
         song: "Something",
         album: "Abbey Road",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/Jl5gN31eKck"
       },
       {
         song: "In My Life",
         album: "Rubber Soul",
-        youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+        youtube: "https://www.youtube.com/embed/z9ypFjX-82g"
       }
     ]
   };
