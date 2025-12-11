@@ -11,11 +11,6 @@ $(function(){
   var $thmubs = $('.cont_4 .bg .thumb li a');
   var nowIdx = 0;
 
-  var arrTopVal = [];
-  $('.cont').each(function(idx){
-    arrTopVal[idx] = $(this).offset().top
-  });
-
   //function
   function sliderMove(){
     $slider.stop().animate({left:-(nowIdx*1100)});
@@ -26,12 +21,6 @@ $(function(){
 
     $('.cont_2 .bg .frame .txt').text(txt);
     $frame.stop().animate({left:-(nowIdx*355)});
-  }
-
-  function pageAni(topVal) {
-    $('html,body').stop().animate({
-      scrollTop: topVal
-    },1500,'easeInOutCubic');
   }
 
   $sliderPrev.on('click',function(){
@@ -122,8 +111,4 @@ $(function(){
     nowIdx = $thmubs.index(this);
     $thmubs.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
   });//end of cont4 - photogallery
-
-  $(window).on('load',function(){
-    pageAni(arrTopVal[nowIdx]);
-  });
 });
