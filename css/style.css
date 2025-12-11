@@ -10,10 +10,11 @@ body{font-family:'Noto Serif KR', serif;}
 /* header for index.html (default) */
 header{position:fixed; top:0; left:0; width:100%; height:100px; background-color:#1a1a1a; z-index:1000;}
 header h1{position:absolute; left:50px; top:50%; transform:translateY(-50%); font-size:40px; display:block;}
+header h1 a{color:#FFFF00 !important; text-decoration:none;}
 header nav{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
 header nav ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:row;}
 header nav ul li{display:inline-block; margin-left:20px; margin-bottom:0;}
-}
+header nav ul li a{color:#FFFF00 !important; font-size:18px; text-decoration:none; display:block; padding:5px 10px; transition:background-color 0.3s ease;}
 header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 
 
@@ -193,4 +194,4 @@ body.music-page .cont{background-color:#8a8a8a;} /* Example color */
     background-color: rgba(255,255,255,0.1);
     padding: 20px;
     border-radius: 10px;
-}/header h1 a{color:#FFFF00; text-decoration:none;}}/header nav ul li a{color:#FFFF00; font-size:18px; text-decoration:none; display:block; padding:5px 10px; transition:background-color 0.3s ease;}}
+}
