@@ -4,7 +4,8 @@
 /* default */
 body{font-family:'Noto Serif KR', serif;}
 #wrap{margin:0 auto; width:100%;}
-.cont{position:relative; margin:0 auto; height:950px; min-width:1200px;}
+.cont{position:relative; margin:0 auto; min-width:1200px;} /* Removed fixed height */
+body.has-top-nav .cont{min-height: calc(100vh - 100px); display:flex; flex-direction:column; justify-content:center; align-items:center;} /* Specific for top-nav pages */
 
 /* header for index.html (default) */
 header{position:fixed; right:30px; top:50%; z-index:200; margin-top:-83px; width:15px; height:165px; background-color:transparent;} /* ORIGINAL WIDTH */

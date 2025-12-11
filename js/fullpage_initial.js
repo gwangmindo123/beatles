@@ -6,6 +6,7 @@ $(document).ready(function() {
     scrollHorizontally: true,
     navigation:true,
     navigationPosition:'left',
-    keyboardScrolling:true
+    keyboardScrolling:true,
+    fixedElements: 'header' // Add this line
   });
 });
