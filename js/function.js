@@ -73,14 +73,14 @@ $(function(){
     if(nowIdx>0){
       nowIdx--;
     }else{
-      nowIdx = 4;
+      nowIdx = 3;
     }
 
     frameMove();
   });
 
   $frameNext.on('click',function(){
-    if(nowIdx<4){
+    if(nowIdx<3){
       nowIdx++;
     }else{
       nowIdx = 0;
