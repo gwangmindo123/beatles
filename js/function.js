@@ -19,14 +19,12 @@ $(function(){
   //function
   function sliderMove(){
     var slideWidth = $slider.find('li').outerWidth(true); // Get actual width of a single slide (li)
-    console.log('sliderMove: nowIdx =', nowIdx, 'slideWidth =', slideWidth, 'translateX =', (-(nowIdx*slideWidth)) + 'px'); // DEBUG
     $slider.stop().css('transform', 'translateX(' + (-(nowIdx*slideWidth)) + 'px)');
   }
 
   function frameMove(){
     var frameWidth = $frame.find('li').outerWidth(true); // Get actual width of a single frame slide (li)
     var txt = $('.cont_2 li>a').eq(nowIdx).attr('title');
-    console.log('frameMove: nowIdx =', nowIdx, 'frameWidth =', frameWidth, 'translateX =', (-(nowIdx*frameWidth)) + 'px'); // DEBUG
 
     $('.cont_2 .bg .frame .current-member-name').text(txt); // Updated class name
     $frame.stop().css('transform', 'translateX(' + (-(nowIdx*frameWidth)) + 'px)');
