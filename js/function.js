@@ -19,7 +19,7 @@ $(function(){
   //function
   function sliderMove(){
     var slideWidth = $slider.find('li').outerWidth(true); // Get actual width of a single slide (li)
-    $slider.stop().animate({left:-(nowIdx*slideWidth)});
+    $slider.stop().css('transform', 'translateX(' + (-(nowIdx*slideWidth)) + 'px)');
   }
 
   function frameMove(){
@@ -27,7 +27,7 @@ $(function(){
     var txt = $('.cont_2 li>a').eq(nowIdx).attr('title');
 
     $('.cont_2 .bg .frame .current-member-name').text(txt); // Updated class name
-    $frame.stop().animate({left:-(nowIdx*frameWidth)});
+    $frame.stop().css('transform', 'translateX(' + (-(nowIdx*frameWidth)) + 'px)');
   }
 
   function pageAni(topVal) {
