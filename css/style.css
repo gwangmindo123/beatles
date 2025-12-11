@@ -279,4 +279,10 @@ body.music-page header nav ul li:nth-child(4) a { /* Music link is the 4th li */
         border: 1px solid #cc6666;
         color: #660000;
     }
+body.quiz-page,
+body.recommend-page,
+body.music-page {
+    background-color: #cccccc;
+}
+
     
