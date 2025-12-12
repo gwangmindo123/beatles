@@ -1,14 +1,4 @@
 $(function(){
-  //var
-  var $slider = $('.cont_0>.bg>.slides>ul');
-  var $sliderPrev = $('.cont_0>.bg>.prev');
-  var $sliderNext = $('.cont_0>.bg>.next');
-  var $thumb = $('.cont_1 .bg ul li a');
-  var $frame = $('.cont_2>.bg>.frame>.frame_img>ul');
-  var $framePrev = $('.cont_2>.bg>.prev');
-  var $frameNext = $('.cont_2>.bg>.next');
-  var $gallOpen = $('.gallOpen');
-  var $thmubs = $('.cont_4 .bg .thumb li a');
   var nowIdx = 0;
 
   var arrTopVal = [];
@@ -16,18 +6,21 @@ $(function(){
     arrTopVal[idx] = $(this).offset().top
   });
 
-  //function
-  function sliderMove(){
-    var slideWidth = $slider.find('li').outerWidth(true); // Get actual width of a single slide (li)
-    $slider.stop().css('transform', 'translateX(' + (-(nowIdx*slideWidth)) + 'px)');
+  // --- Functions ---
+
+  function sliderMove(index){
+    var $slider = $('.cont_0 .bg .slides ul');
+    var slideWidth = $slider.find('li').outerWidth(true);
+    $slider.stop().css('transform', 'translateX(' + (-(index * slideWidth)) + 'px)');
   }
 
-  function frameMove(){
-    var frameWidth = $frame.find('li').outerWidth(true); // Get actual width of a single frame slide (li)
-    var txt = $('.cont_2 li>a').eq(nowIdx).attr('title');
+  function frameMove(index){
+    var $frame = $('.cont_2 .bg .frame .frame_img ul');
+    var frameWidth = $frame.find('li').outerWidth(true);
+    var txt = $('.cont_2 .bg .frame .frame_img li').eq(index).find('a').attr('title');
 
-    $('.cont_2 .bg .frame .current-member-name').text(txt); // Updated class name
-    $frame.stop().css('transform', 'translateX(' + (-(nowIdx*frameWidth)) + 'px)');
+    $('.cont_2 .bg .frame .current-member-name').text(txt);
+    $frame.stop().css('transform', 'translateX(' + (-(index * frameWidth)) + 'px)');
   }
 
   function pageAni(topVal) {
@@ -36,106 +29,77 @@ $(function(){
     },1500,'easeInOutCubic');
   }
 
-  $sliderPrev.on('click',function(){
-    if(nowIdx>0){
-      nowIdx--;
-    }else{
-      nowIdx = 2;
-    }
+  // --- Event Handlers (Delegated) ---
 
-    sliderMove();
+  // History Slider (cont_0)
+  $(document).on('click', '.cont_0 .bg .prev', function(){
+    nowIdx = (nowIdx > 0) ? nowIdx - 1 : 2;
+    sliderMove(nowIdx);
   });
 
-  $sliderNext.on('click',function(){
-    if(nowIdx<2){
-      nowIdx++;
-    }else{
-      nowIdx = 0;
-    }
+  $(document).on('click', '.cont_0 .bg .next', function(){
+    nowIdx = (nowIdx < 2) ? nowIdx + 1 : 0;
+    sliderMove(nowIdx);
+  });
 
-    sliderMove();
-  });//end of cont0 - slide
-
-  $thumb.on('click',function(event){
+  // Iconic Albums (cont_1)
+  $(document).on('click', '.cont_1 .bg ul.thumb li a', function(event){
     event.preventDefault();
-    console.log("Thumbnail clicked!"); // Log 1: Event fired
+    console.log("Thumbnail clicked! (delegated)");
 
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
-    console.log("Image source (href): " + src); // Log 2: Log the href value
-    console.log("Album title: " + cont); // Log 3: Log the title
+    console.log("Image source (href): " + src);
+    console.log("Album title: " + cont);
 
-    // Remove 'active' class from all thumbnails first
-    $thumb.removeClass('active');
-    // Add 'active' class to the clicked one
-    $(this).addClass('active'); 
-    console.log("Applied .active class to the clicked thumbnail."); // Log 4: Confirm class change
+    $('.cont_1 .bg ul.thumb li a').removeClass('active');
+    $(this).addClass('active');
+    console.log("Applied .active class to the clicked thumbnail.");
 
-    // Update the main image and title
     $('.cont_1 .bg .main-album-display img.current-album-cover').attr('src', src);
     $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
-    console.log("Updated main image and title."); // Log 5: Confirm DOM update
-  });//end of cont1 - photogallery
-
-  $framePrev.on('click',function(){
-    if(nowIdx>0){
-      nowIdx--;
-    }else{
-      nowIdx = 3;
-    }
-
-    frameMove();
+    console.log("Updated main image and title.");
   });
 
-  $frameNext.on('click',function(){
-    if(nowIdx<3){
-      nowIdx++;
-    }else{
-      nowIdx = 0;
-    }
+  // Members Slider (cont_2)
+  $(document).on('click', '.cont_2 .bg .prev', function(){
+    nowIdx = (nowIdx > 0) ? nowIdx - 1 : 3;
+    frameMove(nowIdx);
+  });
 
-    frameMove();
-  });//end of cont2 - frame event
+  $(document).on('click', '.cont_2 .bg .next', function(){
+    nowIdx = (nowIdx < 3) ? nowIdx + 1 : 0;
+    frameMove(nowIdx);
+  });
 
-  $gallOpen.on('click',function(event){
+  // Famous Songs Lightbox (cont_3)
+  $(document).on('click', '.cont_3 .song-item', function(event){
     event.preventDefault();
     var src = $(this).attr('href');
-    
     $('.gall .gallcontent').css({
       backgroundImage:'url('+src+')'
     }).parent().fadeIn();
   });
 
-  $('.gallClose').on('click',function(event){
+  $(document).on('click', '.gall, .gallClose', function(event){
     event.preventDefault();
     $('.gall').fadeOut();
   });
-  
-  $('.gall').on('click',function(){
-    $(this).fadeOut();
-  });//end of cont3 - light box
 
-  $thmubs.on('click',function(event){
+  // Legacy Gallery (cont_4)
+  $(document).on('click', '.cont_4 .bg .thumb li a', function(event){
     event.preventDefault();
-
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
 
-    // Updated selectors for .cont_4
     $('.cont_4 .bg .legacy-image-display img.main-legacy-image').attr('src', src);
     $('.cont_4 .bg .legacy-image-display p.legacy-caption').text(cont);
 
+    $('.cont_4 .bg .thumb li a').removeClass('active');
+    $(this).addClass('active');
+  });
 
-    nowIdx = $thmubs.index(this);
-    $(this).addClass('active'); 
-    
-    // 2. 다른 모든 <a> 태그에서 active를 제거합니다.
-    $thumb.not(this).removeClass('active'); 
-    
-    // **참고:** 이전에 <li>에 붙던 active를 제거하는 안전 로직 (선택 사항)
-    $(this).parent().siblings().removeClass('active');
-  });//end of cont4 - photogallery
-
+  // Initial animation on load
   $(window).on('load',function(){
     pageAni(arrTopVal[nowIdx]);
   });
