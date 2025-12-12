@@ -58,17 +58,23 @@ $(function(){
 
   $thumb.on('click',function(event){
     event.preventDefault();
+    console.log("Thumbnail clicked!"); // Log 1: Event fired
+
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
+    console.log("Image source (href): " + src); // Log 2: Log the href value
+    console.log("Album title: " + cont); // Log 3: Log the title
 
     // Remove 'active' class from all thumbnails first
     $thumb.removeClass('active');
     // Add 'active' class to the clicked one
     $(this).addClass('active'); 
+    console.log("Applied .active class to the clicked thumbnail."); // Log 4: Confirm class change
 
     // Update the main image and title
     $('.cont_1 .bg .main-album-display img.current-album-cover').attr('src', src);
     $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
+    console.log("Updated main image and title."); // Log 5: Confirm DOM update
   });//end of cont1 - photogallery
 
   $framePrev.on('click',function(){
