@@ -1,0 +1,57 @@
+/* 앨범 갤러리 썸네일 활성화 상태 스타일 (cont_1) */
+
+.cont_1 .bg ul.thumb li a.active {
+
+    /* 기존 hover 효과와 구분되는 강력한 강조 효과를 부여합니다. */
+
+    opacity: 1; /* 활성화되면 선명하게 */
+
+    border: 3px solid #FFFF00 !important; /* 헤더의 노란색을 사용하여 강조 */
+
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7); /* 빛나는 효과 */
+
+    transform: scale(1.05); /* 약간 확대 */
+
+}
+
+
+
+/* 썸네일 위에 올라가는 반투명 오버레이를 제거하거나 수정합니다. */
+
+/* 이미 <a>에 active가 붙었으므로 오버레이는 필요 없습니다. */
+
+.cont_1 .bg ul.thumb li a.active:after{
+
+    opacity: 0 !important; /* active 상태일 때 오버레이를 제거하여 이미지를 선명하게 보게 함 */
+
+}
+
+
+
+/* 썸네일의 기본 상태를 설정하여 active와 구분되게 합니다. */
+
+.cont_1 .bg ul.thumb li a {
+
+    opacity: 0.7; /* 기본 상태는 약간 흐리게 설정 */
+
+    border: 3px solid transparent; /* 기본 테두리는 투명하게 설정 */
+
+    transition: all 0.4s;
+
+}
+
+
+
+/* 레거시 이미지 갤러리 썸네일 활성화 상태 스타일 (cont_4) */
+
+.cont_4 .bg ul.thumb li a.active {
+
+    border: 2px solid #283e50 !important; /* 짙은 색으로 강조 */
+
+    background-color: #fff !important; /* 배경색 강조 */
+
+    box-shadow: 0 0 5px rgba(40, 62, 80, 0.5);
+
+    transform: scale(1.03);
+
+}
