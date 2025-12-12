@@ -23,6 +23,7 @@ $(function(){
   }
 
   function frameMove(){
+    var frameWidth = 355;
     var txt = $('.cont_2>.bg>.frame>.frame_img>ul>li>a').eq(nowIdx).attr('title');
 
     $('.cont_2>.bg>.frame>.txt').text(txt);
