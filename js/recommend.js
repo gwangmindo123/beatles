@@ -12,22 +12,22 @@ $(function(){
       {
         song: "Good Day Sunshine",
         album: "Revolver",
-        youtube: "https://youtu.be/R9ncBUcInTM?si=oPy4K1Atndj0ZB0Q"
+        youtube: "https://www.youtube.com/embed/R9ncBUcInTM"
       },
       {
         song: "Ob-La-Di, Ob-La-Da",
         album: "The Beatles (White Album)",
-        youtube: "https://youtu.be/9x5WY_jmsko?si=zwztGyktFfSUHAxq"
+        youtube: "https://www.youtube.com/embed/9x5WY_jmsko"
       },
       {
         song: "Penny Lane",
         album: "Magical Mystery Tour",
-        youtube: "https://youtu.be/S-rB0pHI9fU?si=PgmAOc191JzO8rsp"
+        youtube: "https://www.youtube.com/embed/S-rB0pHI9fU"
       },
       {
         song: "All You Need Is Love",
         album: "Magical Mystery Tour",
-        youtube: "https://youtu.be/_7xMfIp-irg?si=RNNCV2BsaW0fx0ls"
+        youtube: "https://www.youtube.com/embed/_7xMfIp-irg"
       }
     ],
     sad: [
@@ -39,76 +39,76 @@ $(function(){
       {
         song: "Eleanor Rigby",
         album: "Revolver",
-        youtube: "https://youtu.be/HuS5NuXRb5Y?si=7SbBbu_Xjxsqxn6E"
+        youtube: "https://www.youtube.com/embed/HuS5NuXRb5Y"
       },
       {
         song: "The Long and Winding Road",
         album: "Let It Be",
-        youtube: "https://youtu.be/fR4HjTH_fTM?si=E-p84IVO_zoktusr"
+        youtube: "https://www.youtube.com/embed/fR4HjTH_fTM"
       },
       {
         song: "Julia",
         album: "The Beatles (White Album)",
-        youtube: "https://youtu.be/TZip_br_v3w?si=ZeRA58BeRcxxeRtc"
+        youtube: "https://www.youtube.com/embed/TZip_br_v3w"
       },
       {
         song: "For No One",
         album: "Revolver",
-        youtube: "https://youtu.be/hgJ7dmr_ysU?si=hs2MR5Lq3kCpV7EN"
+        youtube: "https://www.youtube.com/embed/hgJ7dmr_ysU"
       }
     ],
     energetic: [
       {
         song: "Twist and Shout",
         album: "Please Please Me",
-        youtube: "https://youtu.be/2RicaUqd9Hg?si=BHSvw8meu5u6ZSSU"
+        youtube: "https://www.youtube.com/embed/2RicaUqd9Hg"
       },
       {
         song: "Help!",
         album: "Help!",
-        youtube: "https://youtu.be/2Q_ZzBGPdqE?si=EEpkoCjITka9s7So"
+        youtube: "https://www.youtube.com/embed/2Q_ZzBGPdqE"
       },
       {
         song: "Drive My Car",
         album: "Rubber Soul",
-        youtube: "https://youtu.be/6ZwNO_zAqOo?si=BKCWrADYqcraPtjM"
+        youtube: "https://www.youtube.com/embed/6ZwNO_zAqOo"
       },
       {
         song: "A Hard Day's Night",
         album: "A Hard Day's Night",
-        youtube: "https://youtu.be/Yjyj8qnqkYI?si=0iIF52yO5XC5Mu_O"
+        youtube: "https://www.youtube.com/embed/Yjyj8qnqkYI"
       },
       {
         song: "Helter Skelter",
         album: "The Beatles (White Album)",
-        youtube: "https://youtu.be/vWW2SzoAXMo?si=iHPs75EH7FyzOtOJ"
+        youtube: "https://www.youtube.com/embed/vWW2SzoAXMo"
       }
     ],
     calm: [
       {
         song: "Blackbird",
         album: "The Beatles (White Album)",
-        youtube: "https://youtu.be/Man4Xw8Xypo?si=vjU-YX8YkI9VXHsU"
+        youtube: "https://www.youtube.com/embed/Man4Xw8Xypo"
       },
       {
         song: "Across the Universe",
         album: "Let It Be",
-        youtube: "https://youtu.be/90M60PzmxEE?si=nEoLzKMn8IDz2EbQ"
+        youtube: "https://www.youtube.com/embed/90M60PzmxEE"
       },
       {
         song: "Here, There and Everywhere",
         album: "Revolver",
-        youtube: "https://youtu.be/KQetemT1sWc?si=QvNTy6D4XnVRYoFu"
+        youtube: "https://www.youtube.com/embed/KQetemT1sWc"
       },
       {
         song: "Something",
         album: "Abbey Road",
-        youtube: "https://youtu.be/UelDrZ1aFeY?si=-F-dphHbw_vBcSTg"
+        youtube: "https://www.youtube.com/embed/UelDrZ1aFeY"
       },
       {
         song: "In My Life",
         album: "Rubber Soul",
-        youtube: "https://youtu.be/mBqqeqcJM_0?si=Tbj2EEN8gSDcKAIe"
+        youtube: "https://www.youtube.com/embed/mBqqeqcJM_0"
       }
     ]
   };
