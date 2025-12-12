@@ -295,36 +295,38 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 
 /* 프레임 및 이미지 슬라이드 설정 */
 .cont_2 .bg .frame{
-    position:absolute; 
-    right:50px; 
-    top:50px; 
-    width:550px; /* 프레임 배경 이미지 너비 */
-    height:700px; /* 프레임 배경 이미지 높이 */
-    background-image:url(../images/content_3_bg.jpg); 
-    background-repeat:no-repeat; 
-    background-position:20px 0; /* 배경 이미지 위치 조정 */
+  position:relative;
+  width: 445px; /* Member image width */
+  height: 485px; /* Member image height */
+  background-image:url(../images/content_3_bg.jpg);
+  background-repeat:no-repeat;
+  background-position:center top; /* Center the frame background */
+  margin-bottom: 20px;
+  display: flex; /* Make frame a flex container */
+  justify-content: center; /* Center frame_img horizontally */
+  align-items: center; /* Center frame_img vertically */
 }
 .cont_2 .bg .frame .frame_img{
-    position:relative; 
-    top:76px; /* 프레임 이미지의 Y 위치 */
-    left:97px; /* 프레임 이미지의 X 위치 */
-    overflow:hidden; 
-    width:355px; /* 이미지 슬라이더 뷰포트 너비 */
-    height:507px; /* 이미지 슬라이더 뷰포트 높이 */
+  position:relative;
+  overflow:hidden;
+  width:445px;
+  height:485px;
 }
 .cont_2 .bg .frame .frame_img ul{
-    position:absolute; 
-    left:0; top:0;
-    width:1420px; /* 4 images * 355px = 1420px */
-    height:507px; 
-    transition: transform 0.5s ease-in-out; 
+  position:absolute;
+  left:0; top:0;
+  width:1780px; /* 4 images * 445px */
+  height:100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 .cont_2 .bg .frame .frame_img ul li{
-    float:left; /* float을 사용하여 슬라이드 배치 */
-    width:355px; 
-    height:507px;
-    /* ❌ 중요한 변화: 이미지 삽입은 HTML에서 <img src>로 복원 */
-    /* <a> 태그 내부의 <img>가 이 크기를 채우게 됩니다. */
+  min-width:445px; /* Each slide takes full width */
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Align image to bottom */
 }
 /* 이미지 자르기 옵션: 이미지가 프레임에 꽉 차도록 설정 */
 .cont_2 .bg .frame .frame_img ul li a img {
