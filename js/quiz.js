@@ -1,7 +1,4 @@
 $(function(){
-  // ==========================================================
-  // Quiz Section
-  // ==========================================================
   const quizData = [
     {
       question: "비틀즈의 원래 이름은 무엇이었을까요?",
@@ -32,55 +29,128 @@ $(function(){
       },
       correctAnswer: "b",
       explanation: "비틀즈는 영국에서 총 12장의 정규 스튜디오 앨범을 발매했습니다. (Please Please Me부터 Let It Be까지)"
+    },
+    {
+        question: "다음 중 비틀즈의 멤버가 아닌 사람은 누구일까요?",
+        answers: {
+            a: "존 레논",
+            b: "폴 매카트니",
+            c: "브라이언 엡스타인"
+        },
+        correctAnswer: "c",
+        explanation: "브라이언 엡스타인은 비틀즈의 매니저였습니다. 그는 비틀즈의 성공에 큰 역할을 했지만, 밴드의 멤버는 아니었습니다."
+    },
+    {
+        question: "비틀즈의 마지막 앨범은 무엇일까요?",
+        answers: {
+            a: "Abbey Road",
+            b: "Let It Be",
+            c: "The White Album"
+        },
+        correctAnswer: "b",
+        explanation: "'Let It Be'는 1970년에 발매된 비틀즈의 마지막 앨범입니다. 하지만 녹음 시기상으로는 'Abbey Road'가 마지막입니다."
     }
   ];
 
-  function buildQuiz() {
-    const output = [];
-    quizData.forEach((currentQuestion, questionNumber) => {
-      const answers = [];
-      for (const letter in currentQuestion.answers) {
-        answers.push(
-          `<label>
-             <input type="radio" name="question${questionNumber}" value="${letter}">
-             ${letter} :
-             ${currentQuestion.answers[letter]}
-           </label>`
-        );
-      }
-      output.push(
-        `<div class="quiz-question"> ${currentQuestion.question} </div>
-         <div class="quiz-answers"> ${answers.join('')} </div>`
+  let currentQuestionIndex = 0;
+  let userAnswers = {};
+
+  function displayQuestion() {
+    const questionData = quizData[currentQuestionIndex];
+    const answers = [];
+    for (const letter in questionData.answers) {
+      const userAnswer = userAnswers[currentQuestionIndex];
+      answers.push(
+        `<label>
+           <input type="radio" name="question${currentQuestionIndex}" value="${letter}" ${userAnswer === letter ? 'checked' : ''}>
+           ${letter} :
+           ${questionData.answers[letter]}
+         </label>`
       );
-    });
-    $('#quiz').html(output.join(''));
+    }
+
+    $('#quiz').html(
+      `<div class="quiz-question">${currentQuestionIndex + 1}. ${questionData.question}</div>
+       <div class="quiz-answers">${answers.join('')}</div>`
+    );
+
+    $('#previous-quiz').toggle(currentQuestionIndex > 0);
+    if (currentQuestionIndex === quizData.length - 1) {
+      $('#next-quiz').hide();
+      $('#submit-quiz').show();
+    } else {
+      $('#next-quiz').show();
+      $('#submit-quiz').hide();
+    }
+  }
+
+  function saveAnswer() {
+    const selected = $(`input[name=question${currentQuestionIndex}]:checked`).val();
+    if (selected) {
+      userAnswers[currentQuestionIndex] = selected;
+    }
   }
 
   function showResults() {
-    const answerContainers = $('#quiz .quiz-answers');
+    $('#quiz').hide();
+    $('.quiz-navigation').hide();
+
     let numCorrect = 0;
+    const resultsOutput = [];
 
     quizData.forEach((currentQuestion, questionNumber) => {
-      const answerContainer = $(answerContainers[questionNumber]);
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.find(selector).val() || {});
-
+      const userAnswer = userAnswers[questionNumber];
       let resultText = '';
       if (userAnswer === currentQuestion.correctAnswer) {
         numCorrect++;
-        answerContainer.css('color', 'lightgreen');
-        resultText = `<div class="explanation correct">정답! ${currentQuestion.explanation}</div>`;
+        resultText = `<div class="explanation correct"><b>${questionNumber + 1}번 문제: 정답!</b> ${currentQuestion.explanation}</div>`;
       } else {
-        answerContainer.css('color', 'red');
-        resultText = `<div class="explanation incorrect">오답! 정답은 ${currentQuestion.correctAnswer.toUpperCase()} (${currentQuestion.answers[currentQuestion.correctAnswer]}) 입니다. ${currentQuestion.explanation}</div>`;
+        const correctAnswerText = currentQuestion.answers[currentQuestion.correctAnswer];
+        resultText = `<div class="explanation incorrect"><b>${questionNumber + 1}번 문제: 오답!</b> 정답은 ${currentQuestion.correctAnswer.toUpperCase()} (${correctAnswerText}) 입니다. ${currentQuestion.explanation}</div>`;
       }
-      answerContainer.append(resultText); // Append explanation after answers
+      resultsOutput.push(resultText);
     });
 
-    $('#quiz-results').html(`${quizData.length} 문제 중 ${numCorrect}개 정답!`);
+    $('#quiz-results').html(
+      `<h2>결과: ${quizData.length} 문제 중 ${numCorrect}개 정답!</h2>
+       ${resultsOutput.join('')}`
+    );
+
+    $('#play-again-quiz').show();
+  }
+  
+  function resetQuiz() {
+    currentQuestionIndex = 0;
+    userAnswers = {};
+    
+    $('#quiz-results').empty();
+    $('#play-again-quiz').hide();
+    
+    $('#quiz').show();
+    $('.quiz-navigation').show();
+    
+    displayQuestion();
   }
 
-  buildQuiz();
+  $('#next-quiz').on('click', function() {
+    saveAnswer();
+    currentQuestionIndex++;
+    displayQuestion();
+  });
 
-  $('#submit-quiz').on('click', showResults);
+  $('#previous-quiz').on('click', function() {
+    saveAnswer();
+    currentQuestionIndex--;
+    displayQuestion();
+  });
+
+  $('#submit-quiz').on('click', function() {
+    saveAnswer();
+    showResults();
+  });
+  
+  $('#play-again-quiz').on('click', resetQuiz);
+
+  // Initial load
+  displayQuestion();
 });

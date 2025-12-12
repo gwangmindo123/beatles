@@ -28,7 +28,12 @@
         <p>페이지를 꼼꼼히 읽으셨다면 쉽게 맞출 수 있는 퀴즈입니다.</p>
         <div class="quiz-container">
           <div id="quiz"></div>
-          <button id="submit-quiz">결과 확인</button>
+          <div class="quiz-navigation">
+            <button id="previous-quiz" style="display: none;">이전</button>
+            <button id="next-quiz">다음</button>
+            <button id="submit-quiz" style="display: none;">결과 확인</button>
+            <button id="play-again-quiz" style="display: none;">다시 풀기</button>
+          </div>
           <div id="quiz-results"></div>
         </div>
       </div>
