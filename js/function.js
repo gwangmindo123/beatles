@@ -66,7 +66,7 @@ $(function(){
     $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
 
     nowIdx = $thumb.index(this);
-    $thumb.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
+    $thumb.eq(nowIdx).parent().addClass('active').siblings().removeClass('active');
   });//end of cont1 - photogallery
 
   $framePrev.on('click',function(){
@@ -119,7 +119,7 @@ $(function(){
 
 
     nowIdx = $thmubs.index(this);
-    $thmubs.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
+    $thmubs.eq(nowIdx).parent().addClass('active').siblings().removeClass('active');
   });//end of cont4 - photogallery
 
   $(window).on('load',function(){
