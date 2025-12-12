@@ -61,18 +61,14 @@ $(function(){
     var src = $(this).attr('href');
     var cont = $(this).attr('title');
 
-    // Updated selectors for .cont_1
+    // Remove 'active' class from all thumbnails first
+    $thumb.removeClass('active');
+    // Add 'active' class to the clicked one
+    $(this).addClass('active'); 
+
+    // Update the main image and title
     $('.cont_1 .bg .main-album-display img.current-album-cover').attr('src', src);
     $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
-
-    nowIdx = $thumb.index(this);
-    $(this).addClass('active'); 
-    
-    // 2. 다른 모든 <a> 태그에서 active를 제거합니다.
-    $thumb.not(this).removeClass('active'); 
-    
-    // **참고:** 이전에 <li>에 붙던 active를 제거하는 안전 로직 (선택 사항)
-    $(this).parent().siblings().removeClass('active');
   });//end of cont1 - photogallery
 
   $framePrev.on('click',function(){
