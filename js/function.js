@@ -66,7 +66,13 @@ $(function(){
     $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
 
     nowIdx = $thumb.index(this);
-    $thumb.eq(nowIdx).parent().addClass('active').siblings().removeClass('active');
+    $(this).addClass('active'); 
+    
+    // 2. 다른 모든 <a> 태그에서 active를 제거합니다.
+    $thumb.not(this).removeClass('active'); 
+    
+    // **참고:** 이전에 <li>에 붙던 active를 제거하는 안전 로직 (선택 사항)
+    $(this).parent().siblings().removeClass('active');
   });//end of cont1 - photogallery
 
   $framePrev.on('click',function(){
@@ -119,7 +125,13 @@ $(function(){
 
 
     nowIdx = $thmubs.index(this);
-    $thmubs.eq(nowIdx).parent().addClass('active').siblings().removeClass('active');
+    $(this).addClass('active'); 
+    
+    // 2. 다른 모든 <a> 태그에서 active를 제거합니다.
+    $thumb.not(this).removeClass('active'); 
+    
+    // **참고:** 이전에 <li>에 붙던 active를 제거하는 안전 로직 (선택 사항)
+    $(this).parent().siblings().removeClass('active');
   });//end of cont4 - photogallery
 
   $(window).on('load',function(){
