@@ -275,136 +275,131 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
     margin-bottom: 40px;
 }
 
-/* section - 전설적인 4인조 (.cont_2) */
+/* section - 전설적인 4인조*/
 .cont_2{background-color:#666;}
+.cont_2 .bg{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:90%; max-width:1200px; height:80%; max-height:800px; background-color: #fff; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 
-/* 배경 컨테이너: 화면 중앙에 배치하고 크기를 유연하게 설정 */
-.cont_2 .bg{
-    position:absolute; 
-    left:50%; 
-    top:50%; 
-    transform:translate(-50%, -50%); 
-    width:90%; /* 화면 너비에 따라 유연하게 변경 */
-    max-width:1200px; /* 최대 너비 설정 */
-    height:80%; 
-    max-height:800px; /* 최대 높이 설정 */
-    background-color: #fff; 
-    padding: 50px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-}
-
-/* 텍스트와 슬라이더를 나란히 배치 */
 .cont_2 .bg .member-intro-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    width: 100%;
-    max-width: 1100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 30px;
 }
 .cont_2 .bg .text-info{
-    flex: 1;
-    padding-right: 20px;
+  flex: 1;
+  padding-right: 20px;
 }
-/* 텍스트 스타일은 중앙이 아닌 왼쪽 정렬로 자연스럽게 배치 */
-.cont_2 .bg h2, .cont_2 .bg h3, .cont_2 .bg p {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-}
+.cont_2 .bg h2{margin-bottom: 30px; font-weight:600; font-size:56px; color:#283e50; text-align: left;}
+.cont_2 .bg h3{margin-bottom: 20px; color:#283e50; font-size:38px; font-weight:500; text-align: left;}
+.cont_2 .bg p{margin-bottom: 20px; color:#3b3b3b; font-size:18px; line-height:1.6; text-align: left;}
 
-/* 슬라이더 컨테이너 */
 .cont_2 .bg .member-slider{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; /* 버튼 위치를 위한 기준 */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* For positioning prev/next buttons */
 }
 .cont_2 .bg .frame{
-    position:relative;
-    width: 300px; /* 이미지 프레임 크기 (고정) */
-    height: 450px; /* 이미지 프레임 크기 (고정) */
-    background-image:url(../images/content_3_bg.jpg);
-    background-repeat:no-repeat;
-    background-position:center top;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
+  position:relative;
+  width: 355px; /* Member image width */
+  height: 507px; /* Member image height */
+  background-image:url(../images/content_3_bg.jpg);
+  background-repeat:no-repeat;
+  background-position:center top; /* Center the frame background */
+  margin-bottom: 20px;
+  display: flex; /* Make frame a flex container */
+  justify-content: center; /* Center frame_img horizontally */
+  align-items: center; /* Center frame_img vertically */
 }
 .cont_2 .bg .frame .frame_img{
-    position:relative;
-    overflow:hidden;
-    width:300px;
-    height:450px;
+  position:relative;
+  overflow:hidden;
+  width:355px;
+  height:507px;
 }
 .cont_2 .bg .frame .frame_img ul{
-    position:absolute;
-    left:0; top:0;
-    width:1200px; /* 300px * 4 = 1200px */
-    height:100%;
-    display: flex; /* Flexbox로 슬라이드 배열 */
-    transition: transform 0.5s ease-in-out;
+  position:absolute;
+  left:0; top:0;
+  width:1420px; /* 4 images * 355px */
+  height:100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 .cont_2 .bg .frame .frame_img ul li{
-    min-width:300px;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-width:355px; /* Each slide takes full width */
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Align image to bottom */
 }
-/* 이미지 자체 스타일 */
+.cont_2 .bg .frame .frame_img ul li a{
+  display:flex; /* Use flex to center image and name */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  text-decoration: none;
+  color: #fff; /* Default color for name */
+  font-size: 1.2em;
+}
 .cont_2 .bg .frame .frame_img ul li a img{
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 이미지가 잘리지 않도록 유지 */
+    object-fit: cover; /* Cover the entire area */
+    z-index: 1;
 }
-/* 현재 이름 표시 */
+.cont_2 .bg .frame .frame_img ul li a span{
+    position: relative; /* Position text above image */
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: auto; /* Push name to bottom if flex-direction is column */
+    margin-bottom: 20px;
+}
 .cont_2 .bg .current-member-name{
-    margin-top: 10px;
-    color:#3b3b3b;
-    font-size:18px;
-    text-align:center;
+  color:#3b3b3b;
+  font-size:18px;
+  letter-spacing:-1px;
+  text-align:center;
+  font-weight: bold;
 }
-/* 버튼의 기본 스타일 (두 버튼 모두에 적용) */
+
 .cont_2 .bg .member-slider .prev,
-.cont_2 .bg .member-slider .next {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* member-slider를 기준으로 수직 중앙 정렬 */
-    
-    width: 27px;
-    height: 47px;
-    text-indent: -9999px; /* 텍스트 숨기기 */
-    
-    /* 화살표 이미지 경로와 스타일 */
-    background-image: url(../images/sprite_ico.png); /* 스프라이트 이미지 경로 확인 */
+.cont_2 .bg .member-slider .next{
+    display:block;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:27px;
+    height:47px;
+    text-indent:-9999px;
+    background-image:url(../images/sprite_ico.png);
     cursor: pointer;
-    z-index: 10;
+    z-index: 10; /* Ensure buttons are above slider */
 }
+.cont_2 .bg .member-slider .prev{left:-57px; background-position:-78px 0;}
+.cont_2 .bg .member-slider .prev:hover,.cont_2 .bg .member-slider .prev:focus{background-position:-41px 0;}
+.cont_2 .bg .member-slider .next{right:-57px; background-position:-150px 0;}
+.cont_2 .bg .member-slider .next:hover,.cont_2 .bg .member-slider .next:focus{background-position:-113px 0;}
 
-/* 이전 버튼 (왼쪽) */
-.cont_2 .bg .member-slider .prev {
-    left: -57px; /* 슬라이드 영역 바깥쪽에 위치 */
-    background-position: -78px 0; /* 스프라이트 이미지 내 이전 화살표 위치 */
+/* General styling for h2, h3, p inside .cont_2 .bg for consistency */
+.cont_2 .bg h2, .cont_2 .bg h3, .cont_2 .bg p {
+    text-align: center; /* Center align all headings and paragraphs */
+    margin: 0 auto 20px auto; /* Add margin bottom and center horizontally */
+    max-width: 80%; /* Limit width for better readability */
 }
-.cont_2 .bg .member-slider .prev:hover,
-.cont_2 .bg .member-slider .prev:focus {
-    background-position: -41px 0; /* 호버 시 색상/상태 변경 */
-}
-
-/* 다음 버튼 (오른쪽) */
-.cont_2 .bg .member-slider .next {
-    right: -57px; /* 슬라이드 영역 바깥쪽에 위치 */
-    background-position: -150px 0; /* 스프라이트 이미지 내 다음 화살표 위치 */
-}
-.cont_2 .bg .member-slider .next:hover,
-.cont_2 .bg .member-slider .next:focus {
-    background-position: -113px 0; /* 호버 시 색상/상태 변경 */
+.cont_2 .bg h2 {
+    font-size: 48px; /* Slightly smaller for balance */
+    margin-bottom: 40px;
 }
 /* section - 유명한 노래들*/
 .cont_3{background-color:#8a8a8a;}
