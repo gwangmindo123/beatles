@@ -1,5 +1,3 @@
-![The Beatles Website Banner](/images/intro_img_new.jpg)
-
 # 🎸 THE BEATLES UNIVERSE
 ***웹으로 만나는 비틀즈의 역사 · 음악 · 감성***
 
