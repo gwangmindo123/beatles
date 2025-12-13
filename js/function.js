@@ -72,7 +72,7 @@ $(function(){
     frameMove(nowIdx);
   });
 
-  // Famous Songs Lightbox (cont_3)
+  /*// Famous Songs Lightbox (cont_3)
   $(document).on('click', '.cont_3 .song-item', function(event){
     event.preventDefault();
     var src = $(this).attr('href');
@@ -84,7 +84,7 @@ $(function(){
   $(document).on('click', '.gall, .gallClose', function(event){
     event.preventDefault();
     $('.gall').fadeOut();
-  });
+  });*/
 
   // Legacy Gallery (cont_4)
   $(document).on('click', '.cont_4 .bg .thumb li a', function(event){
