@@ -96,116 +96,164 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 }
 
 /* section - 비틀즈의 역사*/
-.cont_0{width: 100%;
+/* section - 비틀즈의 역사 (축소해도 중앙 고정 버전) */
+.cont_0 {
+    /* FullPage.js가 만들어내는 내부 태그들을 무시하기 위한 기준점 설정 */
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-color: #333;
-    min-height: 100vh; /* 뷰포트 전체 높이를 차지하도록 설정 */
-    display: flex;
-    justify-content: center; /* 내부 .bg를 가로 중앙에 */
-    align-items: center; /* 내부 .bg를 세로 중앙에 */
-    padding: 50px 0;}
-.cont_0 .bg{/* 이전에 사용했던 absolute를 제거하고 일반 흐름에 두어야 합니다. */
-    width: 90%; 
-    max-width: 1200px;
-    height: 80%; /* 또는 height: auto; */
-    max-height: 800px;
-    background-color: #fff; /* <-- 흰색 배경을 다시 설정 */
-    padding: 50px;
+    overflow: hidden; 
+}
+
+/* 흰색 배경 박스 - 무조건 정중앙 고정 */
+.cont_0 .bg {
+    position: absolute; /* 절대 위치 사용 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* 정확히 중앙으로 이동 */
     
-    /* 슬라이드 버튼 prev/next의 기준을 위해 relative 설정 */
-    position: relative;}
-.cont_0 .bg h2{margin-bottom:50px; font-weight:600; font-size:56px; color:#283e50; text-align: center;}
-.cont_0 .bg .slides{position: relative; /* ul의 기준점이 되어야 합니다. */
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    
+    /* 화면이 줄어들어도 내용이 잘리지 않게 최대 높이 제한 */
+    max-height: 90vh; 
+    
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    
+    /* 내부 내용물 정렬 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10; /* 혹시 모를 겹침 방지 */
+}
+
+/* 제목 스타일 */
+.cont_0 .bg h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 48px;
+    color: #283e50;
+    text-align: center;
+}
+
+/* 슬라이드 영역 */
+.cont_0 .bg .slides {
+    position: relative;
     overflow: hidden;
     width: 100%;
-    /* 슬라이드가 들어갈 공간을 명확히 확보 */
-    height: 400px; /* <--- 예시: 이 높이를 명시적으로 지정해야 콘텐츠가 보입니다. */
-    flex-grow: 1; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;}
-.cont_0 .bg .slides ul{position: static; /* 또는 position: relative; */
-    /* absolute는 높이 문제 발생의 주범이므로 제거합니다. */
-    
-    left: 0;
-    top: 0;
-    height: 100%;
-    /* width: auto; 또는 width: 300%; (슬라이드 개수만큼) */
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    
-    /* 가장 중요한 수정: !important를 제거하여 JS가 transform 값을 변경할 수 있도록 합니다. */
-    transform: translateX(0);} /* Ensure initial position */
-.cont_0 .bg .slides ul li{
-    min-width:100%;
-    height:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    box-sizing: border-box;
-    padding: 0 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.cont_0 .bg .slides ul li .text-content{
+
+/* 움직이는 기차 (ul) */
+.cont_0 .bg .slides ul {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 각각의 슬라이드 (li) */
+.cont_0 .bg .slides ul li {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 좌우 중앙 정렬 */
+    gap: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* 반응형: 화면 좁으면 위아래 배치 */
+@media (max-width: 768px) {
+    .cont_0 .bg .slides ul li {
+        flex-direction: column-reverse;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* 텍스트 내용 */
+.cont_0 .bg .slides ul li .text-content {
     flex: 1;
     padding-right: 20px;
+    text-align: left;
+    word-break: keep-all;
 }
-.cont_0 .bg .slides ul li .text-content h3{
-    color:#283e50;
-    font-size:38px;
-    font-weight:500;
-    margin-bottom: 20px;
+.cont_0 .bg .slides ul li .text-content h3 {
+    color: #283e50;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-.cont_0 .bg .slides ul li .text-content p{
-    color:#3b3b3b;
-    font-size:18px;
-    line-height:1.6;
+.cont_0 .bg .slides ul li .text-content p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
 }
-.cont_0 .bg .slides ul li .image-content{
-    flex: 1; /* Take remaining space */
+
+/* 이미지 내용 */
+.cont_0 .bg .slides ul li .image-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px; /* Added padding */
-    background-color: #f9f9f9; /* Subtle background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
-.cont_0 .bg .slides ul li .image-content:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-.cont_0 .bg .slides ul li .img{
+.cont_0 .bg .slides ul li .img {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     height: 300px;
-    text-indent:-9999px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-size: cover;
     background-position: center;
-    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.cont_0 .bg .slides ul li .txt{
-    color:#3b3b3b;
-    font-size:15px;
-    text-align:center;
+.cont_0 .bg .slides ul li .txt {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
 }
 
-.cont_0 .bg .prev, .cont_0 .bg .next{
-    display:block;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:27px;
-    height:47px;
-    text-indent:-9999px;
-    background-image:url(../images/sprite_ico.png);
+/* 이전/다음 버튼 */
+.cont_0 .bg .prev, 
+.cont_0 .bg .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #283e50;
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.cont_0 .bg .prev{left:-57px; background-position:-78px 0;}
-.cont_0 .bg .prev:hover,.cont_0 .bg .prev:focus{background-position:-41px 0;}
-.cont_0 .bg .next{right:-57px; background-position:-150px 0;}
-.cont_0 .bg .next:hover,.cont_0 .bg .next:focus{background-position:-113px 0;}
+.cont_0 .bg .prev { left: -25px; } 
+.cont_0 .bg .next { right: -25px; }
+
+/* CSS 화살표 */
+.cont_0 .bg .prev::after {
+    content: ''; display: block; width: 12px; height: 12px;
+    border-top: 2px solid #fff; border-left: 2px solid #fff;
+    transform: rotate(-45deg); margin-left: 5px;
+}
+.cont_0 .bg .next::after {
+    content: ''; display: block; width: 12px; height: 12px;
+    border-top: 2px solid #fff; border-right: 2px solid #fff;
+    transform: rotate(45deg); margin-right: 5px;
+}
 
 /* section - 아이코닉 앨범*/
 .cont_1{background-color:#4a4a4a;}
