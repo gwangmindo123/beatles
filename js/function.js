@@ -5,7 +5,7 @@ $(function(){
     $('#fullpage').fullpage({
         autoScrolling: true,      // 한 페이지씩 딱딱 넘어감
         fitToSection: true,       // 섹션에 딱 맞게 멈춤
-        scrollingSpeed: 700,      // 넘어가는 속도
+        scrollingSpeed: 1200,      // 넘어가는 속도
         scrollBar: false,         // 스크롤바 숨김 (깔끔하게)
         easing: 'easeInOutCubic',
         
