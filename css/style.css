@@ -452,9 +452,7 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
   position:relative;
   width: 355px; /* Member image width */
   height: 507px; /* Member image height */
-  background-image:url(../images/content_3_bg.jpg);
-  background-repeat:no-repeat;
-  background-position:center top; /* Center the frame background */
+  background: transparent;
   margin-bottom: 20px;
   display: flex; /* Make frame a flex container */
   justify-content: center; /* Center frame_img horizontally */
