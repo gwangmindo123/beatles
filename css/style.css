@@ -96,11 +96,45 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 }
 
 /* section - 비틀즈의 역사*/
-.cont_0{width:100%; background-color:#333;}
-.cont_0 .bg{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:90%; max-width:1200px; height:80%; max-height:800px; background-color:#fff; padding: 50px;}
+.cont_0{width: 100%;
+    background-color: #333;
+    min-height: 100vh; /* 뷰포트 전체 높이를 차지하도록 설정 */
+    display: flex;
+    justify-content: center; /* 내부 .bg를 가로 중앙에 */
+    align-items: center; /* 내부 .bg를 세로 중앙에 */
+    padding: 50px 0;}
+.cont_0 .bg{/* 이전에 사용했던 absolute를 제거하고 일반 흐름에 두어야 합니다. */
+    width: 90%; 
+    max-width: 1200px;
+    height: 80%; /* 또는 height: auto; */
+    max-height: 800px;
+    background-color: #fff; /* <-- 흰색 배경을 다시 설정 */
+    padding: 50px;
+    
+    /* 슬라이드 버튼 prev/next의 기준을 위해 relative 설정 */
+    position: relative;}
 .cont_0 .bg h2{margin-bottom:50px; font-weight:600; font-size:56px; color:#283e50; text-align: center;}
-.cont_0 .bg .slides{position:relative; overflow:hidden; width:100%; flex-grow: 1; height: auto; display: flex; align-items: center; justify-content: center;}
-.cont_0 .bg .slides ul{position:absolute; left:0; top:0; height:100%; display:flex; transition: transform 0.5s ease-in-out; transform: translateX(0) !important;} /* Ensure initial position */
+.cont_0 .bg .slides{position: relative; /* ul의 기준점이 되어야 합니다. */
+    overflow: hidden;
+    width: 100%;
+    /* 슬라이드가 들어갈 공간을 명확히 확보 */
+    height: 400px; /* <--- 예시: 이 높이를 명시적으로 지정해야 콘텐츠가 보입니다. */
+    flex-grow: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;}
+.cont_0 .bg .slides ul{position: static; /* 또는 position: relative; */
+    /* absolute는 높이 문제 발생의 주범이므로 제거합니다. */
+    
+    left: 0;
+    top: 0;
+    height: 100%;
+    /* width: auto; 또는 width: 300%; (슬라이드 개수만큼) */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+    /* 가장 중요한 수정: !important를 제거하여 JS가 transform 값을 변경할 수 있도록 합니다. */
+    transform: translateX(0);} /* Ensure initial position */
 .cont_0 .bg .slides ul li{
     min-width:100%;
     height:100%;
