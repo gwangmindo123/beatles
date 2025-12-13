@@ -420,128 +420,216 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
 }
 
 /* section - 전설적인 4인조*/
-.cont_2{background-color:#666;}
-.cont_2 .bg{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:90%; max-width:1200px; height:80%; max-height:800px; background-color: #fff; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 
-.cont_2 .bg .member-intro-wrapper{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start; /* Align items to the top */
-  gap: 40px;
-  width: 100%;
-  max-width: 1100px;
-  margin-top: 30px;
-}
-.cont_2 .bg .text-info{
-  flex: 1;
-  padding-right: 20px;
-}
-.cont_2 .bg h2{margin-bottom: 30px; font-weight:600; font-size:56px; color:#283e50; text-align: left;}
-.cont_2 .bg h3{margin-bottom: 20px; color:#283e50; font-size:38px; font-weight:500; text-align: left;}
-.cont_2 .bg p{margin-bottom: 20px; color:#3b3b3b; font-size:18px; line-height:1.6; text-align: left;}
-
-.cont_2 .bg .member-slider{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; /* For positioning prev/next buttons */
-}
-.cont_2 .bg .frame{
-  position:relative;
-  width: 355px; /* Member image width */
-  height: 507px; /* Member image height */
-  background: transparent;
-  margin-bottom: 20px;
-  display: flex; /* Make frame a flex container */
-  justify-content: center; /* Center frame_img horizontally */
-  align-items: center; /* Center frame_img vertically */
-}
-.cont_2 .bg .frame .frame_img{
-  position:relative;
-  overflow:hidden;
-  width:355px;
-  height:507px;
-}
-.cont_2 .bg .frame .frame_img ul{
-  position:absolute;
-  left:0; top:0;
-  width:1420px; /* 4 images * 355px */
-  height:100%;
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.cont_2 .bg .frame .frame_img ul li{
-  min-width:355px; /* Each slide takes full width */
-  height:100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end; /* Align image to bottom */
-}
-.cont_2 .bg .frame .frame_img ul li a{
-  display:flex; /* Use flex to center image and name */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-  cursor:pointer;
-  text-decoration: none;
-  color: #fff; /* Default color for name */
-  font-size: 1.2em;
-}
-.cont_2 .bg .frame .frame_img ul li a img{
+.cont_2 {
+    background-color: #666;
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire area */
-    z-index: 1;
-}
-.cont_2 .bg .frame .frame_img ul li a span{
-    position: relative; /* Position text above image */
-    z-index: 2;
-    background-color: rgba(0,0,0,0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-top: auto; /* Push name to bottom if flex-direction is column */
-    margin-bottom: 20px;
-}
-.cont_2 .bg .current-member-name{
-  color:#3b3b3b;
-  font-size:18px;
-  letter-spacing:-1px;
-  text-align:center;
-  font-weight: bold;
+    overflow: hidden;
 }
 
-.cont_2 .bg .member-slider .prev,
-.cont_2 .bg .member-slider .next{
-    display:block;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:27px;
-    height:47px;
-    text-indent:-9999px;
-    background-image:url(../images/sprite_ico.png);
-    cursor: pointer;
-    z-index: 10; /* Ensure buttons are above slider */
+/* 흰색 배경 박스 */
+.cont_2 .bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 85vh; /* 화면 꽉 차지 않게 */
+    
+    background-color: #fff;
+    padding: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-sizing: border-box;
 }
-.cont_2 .bg .member-slider .prev{left:-57px; background-position:-78px 0;}
-.cont_2 .bg .member-slider .prev:hover,.cont_2 .bg .member-slider .prev:focus{background-position:-41px 0;}
-.cont_2 .bg .member-slider .next{right:-57px; background-position:-150px 0;}
-.cont_2 .bg .member-slider .next:hover,.cont_2 .bg .member-slider .next:focus{background-position:-113px 0;}
 
-/* General styling for h2, h3, p inside .cont_2 .bg for consistency */
-.cont_2 .bg h2, .cont_2 .bg h3, .cont_2 .bg p {
-    text-align: center; /* Center align all headings and paragraphs */
-    margin: 0 auto 20px auto; /* Add margin bottom and center horizontally */
-    max-width: 80%; /* Limit width for better readability */
+/* 상단: 텍스트(좌) + 이미지슬라이더(우) 배치 */
+.cont_2 .bg .member-intro-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* 사이 간격 */
+    width: 100%;
+    max-width: 1100px;
 }
+
+/* 왼쪽 텍스트 영역 */
+.cont_2 .bg .text-info {
+    flex: 1;
+    text-align: left; /* 무조건 왼쪽 정렬 */
+}
+
 .cont_2 .bg h2 {
-    font-size: 48px; /* Slightly smaller for balance */
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 48px;
+    color: #283e50;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.cont_2 .bg h3 {
+    margin-bottom: 20px;
+    color: #283e50;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.cont_2 .bg p {
+    margin-bottom: 20px;
+    color: #3b3b3b;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    word-break: keep-all;
+}
+
+/* 오른쪽 슬라이더 영역 */
+.cont_2 .bg .member-slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 화살표 기준점 */
+}
+
+/* 사진 틀 (액자 대신 깔끔한 스타일) */
+.cont_2 .bg .frame {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    
+    background: #000; /* 사진 로딩 전 배경색 */
+    border-radius: 15px; /* 모서리 둥글게 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* 그림자 */
+    
+    margin-bottom: 20px;
+    overflow: hidden; /* 둥근 모서리 적용 */
+}
+
+.cont_2 .bg .frame .frame_img {
+    position: relative;
+    width: 350px;
+    height: 500px;
+}
+
+/* 슬라이드 기차 (ul) */
+.cont_2 .bg .frame .frame_img ul {
+    position: absolute;
+    left: 0; top: 0;
+    width: 1400px; /* 350 * 4 */
+    height: 100%;
+    display: flex;
+    padding: 0; margin: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cont_2 .bg .frame .frame_img ul li {
+    width: 350px;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.cont_2 .bg .frame .frame_img ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: default; /* 링크 기능 끔 (이미지 클릭 방지) */
+}
+
+.cont_2 .bg .frame .frame_img ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 꽉 차게 */
+    display: block;
+}
+
+/* 사진 위 텍스트(span) 숨기기 (중복 방지) */
+.cont_2 .bg .frame .frame_img ul li a span {
+    display: none; 
+}
+
+/* 사진 아래 이름표 (current-member-name) */
+.cont_2 .bg .current-member-name {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: -0.5px;
+}
+
+/* 화살표 버튼 (이미지 없이 CSS로 직접 그림) */
+.cont_2 .bg .member-slider .prev,
+.cont_2 .bg .member-slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* 정확히 수직 중앙 */
+    width: 50px;
+    height: 50px;
+    
+    background-color: #283e50; /* 남색 배경 */
+    border-radius: 50%; /* 동그라미 */
+    cursor: pointer;
+    z-index: 20;
+    
+    /* 화살표 아이콘 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+/* 화살표 위치 조정 (사진 바로 옆) */
+.cont_2 .bg .member-slider .prev { left: -70px; }
+.cont_2 .bg .member-slider .next { right: -70px; }
+
+/* 마우스 올리면 색 변경 */
+.cont_2 .bg .member-slider .prev:hover,
+.cont_2 .bg .member-slider .next:hover {
+    background-color: #1a2b3c;
+}
+
+/* 화살표 모양 그리기 (흰색 꺾쇠) */
+.cont_2 .bg .member-slider .prev::after {
+    content: ''; display: block; width: 12px; height: 12px;
+    border-top: 2px solid #fff; border-left: 2px solid #fff;
+    transform: rotate(-45deg); margin-left: 5px;
+}
+
+.cont_2 .bg .member-slider .next::after {
+    content: ''; display: block; width: 12px; height: 12px;
+    border-top: 2px solid #fff; border-right: 2px solid #fff;
+    transform: rotate(45deg); margin-right: 5px;
+}
+
+/* 반응형: 화면 작을 때 구조 변경 */
+@media (max-width: 1024px) {
+    .cont_2 .bg .member-intro-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .cont_2 .bg .text-info {
+        text-align: center;
+        padding: 0;
+    }
+    .cont_2 .bg h2, .cont_2 .bg h3, .cont_2 .bg p {
+        text-align: center;
+    }
+    /* 모바일에서는 화살표를 사진 안쪽으로 */
+    .cont_2 .bg .member-slider .prev { left: -25px; }
+    .cont_2 .bg .member-slider .next { right: -25px; }
 }
 /* section - 유명한 노래들*/
 .cont_3{background-color:#8a8a8a;}
