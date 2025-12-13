@@ -67,18 +67,27 @@ $(function(){
     });
 
     // Iconic Albums (cont_1: 앨범 클릭)
-    $(document).on('click', '.cont_1 .bg ul.thumb li a', function(event){
-        event.preventDefault();
-        
-        var src = $(this).attr('href');
-        var cont = $(this).attr('title');
+    $(document).on('click', '.cont_1 .bg ul.thumb li a', function(e){
+    e.preventDefault(); 
+    e.stopPropagation();
 
-        $('.cont_1 .bg ul.thumb li a').removeClass('active');
-        $(this).addClass('active');
+    var src = $(this).attr('href');
+    var title = $(this).attr('title');
 
-        $('.cont_1 .bg .main-album-display img.current-album-cover').attr('src', src);
-        $('.cont_1 .bg .main-album-display p.current-album-title').text(cont);
+    // [수정] a태그가 아니라 부모인 li태그에 'on'을 붙여야 CSS가 작동함
+    $('.cont_1 .bg ul.thumb li').removeClass('on'); // 형제들 끄기
+    $(this).parent('li').addClass('on');            // 나(li) 켜기
+
+    // 메인 이미지 변경
+    var $mainImg = $('.cont_1 .bg .main-album-display img.current-album-cover');
+    var $mainTxt = $('.cont_1 .bg .main-album-display p.current-album-title');
+
+    $mainImg.stop().fadeOut(100, function(){
+        $(this).attr('src', src).fadeIn(300);
     });
+    
+    $mainTxt.text(title);
+  });
 
     // Members Slider (cont_2: 멤버 소개 슬라이드)
     $(document).on('click', '.cont_2 .bg .prev', function(){
