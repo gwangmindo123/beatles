@@ -141,63 +141,72 @@ footer>address{height:100px; line-height:100px; text-align:center; font-size:15p
 
 
 
-.current-member-name {
-    display: block !important;
-    text-align: center !important;
-    font-size: 28px !important;    
-    font-weight: bold !important;
-    color: #000000 !important;     
-    margin-top: 20px !important;
-    padding-bottom: 30px !important;
-    z-index: 999 !important;       
-    position: relative !important; 
-}
+/* style.css 맨 아래에 이 코드로 덮어쓰세요 */
 
-
-.frame_img ul li a {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    text-decoration: none !important;
-}
-.frame_img ul li a img {
-    margin-bottom: 10px !important;
-}
+/* 1. 멤버 이름 (큰 글씨 & 작은 글씨) 검정색으로 변경 */
+.current-member-name, 
 .frame_img ul li a span {
-    display: block !important;
-    color: #000000 !important;
-    font-size: 14px !important;
-    text-align: center !important;
+    color: #000000 !important; /* ★ 흰색(#fff)을 검정(#000)으로 변경! */
+    font-weight: bold !important;
+    display: block !important; /* 강제로 보이게 함 */
+    z-index: 9999 !important;
 }
 
-
-
+/* 2. 멤버 소개 구역 (글자 vs 사진) 가로 배치 */
 .cont_2 .bg {
     display: flex !important;
-    flex-direction: row !important;      
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+/* 비율 조정 */
+.cont_2 .bg .member-intro-wrapper { width: 45% !important; }
+.cont_2 .bg .member-slider { width: 50% !important; }
+
+
+/* 3. 유산(Legacy) 구역 가로 배치 */
+/* 아래 HTML에서 새로 만들 'legacy-box'를 가로로 정렬 */
+.legacy-box {
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
-    padding: 0 50px !important;
+}
+.legacy-box .text-info { width: 45% !important; }
+.legacy-box .legacy-visuals { width: 50% !important; }
+
+/* style.css 맨 아래에 이 코드로 덮어쓰세요 */
+
+/* 1. 멤버 이름 (큰 글씨 & 작은 글씨) 검정색으로 변경 */
+.current-member-name, 
+.frame_img ul li a span {
+    color: #000000 !important; /* ★ 흰색(#fff)을 검정(#000)으로 변경! */
+    font-weight: bold !important;
+    display: block !important; /* 강제로 보이게 함 */
+    z-index: 9999 !important;
 }
 
-
-.cont_2 .bg .text-info {
-    width: 45% !important;
+/* 2. 멤버 소개 구역 (글자 vs 사진) 가로 배치 */
+.cont_2 .bg {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
+/* 비율 조정 */
+.cont_2 .bg .member-intro-wrapper { width: 45% !important; }
+.cont_2 .bg .member-slider { width: 50% !important; }
 
 
-.cont_2 .bg .member-slider {
-    width: 50% !important;
+/* 3. 유산(Legacy) 구역 가로 배치 */
+/* 아래 HTML에서 새로 만들 'legacy-box'를 가로로 정렬 */
+.legacy-box {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
 }
-
-
-@media (max-width: 768px) {
-    .cont_2 .bg {
-        flex-direction: column !important;
-    }
-    .cont_2 .bg .text-info,
-    .cont_2 .bg .member-slider {
-        width: 100% !important;
-    }
-}
+.legacy-box .text-info { width: 45% !important; }
+.legacy-box .legacy-visuals { width: 50% !important; }
