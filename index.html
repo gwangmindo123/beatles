@@ -28,7 +28,7 @@
     .frame_img ul li a span {
         display: block;
         text-align: center;
-        color: #ffffff;
+        color: #000000;
         font-weight: bold;
         font-size: 16px;
     }
@@ -37,14 +37,29 @@
     
     
     .member-intro-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
+        display: flex !important;
+        flex-direction: row !important; 
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
     }
+
+
+    .member-intro-wrapper .text-info {
+        width: 45% !important;
+    }
+
+    .member-intro-wrapper .member-slider {
+        width: 50% !important;
+    }
+
     @media (max-width: 768px) {
         .member-intro-wrapper {
-            flex-direction: column;
+            flex-direction: column !important;
+        }
+        .member-intro-wrapper .text-info, 
+        .member-intro-wrapper .member-slider {
+            width: 100% !important;
         }
     }
 </style>
