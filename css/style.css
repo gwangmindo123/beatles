@@ -4,7 +4,7 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 /* default */
-body{font-family:'Noto Serif KR', serif;}
+
 #wrap{margin:0 auto; width:100%;}
 .cont{position:relative; margin:0 auto; display:flex; flex-direction:column; justify-content:center; align-items:center;}
 /* For fullPage.js sections to account for the fixed header */
