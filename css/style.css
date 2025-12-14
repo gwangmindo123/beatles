@@ -879,7 +879,25 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
     transform: scale(1.05); /* 살짝 커지는 효과 */
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+/* --- 여기부터 복사해서 붙여넣으세요 --- */
 
+/* 유산 페이지(cont_4) 버튼 배경 이미지 추가 */
+.cont_4 .bg ul.thumb li:nth-child(1) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141013_132%2Fgksllove22_1413203520554GR0Hf_PNG%2FK-25.png&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(2) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140309_244%2Fthdskarl6_1394306149717uaQGY_JPEG%2F%25BA%25F11%25C6%25B2%25C1%25EE_%25B8%25ED%25B0%25EE_%25BF%25A1%25BA%25F1%25B7%25CE%25B5%25E5_namkisong_%25284%2529.jpg&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(3) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA2MDZfMTY1%2FMDAxNDk2NzEwODEyMjQ2.T9BWNDaDZg9y73w0gyB53LV6SY4QVF1Ro19t8CDGy9kg.WR2MnXKFj4u3RMxXKDlY4OFSvnKbLaymByGimqDGY4og.JPEG.junglx%2Fsgt-pepper.jpg&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(4) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20141014_124%2Fadaptable_1413268750846pKol8_JPEG%2FALeqM5g6qom6PkUhTDF1QO-CoGfdmS95hg.jpg&type=sc960_832');
+}
+/* ------------------------------------- */
 /* General styling for h2, h3, p inside .cont_4 .bg for consistency */
 .cont_4 .bg h2, .cont_4 .bg h3, .cont_4 .bg p {
     text-align: center; /* Center align all headings and paragraphs */
