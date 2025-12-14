@@ -270,36 +270,5 @@
       </div>
     </div><!--end of fullpage-->
   </div><!--end of wrap-->
-<script>
-    $(document).ready(function() {
-        
-        var names = ["존 레논", "폴 매카트니", "조지 해리슨", "링고 스타"];
-        var idx = 0; 
-
-        function updateText() {
-            $(".current-member-name").text(names[idx]);
-        }
-
-        $(".next").on("click", function() {
-            idx++; 
-            if (idx > 3) { idx = 0; } 
-            updateText();
-        });
-
-      
-        $(".prev").on("click", function() {
-            idx--; 
-            if (idx < 0) { idx = 3; } 
-            updateText();
-        });
-
-      
-        $(".frame_img ul li a").on("click", function() {
-            var myTitle = $(this).attr("title"); 
-            idx = names.indexOf(myTitle); 
-            updateText();
-        });
-    });
-</script>
 </body>
 </html>
