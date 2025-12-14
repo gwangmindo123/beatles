@@ -1169,3 +1169,20 @@ html body .cont_0 .bg .next:hover {
     transform: translateY(2px) !important; /* 살짝 아래로 눌림 */
     box-shadow: 0 2px 0 #0f1a25 !important; /* 그림자 줄어듦 */
 }
+/* ========================================= */
+/* ★ 제목 vs 부제목 색상 분리하기 ★ */
+/* ========================================= */
+
+/* 1. 메인 제목 (h2) -> 힙한 초록색 유지 */
+html body h2, 
+html body h1, 
+html body .title {
+    color: #8CB811 !important; /* 애플 그린 */
+}
+
+/* 2. 부제목 (h3) -> 버튼이랑 똑같은 남색으로 변경 */
+html body h3 {
+    color: #283e50 !important; /* 차분한 남색 */
+    font-weight: 600 !important; /* 가독성 있게 굵기 조절 */
+    text-shadow: none !important; /* 그림자 없이 깔끔하게 */
+}
