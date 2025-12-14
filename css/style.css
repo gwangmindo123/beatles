@@ -1037,3 +1037,20 @@ body.music-page {
     background-color: #cccccc;
 }
 
+
+.frame_img ul li a {
+    display: flex !important;          
+    flex-direction: column !important;  
+    align-items: center !important;     
+    text-decoration: none !important;    
+    height: auto !important;
+}
+
+.frame_img ul li a span {
+    display: block !important;           /* 글자 박스 보이기 */
+    color: #000000 !important;           /* ★글자색 검정 (필수) */
+    font-size: 16px !important;          /* 글자 크기 */
+    font-weight: bold !important;        /* 굵게 */
+    margin-top: 10px !important;         /* 사진과 간격 띄우기 */
+    text-align: center !important;       /* 가운데 정렬 */
+}
