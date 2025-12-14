@@ -1071,10 +1071,10 @@ body.music-page {
 }
 /
 .current-member-name {
-    text-align: center;       /* 글자 가운데 정렬 */
-    font-size: 24px;          /* 글자 크기 (원하는 대로 조절) */
-    font-weight: bold;        /* 굵게 */
-    color: #000000;           /* 글자 색상 (배경에 맞춰 변경) */
-    margin-top: 20px;         /* 사진과의 간격 */
-    min-height: 30px;         /* 글자가 없을 때도 공간 유지 */
+    text-align: center;    
+    font-size: 24px;       
+    font-weight: bold;    
+    color: #000000;         
+    margin-top: 20px;        
+    min-height: 30px;         
 }
