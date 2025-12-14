@@ -1064,7 +1064,7 @@ body.music-page {
 
 
 .frame_img ul li a {
-    display: flex !important;            
+    display: flex !important;           =
     flex-direction: column !important;   
     align-items: center !important;     
     justify-content: center !important;
@@ -1081,7 +1081,7 @@ body.music-page {
 
 .frame_img ul li a span {
     display: block !important;          
-    color: #FFFFFF !important;          
+    color: #ffffff !important;          
     font-size: 16px !important;
     font-weight: bold !important;
     text-align: center !important;
