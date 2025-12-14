@@ -272,36 +272,32 @@
   </div><!--end of wrap-->
 <script>
     $(document).ready(function() {
-       
-        var memberNames = ["존 레논", "폴 매카트니", "조지 해리슨", "링고 스타"];
-        var currentIndex = 0; 
-
         
-        function updateName() {
-            $(".current-member-name").text(memberNames[currentIndex]);
+        var names = ["존 레논", "폴 매카트니", "조지 해리슨", "링고 스타"];
+        var idx = 0; 
+
+        function updateText() {
+            $(".current-member-name").text(names[idx]);
         }
 
-       
         $(".next").on("click", function() {
-            currentIndex++; // 번호 1 증가
-            if (currentIndex > 3) { currentIndex = 0; } // 링고(3) 다음엔 다시 존(0)으로
-            updateName();
+            idx++; 
+            if (idx > 3) { idx = 0; } 
+            updateText();
         });
 
-        // 3. [이전] 화살표 눌렀을 때
+      
         $(".prev").on("click", function() {
-            currentIndex--; // 번호 1 감소
-            if (currentIndex < 0) { currentIndex = 3; } // 존(0) 이전엔 링고(3)로
-            updateName();
+            idx--; 
+            if (idx < 0) { idx = 3; } 
+            updateText();
         });
 
-        // 4. 작은 사진(썸네일) 직접 눌렀을 때도 싱크 맞추기
+      
         $(".frame_img ul li a").on("click", function() {
-            var clickedName = $(this).attr("title"); // 클릭한 사진의 이름 가져오기
-            
-            // 그 이름이 명단에서 몇 번째인지 찾아서 번호(index) 수정
-            currentIndex = memberNames.indexOf(clickedName);
-            updateName();
+            var myTitle = $(this).attr("title"); 
+            idx = names.indexOf(myTitle); 
+            updateText();
         });
     });
 </script>
