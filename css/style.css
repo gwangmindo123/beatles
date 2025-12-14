@@ -1,6 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 /* default */
@@ -1185,4 +1183,26 @@ html body h3 {
     color: #283e50 !important; /* 차분한 남색 */
     font-weight: 600 !important; /* 가독성 있게 굵기 조절 */
     text-shadow: none !important; /* 그림자 없이 깔끔하게 */
+}
+/* ========================================= */
+/* ★ 진_최종: 모든 글씨 "네모 반듯" 강제 통일 ★ */
+/* ========================================= */
+
+/* 별표(*)는 '모든 것'을 뜻합니다. 제목, 본문, 영어, 한글 싹 다 포함 */
+* {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
+}
+
+/* 혹시라도 필기체나 명조체가 남아있을까봐 확인 사살 */
+body, h1, h2, h3, p, a, span, li, button, input, .title, header, nav {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
+    font-weight: 600 !important; /* 글씨가 너무 얇으면 흐려 보이니까 살짝 힘주기 */
+}
+
+/* 영어 필기체 썼던 제목들도 다 "정직한 고딕"으로 변경 */
+header nav ul li a, 
+header h1 a,
+.cont_home h2 {
+    font-style: normal !important; /* 기울기(이탤릭) 제거 */
+    letter-spacing: -0.5px !important; /* 자간 살짝 좁혀서 단정하게 */
 }
