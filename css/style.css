@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* --- ★ 여기서부터 복사하세요 (빈티지 테마 시작) ★ --- */
 
 /* 1. 폰트 불러오기 (G마켓 산스, 프리텐다드) */
 @import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
@@ -23,7 +22,6 @@ header {
     background-color: #283e50 !important; /* 메뉴바는 진한 남색 유지 (가독성 위해) */
 }
 
-/* --- ★ 여기까지 복사하세요 (빈티지 테마 끝) ★ --- */
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
 
 /* default */
