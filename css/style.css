@@ -1,69 +1,81 @@
 @charset "utf-8";
+/* ========================================= */
+/* ★ 비틀즈 Abbey Road (시크 & 모던) 테마 ★ */
+/* ========================================= */
 
+/* 1. 폰트 가져오기 */
+/* 영어: Dancing Script (예쁜 필기체), 한글: Pretendard (가장 깔끔한 요즘 폰트) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 1. 폰트 가져오기 (영어 필기체 + 한글 명조체) */
-/* 영어: Dancing Script (우아한 필기체), 한글: 나눔명조 (클래식함) */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-/* 2. 전체 배경색: 눈이 편한 '오래된 종이색(베이지 그레이)' */
+/* 2. 전체 배경: 횡단보도의 아스팔트처럼 시크한 '다크 그레이' */
 body, 
 .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5,
 .cont_home .text-overlay { 
-    background-color: #E6DBC8 !important; /* 차분한 베이지색 */
+    background-color: #1a1a1a !important; /* 거의 검정에 가까운 진한 회색 */
 }
 
-/* 3. 내용 박스(.bg): 약간 빛바랜 아이보리색 + 갈색 테두리 */
+/* 3. 내용 박스: 횡단보도 흰색 줄처럼 '깨끗한 화이트' */
 .cont_0 .bg, .cont_1 .bg, .cont_2 .bg, .cont_3 .bg, .cont_4 .bg {
-    background-color: #F8F1E5 !important; /* 눈 안 아픈 따뜻한 아이보리 */
-    border: 2px solid #5D4037 !important; /* 진한 갈색 테두리 */
-    box-shadow: 8px 8px 0px rgba(93, 64, 55, 0.2) !important; /* 그림자도 은은하게 */
-    border-radius: 5px !important; /* 둥근 모서리 살짝만 */
+    background-color: #FFFFFF !important; /* 쨍한 흰색 */
+    border: none !important; /* 테두리 없애서 심플하게 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* 그림자로 입체감만 살짝 */
+    border-radius: 15px !important; /* 모서리는 부드럽게 */
 }
 
-/* 4. 텍스트 색상 및 폰트 변경 */
-/* 제목 (영어는 필기체, 한글은 명조체) */
+/* 4. 텍스트 색상 및 폰트 (가장 중요!) */
+
+/* 제목 (영어는 필기체, 한글은 깔끔하게) */
 h1, h2, h3, .title, header h1 a {
-    color: #2F4F4F !important;      /* 딥 그린 (차분하고 클래식함) */
-    font-family: 'Dancing Script', 'Nanum Myeongjo', serif !important; /* 영어 필기체 우선 적용 */
-    letter-spacing: 1px !important;
+    color: #283e50 !important;      /* 비틀즈 정장 색깔 (차분한 남색) */
+    font-family: 'Dancing Script', 'Pretendard', sans-serif !important; /* 영어만 필기체 적용 */
+    font-weight: 700 !important;
 }
 
-/* 본문 (검정 대신 진한 갈색으로 눈 피로 감소) */
+/* 본문 (한글은 무조건 깔끔한 고딕체! 악기점 탈출!) */
 p, li, span, .writer, .txt, .quiz-question, label {
-    color: #4B3621 !important;      /* 다크 커피색 */
-    font-family: 'Nanum Myeongjo', serif !important; /* 본문은 가독성 좋은 명조체 */
-    font-weight: 600 !important;    /* 명조체는 얇아서 조금 두껍게 */
+    color: #333333 !important;      /* 진한 검정 (가독성 최우선) */
+    font-family: 'Pretendard', sans-serif !important; /* 아이폰 폰트처럼 깔끔함 */
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
 }
 
-/* 5. 촌스러운 노랑+남색 헤더(메뉴바) 수정 */
+/* 5. 포인트 컬러 (Abbey Road의 파란 하늘) */
+/* 링크나 강조하고 싶은 부분, 버튼 */
+a, .on, header nav ul li a:hover {
+    color: #3498db !important; /* 맑은 하늘색 */
+}
+
+/* 6. 헤더(메뉴바) 디자인 */
 header {
-    background-color: #3E2723 !important; /* 아주 진한 고동색 (나무 느낌) */
-    border-bottom: 2px solid #D7CCC8;
+    background-color: #000000 !important; /* 완전 검정 */
+    border-bottom: 1px solid #333;
 }
 
-header nav ul li a, header h1 a {
-    color: #EFEBE9 !important; /* 글씨는 은은한 크림색 (노란색 제거!) */
-    font-family: 'Dancing Script', cursive !important; /* 메뉴도 필기체 */
-    font-size: 22px !important;
-    font-weight: normal !important;
+header nav ul li a {
+    color: #FFFFFF !important; /* 메뉴 글씨는 흰색 */
+    font-family: 'Dancing Script', cursive !important; /* 메뉴도 예쁜 필기체로 */
+    font-size: 24px !important;
 }
 
-/* 6. 홈 화면(배너) 글씨가 배경이랑 섞이지 않게 */
+/* 7. 홈 화면(배너) 글씨 조정 */
 .cont_home h2 {
-    color: #3E2723 !important; /* 홈 제목은 진한 갈색 */
-    font-size: 90px !important; /* 필기체라 조금 더 크게 */
+    color: #FFFFFF !important; /* 어두운 배경이니까 흰색 글씨 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 잘 보이게 그림자 */
 }
 .cont_home p {
-    color: #5D4037 !important;
-    background-color: transparent !important; /* 불필요한 배경 제거 */
+    color: #DDDDDD !important; /* 살짝 흐린 회색 */
 }
 
-/* 7. 슬라이드 버튼 등 포인트 컬러 */
+/* 8. 버튼 스타일 (남색 + 파랑) */
 .cont_0 .bg .prev, .cont_0 .bg .next,
 #submit-quiz, #recommend-btn {
-    filter: sepia(100%) hue-rotate(-50deg) saturate(600%) !important; /* 버튼들을 갈색 톤으로 변경 */
-    background-color: #5D4037 !important; /* 퀴즈 버튼 갈색 */
+    background-color: #283e50 !important; /* 남색 버튼 */
     color: #fff !important;
+    border-radius: 50px !important; /* 둥글게 */
+}
+#submit-quiz:hover, #recommend-btn:hover {
+    background-color: #3498db !important; /* 마우스 올리면 파란색 */
 }
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
 
