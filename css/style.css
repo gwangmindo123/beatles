@@ -1060,3 +1060,12 @@ body.music-page {
     max-width: 200px;       
     height: auto;             /* 비율 유지 */
 }    
+
+.current-member-name {
+    text-align: center;  
+    font-size: 24px;      
+    font-weight: bold;      
+    color: #000000;         
+    margin-top: 20px;    
+    min-height: 30px;         
+}

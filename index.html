@@ -270,5 +270,22 @@
       </div>
     </div><!--end of fullpage-->
   </div><!--end of wrap-->
+  <script>
+    $(document).ready(function() {
+     
+        $(".frame_img ul li a").on("click", function() {
+
+            var memberName = $(this).attr("title");
+            
+  
+            $(".current-member-name").text(memberName);
+        });
+
+        $(".prev, .next").on("click", function() {
+            setTimeout(function(){
+            }, 500);
+        });
+    });
+</script>
 </body>
 </html>
