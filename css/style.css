@@ -859,4 +859,278 @@ header nav ul li a:hover{background-color:rgba(255,255,255,0.2);}
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 10
+    height: 100%;
+    
+    text-decoration: none;
+    color: transparent; /* 글씨 숨김 (이미지만 보이게) */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    
+    background-size: cover;
+    background-position: center;
+    position: relative; /* 자바스크립트용 active 효과 위해 필요 */
+}
+
+/* 마우스 올렸을 때 & 활성화 됐을 때 효과 */
+.cont_4 .bg ul.thumb li a:hover,
+.cont_4 .bg ul.thumb li.on a {
+    border-color: #283e50;
+    transform: scale(1.05); /* 살짝 커지는 효과 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+/* --- 여기부터 복사해서 붙여넣으세요 --- */
+
+/* 유산 페이지(cont_4) 버튼 배경 이미지 추가 */
+.cont_4 .bg ul.thumb li:nth-child(1) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141013_132%2Fgksllove22_1413203520554GR0Hf_PNG%2FK-25.png&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(2) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140309_244%2Fthdskarl6_1394306149717uaQGY_JPEG%2F%25BA%25F11%25C6%25B2%25C1%25EE_%25B8%25ED%25B0%25EE_%25BF%25A1%25BA%25F1%25B7%25CE%25B5%25E5_namkisong_%25284%2529.jpg&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(3) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA2MDZfMTY1%2FMDAxNDk2NzEwODEyMjQ2.T9BWNDaDZg9y73w0gyB53LV6SY4QVF1Ro19t8CDGy9kg.WR2MnXKFj4u3RMxXKDlY4OFSvnKbLaymByGimqDGY4og.JPEG.junglx%2Fsgt-pepper.jpg&type=a340');
+}
+
+.cont_4 .bg ul.thumb li:nth-child(4) a {
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20141014_124%2Fadaptable_1413268750846pKol8_JPEG%2FALeqM5g6qom6PkUhTDF1QO-CoGfdmS95hg.jpg&type=sc960_832');
+}
+/* ------------------------------------- */
+/* General styling for h2, h3, p inside .cont_4 .bg for consistency */
+.cont_4 .bg h2, .cont_4 .bg h3, .cont_4 .bg p {
+    text-align: center; /* Center align all headings and paragraphs */
+    margin: 0 auto 20px auto; /* Add margin bottom and center horizontally */
+    max-width: 80%; /* Limit width for better readability */
+}
+.cont_4 .bg h2 {
+    font-size: 48px; /* Slightly smaller for balance */
+    margin-bottom: 40px;
+}
+
+/* footer */
+.cont_5{height:950px; background-color:#3b3b3b;}
+footer{width:100%; height:200px; margin:0 auto; min-width:1200px;}
+footer address{line-height:2; text-align:center; font-size:17px; color:#fff;}
+
+/* New page general styles */
+.cont h2, .cont h3, .cont p{color:#fff;} /* Keep white for general cont outside of specific backgrounds */
+.cont .bg{background-color:#fff; padding:50px; max-width:1000px; min-height: 100%; width:90%; height:auto; margin:auto; box-sizing:border-box; color:#3b3b3b;} /* Removed max-height, set min-height to 100% of parent .cont */
+.cont .bg h2, .cont .bg h3, .cont .bg p{color:#3b3b3b;} /* Explicitly set dark color for titles/paragraphs inside .cont .bg */
+.cont{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;} /* Make sure content fills viewport */
+
+/* Specific background for each new page to make them distinct */
+body.quiz-page .cont{background-color:#cccccc;}
+body.recommend-page .cont{background-color:#cccccc;}
+body.music-page .cont{background-color:#cccccc;}
+
+/* Ensure quiz elements are visible */
+.quiz-question { color: #333; margin-bottom: 15px;}
+.quiz-answers label { color: #333; cursor:pointer; }
+.quiz-answers input[type="radio"] { margin-right: 10px;}
+#submit-quiz { background-color: #283e50; color: #fff; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; margin-top: 20px;}
+#submit-quiz:hover{background-color:#3e5c77;}
+#quiz-results { color: #333; margin-top: 20px; font-size: 22px; font-weight: bold; text-align: center;}
+
+/* Ensure recommendation elements are visible */
+#recommend-questions p { color: #333; margin-bottom: 15px;}
+#mood { padding: 10px; font-size: 16px; margin-bottom: 20px; background-color: #fff; color: #3b3b3b; border-radius:5px;}
+#recommend-btn { background-color: #283e50; color: #fff; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; margin-top: 20px;}
+#recommend-btn:hover{background-color:#3e5c77;}
+#recommend-result { margin-top: 30px; text-align: center;}
+#recommend-result h3 { color: #333; font-size: 28px; margin-bottom: 10px;}
+#recommend-result p { color: #333; font-size: 18px; margin-bottom: 20px;}
+
+/* Ensure music player elements are visible */
+.music-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: nowrap; /* Ensure items stay in a single row */
+}
+.music-player h4 { color: #333; font-size: 24px; margin-bottom: 15px;}
+
+/* Style for embeds to ensure they are centered and responsive */
+.music-container iframe, #recommend-result iframe {
+    display: block;
+    margin: 20px auto;
+    width: 100%; /* Make iframe take full width of its parent */
+    height: 200px; /* Adjusted fixed height, can be made responsive with aspect ratio */
+}
+.music-player {
+    background-color: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33.333% - 20px); /* Approximately 3 items per row with gap */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Active navigation link styling */
+body.quiz-page header nav ul li:nth-child(2) a, /* Quiz link is the 2nd li */
+body.recommend-page header nav ul li:nth-child(3) a, /* Recommend link is the 3rd li */
+body.music-page header nav ul li:nth-child(4) a { /* Music link is the 4th li */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+/* Quiz Specific Styling for prettiness and readability */
+.quiz-container {
+    background-color: #f9f9f9; /* Slightly off-white background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.quiz-question {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #283e50; /* Darker color for questions */
+    line-height: 1.4;
+}
+
+.quiz-answers label {
+    display: block; /* Each answer on a new line */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.quiz-answers label:hover {
+    background-color: #eef; /* Light hover effect */
+}
+
+.quiz-answers input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Slightly larger radio buttons */
+}
+
+#submit-quiz {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    #quiz-results {
+        font-size: 1.5em;
+        margin-top: 30px;
+        padding: 15px;
+        border-top: 2px solid #eee;
+        color: #283e50; /* Dark color for results */
+    }
+    
+    .explanation {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 0.95em;
+        line-height: 1.4;
+    }
+    
+    .explanation.correct {
+        background-color: #e6ffe6; /* Light green background */
+        border: 1px solid #66cc66;
+        color: #006600;
+    }
+    
+    .explanation.incorrect {
+        background-color: #ffe6e6; /* Light red background */
+        border: 1px solid #cc6666;
+        color: #660000;
+    }
+body.quiz-page,
+body.recommend-page,
+body.music-page {
+    background-color: #cccccc;
+}
+
+/* 이름표 디자인 (빨간 동그라미 위치) */
+.my-member-name {
+    display: block !important;
+    text-align: center !important; /* 가운데 정렬 */
+    font-size: 30px !important;    /* 글자 크기 */
+    font-weight: bold !important;  /* 굵게 */
+    color: #000000 !important;     /* 글자색: 무조건 검정 */
+    margin-top: 40px !important;   /* 사진이랑 40px 떨어뜨리기 */
+    padding-bottom: 20px !important;
+    width: 100% !important;
+}
+/* ================================================= */
+/* ★ 송란채님의 비틀즈 홈페이지 최종 디자인 (Clean Ver.) ★ */
+/* ================================================= */
+
+/* 1. 폰트 설정 (무조건 깔끔한 고딕으로 통일) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
+}
+
+/* 2. 전체 배경 (시크한 블랙) */
+body, .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5, .text-overlay { 
+    background-color: #1a1a1a !important; 
+}
+
+/* 3. 내용 박스 (깨끗한 화이트) */
+.bg {
+    background-color: #FFFFFF !important;
+    border: 1px solid #8CB811 !important; /* 초록색 테두리 포인트 */
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 4. 제목 글씨 (애플 그린) */
+h1, h2, h3, .title, header h1 a {
+    color: #8CB811 !important; 
+    font-weight: 700 !important;
+    font-style: normal !important; /* 필기체 금지 */
+    letter-spacing: -0.5px !important;
+}
+
+/* 5. 본문 글씨 (진한 회색) */
+p, li, span, .writer, .txt, label {
+    color: #333333 !important;
+    font-weight: 500 !important;
+}
+
+/* 6. 부제목은 차분하게 (남색) */
+h3 {
+    color: #283e50 !important;
+}
+
+/* 7. 헤더 메뉴바 (검정 배경 + 초록 글씨) */
+header {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #8CB811 !important;
+}
+header nav ul li a {
+    color: #8CB811 !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+/* 8. 모든 버튼 (네모난 남색) */
+.prev, .next, #submit-quiz, #recommend-btn, .listen-btn {
+    background-color: #283e50 !important;
+    color: #ffffff !important;
+    border-radius: 5px !important; /* 네모 반듯 */
+    padding: 10px 20px !important;
+    border: none !important;
+    box-shadow: 0 4px 0 #1a2b3c !important;
+}
+/* 버튼 마우스 올렸을 때 */
+.prev:hover, .next:hover, #submit-quiz:hover, #recommend-btn:hover, .listen-btn:hover {
+    background-color: #1a2b3c !important;
+    transform: translateY(2px) !important;
+}
