@@ -1037,20 +1037,3 @@ body.music-page {
     background-color: #cccccc;
 }
 
-
-.frame_img ul li a {
-    display: flex !important;          
-    flex-direction: column !important;  
-    align-items: center !important;     
-    text-decoration: none !important;    
-    height: auto !important;
-}
-
-.frame_img ul li a span {
-    display: block !important;          
-    color: #ffffff !important;       
-    font-size: 16px !important;         
-    font-weight: bold !important;    
-    margin-top: 10px !important;        
-    text-align: center !important;    
-}
