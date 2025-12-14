@@ -1,81 +1,78 @@
 @charset "utf-8";
-/* ========================================= */
-/* ★ 비틀즈 Abbey Road (시크 & 모던) 테마 ★ */
-/* ========================================= */
 
 /* 1. 폰트 가져오기 */
-/* 영어: Dancing Script (예쁜 필기체), 한글: Pretendard (가장 깔끔한 요즘 폰트) */
+/* 영어 제목용: Dancing Script (필기체) */
+/* 한글 제목용: Gmarket Sans (레트로 고딕) */
+/* 본문용: Pretendard (가장 깔끔함) */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 2. 전체 배경: 횡단보도의 아스팔트처럼 시크한 '다크 그레이' */
+/* 2. 배경 설정 (전체는 시크한 블랙) */
 body, 
 .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5,
 .cont_home .text-overlay { 
-    background-color: #1a1a1a !important; /* 거의 검정에 가까운 진한 회색 */
+    background-color: #1a1a1a !important; /* 아주 진한 블랙 그레이 */
 }
 
-/* 3. 내용 박스: 횡단보도 흰색 줄처럼 '깨끗한 화이트' */
+/* 3. 내용 박스 (흰색 종이 느낌) */
 .cont_0 .bg, .cont_1 .bg, .cont_2 .bg, .cont_3 .bg, .cont_4 .bg {
-    background-color: #FFFFFF !important; /* 쨍한 흰색 */
-    border: none !important; /* 테두리 없애서 심플하게 */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* 그림자로 입체감만 살짝 */
-    border-radius: 15px !important; /* 모서리는 부드럽게 */
+    background-color: #FFFFFF !important; /* 깨끗한 화이트 */
+    border: 1px solid #8CB811 !important; /* 테두리도 살짝 초록으로 포인트 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important; /* 진한 그림자 */
+    border-radius: 15px !important;
 }
 
-/* 4. 텍스트 색상 및 폰트 (가장 중요!) */
-
-/* 제목 (영어는 필기체, 한글은 깔끔하게) */
+/* 4. 제목 스타일 (영어=필기체, 색상=초록) */
 h1, h2, h3, .title, header h1 a {
-    color: #283e50 !important;      /* 비틀즈 정장 색깔 (차분한 남색) */
-    font-family: 'Dancing Script', 'Pretendard', sans-serif !important; /* 영어만 필기체 적용 */
+    color: #8CB811 !important; /* ★ 원하셨던 그 초록색! */
+    /* 영어가 먼저 나오면 필기체, 한글이 나오면 지마켓산스 적용 */
+    font-family: 'Dancing Script', 'GmarketSans', sans-serif !important;
     font-weight: 700 !important;
 }
 
-/* 본문 (한글은 무조건 깔끔한 고딕체! 악기점 탈출!) */
+/* 5. 메뉴바 (헤더) 설정 */
+header {
+    background-color: #000000 !important; /* 완전 검정 */
+    border-bottom: 2px solid #8CB811; /* 초록색 밑줄 쫙 */
+}
+
+header nav ul li a {
+    color: #8CB811 !important; /* 메뉴 글씨도 초록색 */
+    font-family: 'Dancing Script', cursive !important; /* 메뉴는 영어니까 필기체 */
+    font-size: 24px !important;
+}
+/* 메뉴에 마우스 올렸을 때 */
+header nav ul li a:hover {
+    color: #ffffff !important; /* 흰색으로 반짝 */
+    text-shadow: 0 0 10px #8CB811; /* 초록색 번짐 효과 */
+}
+
+/* 6. 본문 스타일 (검정 글씨, 깔끔한 폰트) */
 p, li, span, .writer, .txt, .quiz-question, label {
-    color: #333333 !important;      /* 진한 검정 (가독성 최우선) */
-    font-family: 'Pretendard', sans-serif !important; /* 아이폰 폰트처럼 깔끔함 */
+    color: #333333 !important; /* 가독성 좋은 진한 회색 */
+    font-family: 'Pretendard', sans-serif !important; /* 깔끔한 고딕 */
     font-weight: 500 !important;
     line-height: 1.6 !important;
 }
 
-/* 5. 포인트 컬러 (Abbey Road의 파란 하늘) */
-/* 링크나 강조하고 싶은 부분, 버튼 */
-a, .on, header nav ul li a:hover {
-    color: #3498db !important; /* 맑은 하늘색 */
-}
-
-/* 6. 헤더(메뉴바) 디자인 */
-header {
-    background-color: #000000 !important; /* 완전 검정 */
-    border-bottom: 1px solid #333;
-}
-
-header nav ul li a {
-    color: #FFFFFF !important; /* 메뉴 글씨는 흰색 */
-    font-family: 'Dancing Script', cursive !important; /* 메뉴도 예쁜 필기체로 */
-    font-size: 24px !important;
-}
-
-/* 7. 홈 화면(배너) 글씨 조정 */
+/* 7. 홈 화면(배너) 글씨 */
+/* 노란색 싫다고 하셔서 초록으로 변경! */
 .cont_home h2 {
-    color: #FFFFFF !important; /* 어두운 배경이니까 흰색 글씨 */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 잘 보이게 그림자 */
+    color: #8CB811 !important; 
+    text-shadow: 2px 2px 0px #000; /* 검정 그림자로 잘 보이게 */
 }
 .cont_home p {
-    color: #DDDDDD !important; /* 살짝 흐린 회색 */
+    color: #ddd !important; /* 작은 글씨는 흰색에 가깝게 */
 }
 
-/* 8. 버튼 스타일 (남색 + 파랑) */
+/* 8. 모든 버튼 색상 (초록색 통일) */
 .cont_0 .bg .prev, .cont_0 .bg .next,
-#submit-quiz, #recommend-btn {
-    background-color: #283e50 !important; /* 남색 버튼 */
-    color: #fff !important;
-    border-radius: 50px !important; /* 둥글게 */
-}
-#submit-quiz:hover, #recommend-btn:hover {
-    background-color: #3498db !important; /* 마우스 올리면 파란색 */
+#submit-quiz, #recommend-btn, .listen-btn {
+    background-color: #8CB811 !important; /* 버튼 배경 초록 */
+    color: #fff !important; /* 글씨 흰색 */
+    border: none !important;
+    border-radius: 50px !important;
 }
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
 
