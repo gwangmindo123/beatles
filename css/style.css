@@ -1,27 +1,70 @@
 @charset "utf-8";
 
-/* 1. 폰트 불러오기 (G마켓 산스, 프리텐다드) */
-@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 2. 전체 배경색(크림색) & 본문 폰트 설정 */
-body, .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5 {
-    background-color: #FDF5E6 !important; /* 따뜻한 크림 아이보리 */
-    color: #333333 !important;            /* 차콜색 글씨 */
-    font-family: 'Pretendard', sans-serif !important; /* 깔끔한 본문 폰트 */
+/* 1. 폰트 가져오기 (영어 필기체 + 한글 명조체) */
+/* 영어: Dancing Script (우아한 필기체), 한글: 나눔명조 (클래식함) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+/* 2. 전체 배경색: 눈이 편한 '오래된 종이색(베이지 그레이)' */
+body, 
+.cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5,
+.cont_home .text-overlay { 
+    background-color: #E6DBC8 !important; /* 차분한 베이지색 */
 }
 
-/* 3. 제목 폰트 & 색상 설정 (애플 그린) */
-h1, h2, h3, header nav ul li a {
-    font-family: 'GmarketSans', sans-serif !important; /* 레트로한 제목 폰트 */
-    color: #8CB811 !important; /* 비틀즈 사과(Apple) 로고 색상 */
+/* 3. 내용 박스(.bg): 약간 빛바랜 아이보리색 + 갈색 테두리 */
+.cont_0 .bg, .cont_1 .bg, .cont_2 .bg, .cont_3 .bg, .cont_4 .bg {
+    background-color: #F8F1E5 !important; /* 눈 안 아픈 따뜻한 아이보리 */
+    border: 2px solid #5D4037 !important; /* 진한 갈색 테두리 */
+    box-shadow: 8px 8px 0px rgba(93, 64, 55, 0.2) !important; /* 그림자도 은은하게 */
+    border-radius: 5px !important; /* 둥근 모서리 살짝만 */
 }
 
-/* 4. 헤더(메뉴바) 배경색 변경 */
+/* 4. 텍스트 색상 및 폰트 변경 */
+/* 제목 (영어는 필기체, 한글은 명조체) */
+h1, h2, h3, .title, header h1 a {
+    color: #2F4F4F !important;      /* 딥 그린 (차분하고 클래식함) */
+    font-family: 'Dancing Script', 'Nanum Myeongjo', serif !important; /* 영어 필기체 우선 적용 */
+    letter-spacing: 1px !important;
+}
+
+/* 본문 (검정 대신 진한 갈색으로 눈 피로 감소) */
+p, li, span, .writer, .txt, .quiz-question, label {
+    color: #4B3621 !important;      /* 다크 커피색 */
+    font-family: 'Nanum Myeongjo', serif !important; /* 본문은 가독성 좋은 명조체 */
+    font-weight: 600 !important;    /* 명조체는 얇아서 조금 두껍게 */
+}
+
+/* 5. 촌스러운 노랑+남색 헤더(메뉴바) 수정 */
 header {
-    background-color: #283e50 !important; /* 메뉴바는 진한 남색 유지 (가독성 위해) */
+    background-color: #3E2723 !important; /* 아주 진한 고동색 (나무 느낌) */
+    border-bottom: 2px solid #D7CCC8;
 }
 
+header nav ul li a, header h1 a {
+    color: #EFEBE9 !important; /* 글씨는 은은한 크림색 (노란색 제거!) */
+    font-family: 'Dancing Script', cursive !important; /* 메뉴도 필기체 */
+    font-size: 22px !important;
+    font-weight: normal !important;
+}
+
+/* 6. 홈 화면(배너) 글씨가 배경이랑 섞이지 않게 */
+.cont_home h2 {
+    color: #3E2723 !important; /* 홈 제목은 진한 갈색 */
+    font-size: 90px !important; /* 필기체라 조금 더 크게 */
+}
+.cont_home p {
+    color: #5D4037 !important;
+    background-color: transparent !important; /* 불필요한 배경 제거 */
+}
+
+/* 7. 슬라이드 버튼 등 포인트 컬러 */
+.cont_0 .bg .prev, .cont_0 .bg .next,
+#submit-quiz, #recommend-btn {
+    filter: sepia(100%) hue-rotate(-50deg) saturate(600%) !important; /* 버튼들을 갈색 톤으로 변경 */
+    background-color: #5D4037 !important; /* 퀴즈 버튼 갈색 */
+    color: #fff !important;
+}
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
 
 /* default */
