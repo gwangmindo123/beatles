@@ -1066,143 +1066,71 @@ body.music-page {
     padding-bottom: 20px !important;
     width: 100% !important;
 }
+/* ================================================= */
+/* ★ 송란채님의 비틀즈 홈페이지 최종 디자인 (Clean Ver.) ★ */
+/* ================================================= */
 
-/* ========================================= */
-/* ★ 최종: 블랙 & 애플그린 & 필기체 적용 ★ */
-/* ========================================= */
+/* 1. 폰트 설정 (무조건 깔끔한 고딕으로 통일) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 1. 배경 설정 (전체 블랙) */
-html body, 
-html body .cont_home, 
-html body .cont_0, 
-html body .cont_1, 
-html body .cont_2, 
-html body .cont_3, 
-html body .cont_4, 
-html body .cont_5 { 
-    background-color: #1a1a1a !important; 
-}
-
-/* 2. 흰색 박스 디자인 */
-html body .cont_0 .bg, 
-html body .cont_1 .bg, 
-html body .cont_2 .bg, 
-html body .cont_3 .bg, 
-html body .cont_4 .bg {
-    background-color: #FFFFFF !important;
-    border: 1px solid #8CB811 !important;
-    border-radius: 15px !important;
-}
-
-/* 3. ★ 메뉴바 (노란색/장구 폰트 죽이기) ★ */
-/* 헤더 전체 배경 */
-html body header {
-    background-color: #000000 !important;
-    border-bottom: 2px solid #8CB811 !important;
-}
-
-/* 메뉴 글씨 (여기가 안 바뀌던 부분!) */
-html body header h1 a,
-html body header nav ul li a {
-    color: #8CB811 !important; /* 초록색 강제 적용 */
-    font-family: 'Dancing Script', cursive !important; /* 영어 필기체 강제 적용 */
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    text-shadow: none !important;
-    text-decoration: none !important;
-}
-
-/* 4. 본문 제목들 (초록색 + 필기체/레트로고딕) */
-html body h1, html body h2, html body h3, html body .title {
-    color: #8CB811 !important;
-    font-family: 'Dancing Script', 'GmarketSans', sans-serif !important;
-}
-
-/* 5. 본문 내용 (검정색 + 깔끔한 고딕) */
-html body p, html body li, html body span, html body .writer, html body .txt {
-    color: #333333 !important;
-    font-family: 'Pretendard', sans-serif !important; /* 장구 폰트 제거 */
-    font-weight: 500 !important;
-}
-
-/* 6. 홈 화면(배너) 글씨 */
-html body .cont_home h2 {
-    color: #8CB811 !important;
-    font-family: 'Dancing Script', cursive !important;
-}
-
-/* 7. 버튼들 */
-html body .prev, html body .next, 
-html body #submit-quiz, html body #recommend-btn {
-    background-color: #8CB811 !important;
-    color: #fff !important;
-    border-radius: 50px !important;
-}
-/* ========================================= */
-/* ★ 버튼 디자인 수정 (초록 동그라미 -> 남색 네모) ★ */
-/* ========================================= */
-
-/* 1. 버튼 모양과 색상 변경 */
-/* 퀴즈 제출, 추천 받기, 노래 듣기 버튼 등 모든 버튼 대상 */
-html body #submit-quiz, 
-html body #recommend-btn, 
-html body .listen-btn,
-html body .cont_0 .bg .prev, 
-html body .cont_0 .bg .next {
-    background-color: #283e50 !important; /* 차분한 남색 (Navy) */
-    color: #FFFFFF !important;            /* 글씨는 하얀색 */
-    border-radius: 5px !important;        /* 동그라미(50px) 말고 살짝 둥근 네모(5px) */
-    padding: 10px 20px !important;        /* 네모니까 여백을 좀 더 넉넉하게 */
-    box-shadow: 0 4px 0 #1a2b3c !important; /* 버튼 아래에 입체감 주는 그림자 */
-    transition: all 0.2s !important;
-}
-
-/* 2. 마우스 올렸을 때 효과 (살짝 눌리는 느낌) */
-html body #submit-quiz:hover, 
-html body #recommend-btn:hover, 
-html body .listen-btn:hover,
-html body .cont_0 .bg .prev:hover, 
-html body .cont_0 .bg .next:hover {
-    background-color: #1a2b3c !important; /* 더 진한 남색으로 변함 */
-    transform: translateY(2px) !important; /* 살짝 아래로 눌림 */
-    box-shadow: 0 2px 0 #0f1a25 !important; /* 그림자 줄어듦 */
-}
-/* ========================================= */
-/* ★ 제목 vs 부제목 색상 분리하기 ★ */
-/* ========================================= */
-
-/* 1. 메인 제목 (h2) -> 힙한 초록색 유지 */
-html body h2, 
-html body h1, 
-html body .title {
-    color: #8CB811 !important; /* 애플 그린 */
-}
-
-/* 2. 부제목 (h3) -> 버튼이랑 똑같은 남색으로 변경 */
-html body h3 {
-    color: #283e50 !important; /* 차분한 남색 */
-    font-weight: 600 !important; /* 가독성 있게 굵기 조절 */
-    text-shadow: none !important; /* 그림자 없이 깔끔하게 */
-}
-/* ========================================= */
-/* ★ 진_최종: 모든 글씨 "네모 반듯" 강제 통일 ★ */
-/* ========================================= */
-
-/* 별표(*)는 '모든 것'을 뜻합니다. 제목, 본문, 영어, 한글 싹 다 포함 */
 * {
     font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
 }
 
-/* 혹시라도 필기체나 명조체가 남아있을까봐 확인 사살 */
-body, h1, h2, h3, p, a, span, li, button, input, .title, header, nav {
-    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
-    font-weight: 600 !important; /* 글씨가 너무 얇으면 흐려 보이니까 살짝 힘주기 */
+/* 2. 전체 배경 (시크한 블랙) */
+body, .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5, .text-overlay { 
+    background-color: #1a1a1a !important; 
 }
 
-/* 영어 필기체 썼던 제목들도 다 "정직한 고딕"으로 변경 */
-header nav ul li a, 
-header h1 a,
-.cont_home h2 {
-    font-style: normal !important; /* 기울기(이탤릭) 제거 */
-    letter-spacing: -0.5px !important; /* 자간 살짝 좁혀서 단정하게 */
+/* 3. 내용 박스 (깨끗한 화이트) */
+.bg {
+    background-color: #FFFFFF !important;
+    border: 1px solid #8CB811 !important; /* 초록색 테두리 포인트 */
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 4. 제목 글씨 (애플 그린) */
+h1, h2, h3, .title, header h1 a {
+    color: #8CB811 !important; 
+    font-weight: 700 !important;
+    font-style: normal !important; /* 필기체 금지 */
+    letter-spacing: -0.5px !important;
+}
+
+/* 5. 본문 글씨 (진한 회색) */
+p, li, span, .writer, .txt, label {
+    color: #333333 !important;
+    font-weight: 500 !important;
+}
+
+/* 6. 부제목은 차분하게 (남색) */
+h3 {
+    color: #283e50 !important;
+}
+
+/* 7. 헤더 메뉴바 (검정 배경 + 초록 글씨) */
+header {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #8CB811 !important;
+}
+header nav ul li a {
+    color: #8CB811 !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+/* 8. 모든 버튼 (네모난 남색) */
+.prev, .next, #submit-quiz, #recommend-btn, .listen-btn {
+    background-color: #283e50 !important;
+    color: #ffffff !important;
+    border-radius: 5px !important; /* 네모 반듯 */
+    padding: 10px 20px !important;
+    border: none !important;
+    box-shadow: 0 4px 0 #1a2b3c !important;
+}
+/* 버튼 마우스 올렸을 때 */
+.prev:hover, .next:hover, #submit-quiz:hover, #recommend-btn:hover, .listen-btn:hover {
+    background-color: #1a2b3c !important;
+    transform: translateY(2px) !important;
 }
