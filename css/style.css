@@ -1037,3 +1037,14 @@ body.music-page {
     background-color: #cccccc;
 }
 
+/* 이름표 디자인 (빨간 동그라미 위치) */
+.my-member-name {
+    display: block !important;
+    text-align: center !important; /* 가운데 정렬 */
+    font-size: 30px !important;    /* 글자 크기 */
+    font-weight: bold !important;  /* 굵게 */
+    color: #000000 !important;     /* 글자색: 무조건 검정 */
+    margin-top: 40px !important;   /* 사진이랑 40px 떨어뜨리기 */
+    padding-bottom: 20px !important;
+    width: 100% !important;
+}
