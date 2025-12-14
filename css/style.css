@@ -1,4 +1,29 @@
 @charset "utf-8";
+/* --- ★ 여기서부터 복사하세요 (빈티지 테마 시작) ★ --- */
+
+/* 1. 폰트 불러오기 (G마켓 산스, 프리텐다드) */
+@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* 2. 전체 배경색(크림색) & 본문 폰트 설정 */
+body, .cont_home, .cont_0, .cont_1, .cont_2, .cont_3, .cont_4, .cont_5 {
+    background-color: #FDF5E6 !important; /* 따뜻한 크림 아이보리 */
+    color: #333333 !important;            /* 차콜색 글씨 */
+    font-family: 'Pretendard', sans-serif !important; /* 깔끔한 본문 폰트 */
+}
+
+/* 3. 제목 폰트 & 색상 설정 (애플 그린) */
+h1, h2, h3, header nav ul li a {
+    font-family: 'GmarketSans', sans-serif !important; /* 레트로한 제목 폰트 */
+    color: #8CB811 !important; /* 비틀즈 사과(Apple) 로고 색상 */
+}
+
+/* 4. 헤더(메뉴바) 배경색 변경 */
+header {
+    background-color: #283e50 !important; /* 메뉴바는 진한 남색 유지 (가독성 위해) */
+}
+
+/* --- ★ 여기까지 복사하세요 (빈티지 테마 끝) ★ --- */
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
 
 /* default */
