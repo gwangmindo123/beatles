@@ -1047,10 +1047,10 @@ body.music-page {
 }
 
 .frame_img ul li a span {
-    display: block !important;           /* 글자 박스 보이기 */
-    color: #000000 !important;           /* ★글자색 검정 (필수) */
-    font-size: 16px !important;          /* 글자 크기 */
-    font-weight: bold !important;        /* 굵게 */
-    margin-top: 10px !important;         /* 사진과 간격 띄우기 */
-    text-align: center !important;       /* 가운데 정렬 */
+    display: block !important;          
+    color: #000000 !important;       
+    font-size: 16px !important;         
+    font-weight: bold !important;    
+    margin-top: 10px !important;        
+    text-align: center !important;    
 }
