@@ -1,7 +1,7 @@
 @charset "utf-8";
-
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 /* default */
 body{font-family:'Noto Serif KR', serif;}
@@ -1069,62 +1069,103 @@ body.music-page {
     width: 100% !important;
 }
 
-
 /* ========================================= */
-/* ★ 비틀즈 빈티지 테마 (여기서부터 맨 끝에 붙여넣기) ★ */
+/* ★ 최종: 블랙 & 애플그린 & 필기체 적용 ★ */
 /* ========================================= */
 
-/* 1. 폰트 가져오기 */
-@import url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css');
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-/* 2. 모든 배경을 크림색으로 강제 변경 */
-body, 
-.cont_home, 
-.cont_0, 
-.cont_1, 
-.cont_2, 
-.cont_3, 
-.cont_4, 
-.cont_5,
-.cont_home .text-overlay { 
-    background-color: #FDF5E6 !important; /* 크림 아이보리 */
+/* 1. 배경 설정 (전체 블랙) */
+html body, 
+html body .cont_home, 
+html body .cont_0, 
+html body .cont_1, 
+html body .cont_2, 
+html body .cont_3, 
+html body .cont_4, 
+html body .cont_5 { 
+    background-color: #1a1a1a !important; 
 }
 
-/* 3. 흰색 박스(.bg)도 자연스럽게 어울리도록 변경 (원하면 #fff로 둬도 됨) */
-.cont_0 .bg, 
-.cont_1 .bg, 
-.cont_2 .bg, 
-.cont_3 .bg, 
-.cont_4 .bg {
-    background-color: #fffaf0 !important; /* 배경보다 살짝 밝은 크림색 */
-    border: 2px solid #283e50 !important; /* 테두리 추가로 레트로 느낌 */
-    box-shadow: 10px 10px 0px rgba(40, 62, 80, 0.2) !important; /* 그림자도 레트로하게 */
-    color: #333 !important;
+/* 2. 흰색 박스 디자인 */
+html body .cont_0 .bg, 
+html body .cont_1 .bg, 
+html body .cont_2 .bg, 
+html body .cont_3 .bg, 
+html body .cont_4 .bg {
+    background-color: #FFFFFF !important;
+    border: 1px solid #8CB811 !important;
+    border-radius: 15px !important;
 }
 
-/* 4. 글씨체 및 색상 일괄 변경 */
-/* 본문용 */
-body, p, li, span, .writer, .txt {
-    color: #333333 !important;      /* 진한 회색 */
-    font-family: 'Pretendard', sans-serif !important;
-    text-shadow: none !important;   /* 기존 그림자 제거 */
+/* 3. ★ 메뉴바 (노란색/장구 폰트 죽이기) ★ */
+/* 헤더 전체 배경 */
+html body header {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #8CB811 !important;
 }
 
-/* 제목용 (레트로 폰트) */
-h1, h2, h3, .title, header nav ul li a {
-    color: #8CB811 !important;      /* 애플 그린 (비틀즈 사과 색) */
-    font-family: 'GmarketSans', sans-serif !important;
-    font-weight: bold !important;
+/* 메뉴 글씨 (여기가 안 바뀌던 부분!) */
+html body header h1 a,
+html body header nav ul li a {
+    color: #8CB811 !important; /* 초록색 강제 적용 */
+    font-family: 'Dancing Script', cursive !important; /* 영어 필기체 강제 적용 */
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    text-decoration: none !important;
 }
 
-/* 5. 헤더(메뉴)는 잘 보이게 남색 유지 */
-header {
-    background-color: #283e50 !important;
-    border-bottom: 3px solid #8CB811;
+/* 4. 본문 제목들 (초록색 + 필기체/레트로고딕) */
+html body h1, html body h2, html body h3, html body .title {
+    color: #8CB811 !important;
+    font-family: 'Dancing Script', 'GmarketSans', sans-serif !important;
 }
 
-/* 6. 홈 화면 글씨가 배경 때문에 안 보일 수 있으니 조정 */
-.cont_home h2, .cont_home h3, .cont_home p {
-    color: #283e50 !important; /* 홈 화면 글씨는 진한 남색으로 */
+/* 5. 본문 내용 (검정색 + 깔끔한 고딕) */
+html body p, html body li, html body span, html body .writer, html body .txt {
+    color: #333333 !important;
+    font-family: 'Pretendard', sans-serif !important; /* 장구 폰트 제거 */
+    font-weight: 500 !important;
+}
+
+/* 6. 홈 화면(배너) 글씨 */
+html body .cont_home h2 {
+    color: #8CB811 !important;
+    font-family: 'Dancing Script', cursive !important;
+}
+
+/* 7. 버튼들 */
+html body .prev, html body .next, 
+html body #submit-quiz, html body #recommend-btn {
+    background-color: #8CB811 !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+/* ========================================= */
+/* ★ 버튼 디자인 수정 (초록 동그라미 -> 남색 네모) ★ */
+/* ========================================= */
+
+/* 1. 버튼 모양과 색상 변경 */
+/* 퀴즈 제출, 추천 받기, 노래 듣기 버튼 등 모든 버튼 대상 */
+html body #submit-quiz, 
+html body #recommend-btn, 
+html body .listen-btn,
+html body .cont_0 .bg .prev, 
+html body .cont_0 .bg .next {
+    background-color: #283e50 !important; /* 차분한 남색 (Navy) */
+    color: #FFFFFF !important;            /* 글씨는 하얀색 */
+    border-radius: 5px !important;        /* 동그라미(50px) 말고 살짝 둥근 네모(5px) */
+    padding: 10px 20px !important;        /* 네모니까 여백을 좀 더 넉넉하게 */
+    box-shadow: 0 4px 0 #1a2b3c !important; /* 버튼 아래에 입체감 주는 그림자 */
+    transition: all 0.2s !important;
+}
+
+/* 2. 마우스 올렸을 때 효과 (살짝 눌리는 느낌) */
+html body #submit-quiz:hover, 
+html body #recommend-btn:hover, 
+html body .listen-btn:hover,
+html body .cont_0 .bg .prev:hover, 
+html body .cont_0 .bg .next:hover {
+    background-color: #1a2b3c !important; /* 더 진한 남색으로 변함 */
+    transform: translateY(2px) !important; /* 살짝 아래로 눌림 */
+    box-shadow: 0 2px 0 #0f1a25 !important; /* 그림자 줄어듦 */
 }
