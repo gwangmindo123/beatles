@@ -3,6 +3,7 @@ $(function(){
     // [1] FullPage.js 설정 (스크롤 담당)
     // --------------------------------------------------------
     $('#fullpage').fullpage({
+        fixedElements: 'header',
         autoScrolling: true,
         fitToSection: true,
         scrollingSpeed: 1200,
