@@ -13,6 +13,28 @@
 	<script src="js/function.js?v=1.1"></script>
 
 </style>
+	<style>
+    /* 1. 가로 스크롤 강제 삭제 (범인 검거) */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important; /* 가로로 넘치는 건 무조건 자른다 */
+    }
+
+    /* 멤버 소개 구역도 단속 */
+    .cont_2, .section {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+    
+    /* 2. PC 화면에서 사진 눈 위치 맞추기 */
+    /* 화면이 넓을 때(PC)만 실행 */
+    @media (min-width: 1024px) {
+        .cont_home .main-hero-image {
+            /* 위에서 20% 지점(눈 높이)을 기준으로 보여줘라! */
+            object-position: center 20% !important; 
+        }
+    }
+</style>
 </head>
 <body class="has-top-nav">
   <header>
