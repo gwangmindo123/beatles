@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
   <title>비틀즈</title>
   <link rel="icon" type="image/jpeg" href="images/content_2_thumb_1.jpg">
   <link rel="stylesheet" href="css/reset.css">
@@ -10,35 +10,29 @@
   <script src="js/jquery-1.12.3.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/fullpage.js"></script>
-  <script src="js/function.js?v=1.1"></script>
+	<script src="js/function.js?v=1.1"></script>
 
-  <style>
+	<style>
     /* ========================================= */
-    /* 1. 스크롤바 강제 삭제 (끝판왕 버전) */
+    /* 1. 스크롤바 강제 삭제 */
     /* ========================================= */
-    
-    /* 웹페이지 전체의 가로 스크롤을 막고, 스크롤바 자체를 안 보이게 설정 */
     html, body {
         max-width: 100%;
-        overflow-x: hidden !important; /* 가로 넘침 숨김 */
-        -ms-overflow-style: none; /* 인터넷 익스플로러, 엣지용 스크롤 숨김 */
-        scrollbar-width: none; /* 파이어폭스용 스크롤 숨김 */
+        overflow-x: hidden !important;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
-    
-    /* 크롬, 사파리, 오페라용 스크롤바 숨김 (공간은 있되 눈에만 안 보임) */
     html::-webkit-scrollbar, 
     body::-webkit-scrollbar {
         display: none !important;
     }
-
-    /* 범인으로 추정되는 구역들 전부 단속 */
     #wrap, .section, .cont_2, .cont_2 .bg {
         width: 100% !important;
         overflow-x: hidden !important;
     }
 
     /* ========================================= */
-    /* 2. PC 화면: 얼굴 위치 살짝 올리기 */
+    /* 2. PC 화면: 얼굴 위치 조정 */
     /* ========================================= */
     @media (min-width: 1024px) {
         .cont_home .main-hero-image {
@@ -47,48 +41,59 @@
     }
 
     /* ========================================= */
-    /* 3. 멤버 소개(cont_2) 버튼 강제 노출 (수정됨) */
+    /* [재수정됨] 3. 멤버 소개(cont_2) 버튼 위치 및 크기 복구 */
     /* ========================================= */
-    .cont_2 .bg {
-        position: relative; /* 버튼의 기준점 잡기 */
+    
+    .cont_2 .bg, .cont_2 .member-intro-wrapper {
+        position: relative; 
     }
 
+    /* 이전, 다음 버튼 공통 설정 */
     .cont_2 .prev, 
     .cont_2 .next {
-        display: block !important;       /* 강제로 보이게 */
-        position: absolute !important;   /* 절대 위치 */
-        bottom: 15% !important;          /* 바닥에서 적당히 띄움 */
-        z-index: 9999 !important;        /* 이미지보다 위에 오도록 */
+        display: block !important;
+        position: absolute !important;
+        
+        /* 1. 위치를 화면 세로 중앙으로 변경 (잘림 방지 핵심) */
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-50%); /* 정확한 수직 중앙 정렬 */
+        
+        z-index: 9999 !important;
         cursor: pointer;
         
-        /* 버튼 디자인 (잘 보이도록 스타일 추가) */
-        background: rgba(0, 0, 0, 0.6);  /* 반투명 검은 배경 */
-        color: #fff;                     /* 흰색 글씨 */
-        padding: 10px 20px;              /* 버튼 크기 확보 */
-        border-radius: 4px;              /* 모서리 둥글게 */
-        font-weight: bold;
+        /* 2. 크기 및 스타일 원상 복구 (커지는 현상 해결) */
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;      /* 여백 제거 */
+        background: none !important; /* 배경 제거 */
+        border: none !important;     /* 테두리 제거 */
+        
+        /* 텍스트가 배경에 묻히지 않도록 색상만 하얗게 유지 */
+        color: #fff !important;
+        font-size: 20px !important; /* 적당한 글자 크기 */
+        font-weight: bold !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 잘 보이게 그림자 살짝 추가 */
     }
 
-    /* 왼쪽 버튼 위치 */
+    /* 3. 가로 간격 조정 (화면 끝에 너무 붙지 않게) */
     .cont_2 .prev {
-        left: 30px !important;  /* 왼쪽 화면 끝에서 30px 안쪽 */
-        right: auto !important;
+        left: 5% !important;
     }
 
-    /* 오른쪽 버튼 위치 */
     .cont_2 .next {
-        right: 30px !important; /* 오른쪽 화면 끝에서 30px 안쪽 */
-        left: auto !important;
+        right: 5% !important;
     }
 
-    /* 모바일 화면 대응 */
+    /* 모바일 대응 */
     @media (max-width: 768px) {
         .cont_2 .prev, .cont_2 .next {
-            bottom: 5% !important; /* 모바일은 조금 더 아래로 */
-            padding: 8px 15px;
+            font-size: 16px !important; /* 모바일은 조금 작게 */
+            left: 3% !important;
+            right: 3% !important;
         }
     }
-  </style>
+</style>
 </head>
 <body class="has-top-nav">
   <header>
