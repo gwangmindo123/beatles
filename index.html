@@ -14,24 +14,40 @@
 
 </style>
 	<style>
-    /* 1. 가로 스크롤 강제 삭제 (범인 검거) */
+    /* ========================================= */
+    /* 1. 스크롤바 강제 삭제 (끝판왕 버전) */
+    /* ========================================= */
+    
+    /* 웹페이지 전체의 가로 스크롤을 막고, 스크롤바 자체를 안 보이게 설정 */
     html, body {
-        max-width: 100% !important;
-        overflow-x: hidden !important; /* 가로로 넘치는 건 무조건 자른다 */
-    }
-
-    /* 멤버 소개 구역도 단속 */
-    .cont_2, .section {
-        overflow-x: hidden !important;
-        width: 100% !important;
+        max-width: 100%;
+        overflow-x: hidden !important; /* 가로 넘침 숨김 */
+        -ms-overflow-style: none; /* 인터넷 익스플로러, 엣지용 스크롤 숨김 */
+        scrollbar-width: none; /* 파이어폭스용 스크롤 숨김 */
     }
     
-    /* 2. PC 화면에서 사진 눈 위치 맞추기 */
-    /* 화면이 넓을 때(PC)만 실행 */
+    /* 크롬, 사파리, 오페라용 스크롤바 숨김 (공간은 있되 눈에만 안 보임) */
+    html::-webkit-scrollbar, 
+    body::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* 범인으로 추정되는 구역들 전부 단속 */
+    #wrap, .section, .cont_2, .cont_2 .bg {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* ========================================= */
+    /* 2. PC 화면: 얼굴 위치 살짝 올리기 */
+    /* ========================================= */
     @media (min-width: 1024px) {
         .cont_home .main-hero-image {
-            /* 위에서 20% 지점(눈 높이)을 기준으로 보여줘라! */
-            object-position: center 20% !important; 
+            /* 아까 20%여서 너무 내려왔음. 
+               12% 정도로 살짝만 올려서 '이마~눈' 위치를 맞춤! 
+               (숫자가 작을수록 위로 올라갑니다)
+            */
+            object-position: center 12% !important; 
         }
     }
 </style>
