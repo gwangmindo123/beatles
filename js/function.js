@@ -3,104 +3,84 @@ $(function(){
     // [1] FullPage.js 설정 (스크롤 담당)
     // --------------------------------------------------------
     $('#fullpage').fullpage({
-        autoScrolling: true,      // 한 페이지씩 딱딱 넘어감
-        fitToSection: true,       // 섹션에 딱 맞게 멈춤
-        scrollingSpeed: 1200,      // 넘어가는 속도
-        scrollBar: false,         // 스크롤바 숨김 (깔끔하게)
+        autoScrolling: true,
+        fitToSection: true,
+        scrollingSpeed: 1200,
+        scrollBar: false,
         easing: 'easeInOutCubic',
-        
-        // 네비게이션 (오른쪽 점) 필요하면 true로 변경
-        navigation: true, 
+        navigation: true,
         navigationPosition: 'right',
-        
-        // 반응형 설정 (화면 작아져도 풀페이지 유지)
         responsiveWidth: 0,
         responsiveHeight: 0,
-
-        // 섹션 내부가 길 경우 처리 (필요시 true, scrolloverflow.min.js 필요)
         scrollOverflow: false, 
-        
-        // 디자인 보정
-        verticalCentered: true,   // 내용 수직 중앙 정렬
-        
-        // 페이지 로드 후 실행할 것들
+        verticalCentered: true,
         afterRender: function(){
-            // 슬라이드 초기화 등이 필요하면 여기에 작성
+            // 슬라이드 초기화: 각 슬라이더의 현재 인덱스를 0으로 설정
+            $('.slides').data('current-index', 0);
+            $('.album-slider').data('current-index', 0);
+            $('.frame').data('current-index', 0);
         }
     });
 
     // --------------------------------------------------------
-    // [2] 기존 팀플 기능 유지 (슬라이드, 탭, 갤러리)
+    // [2] 슬라이더 기능
     // --------------------------------------------------------
-    
-    var nowIdx = 0; // 슬라이드용 순서 변수
 
-    // --- Functions (슬라이드 움직이는 함수들) ---
-    function sliderMove(index){
-        var $slider = $('.cont_0 .bg .slides ul');
-        var slideWidth = $slider.find('li').outerWidth(true);
-        $slider.stop().css('transform', 'translateX(' + (-(index * slideWidth)) + 'px)');
-    }
-
-    function frameMove(index){
-        var $frame = $('.cont_2 .bg .frame .frame_img ul');
-        var frameWidth = $frame.find('li').outerWidth(true);
-        var txt = $('.cont_2 .bg .frame .frame_img li').eq(index).find('a').attr('title');
-
-        $('.cont_2 .bg .my-member-name').text(txt);
-        $frame.stop().css('transform', 'translateX(' + (-(index * frameWidth)) + 'px)');
-    }
-
-    // (주의) pageAni 함수는 FullPage.js와 충돌나므로 삭제했습니다.
-
-    // --- Event Handlers (클릭 이벤트들) ---
-
-    // History Slider (cont_0: 비틀즈 역사 슬라이드)
-    $(document).on('click', '.cont_0 .bg .prev', function(){
-        nowIdx = (nowIdx > 0) ? nowIdx - 1 : 2;
-        sliderMove(nowIdx);
+    // History Slider (cont_0)
+    $(document).on('click', '.cont_0 .bg .next, .cont_0 .bg .prev', function(e){
+        var slider = $('.cont_0 .slides');
+        var currentIndex = slider.data('current-index');
+        var maxIndex = slider.find('ul li').length - 1;
+        
+        if ($(this).hasClass('next')) {
+            currentIndex = (currentIndex < maxIndex) ? currentIndex + 1 : 0;
+        } else {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : maxIndex;
+        }
+        slider.data('current-index', currentIndex);
+        
+        var slideWidth = slider.find('li').outerWidth(true);
+        slider.find('ul').stop().css('transform', 'translateX(' + (-currentIndex * slideWidth) + 'px)');
     });
 
-    $(document).on('click', '.cont_0 .bg .next', function(){
-        nowIdx = (nowIdx < 2) ? nowIdx + 1 : 0;
-        sliderMove(nowIdx);
+    // Iconic Albums Slider (cont_1)
+    $(document).on('click', '.cont_1 .bg .next, .cont_1 .bg .prev', function(e){
+        var slider = $('.cont_1 .album-slider');
+        var currentIndex = slider.data('current-index');
+        var maxIndex = slider.find('ul li').length - 1;
+        
+        if ($(this).hasClass('next')) {
+            currentIndex = (currentIndex < maxIndex) ? currentIndex + 1 : 0;
+        } else {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : maxIndex;
+        }
+        slider.data('current-index', currentIndex);
+        
+        var slideWidth = slider.find('li').outerWidth(true);
+        slider.find('ul').stop().css('transform', 'translateX(' + (-currentIndex * slideWidth) + 'px)');
     });
 
-    // Iconic Albums (cont_1: 앨범 클릭)
-    $(document).on('click', '.cont_1 .bg ul.thumb li a', function(e){
-    e.preventDefault(); 
-    e.stopPropagation();
+    // Members Slider (cont_2)
+    $(document).on('click', '.member-intro-wrapper .next, .member-intro-wrapper .prev', function(e){
+        var frame = $('.cont_2 .frame');
+        var currentIndex = frame.data('current-index');
+        var maxIndex = frame.find('.frame_img ul li').length - 1;
 
-    var src = $(this).attr('href');
-    var title = $(this).attr('title');
+        if ($(this).hasClass('next')) {
+            currentIndex = (currentIndex < maxIndex) ? currentIndex + 1 : 0;
+        } else {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : maxIndex;
+        }
+        frame.data('current-index', currentIndex);
 
-    // [수정] a태그가 아니라 부모인 li태그에 'on'을 붙여야 CSS가 작동함
-    $('.cont_1 .bg ul.thumb li').removeClass('on'); // 형제들 끄기
-    $(this).parent('li').addClass('on');            // 나(li) 켜기
-
-    // 메인 이미지 변경
-    var $mainImg = $('.cont_1 .bg .main-album-display img.current-album-cover');
-    var $mainTxt = $('.cont_1 .bg .main-album-display p.current-album-title');
-
-    $mainImg.stop().fadeOut(100, function(){
-        $(this).attr('src', src).fadeIn(300);
-    });
-    
-    $mainTxt.text(title);
-  });
-
-    // Members Slider (cont_2: 멤버 소개 슬라이드)
-    $(document).on('click', '.cont_2 .bg .prev', function(){
-        nowIdx = (nowIdx > 0) ? nowIdx - 1 : 3;
-        frameMove(nowIdx);
+        var txt = frame.find('.frame_img li').eq(currentIndex).find('a').attr('title');
+        $('.my-member-name').text(txt);
+        
+        var frameWidth = frame.find('li').outerWidth(true);
+        frame.find('.frame_img ul').stop().css('transform', 'translateX(' + (-currentIndex * frameWidth) + 'px)');
     });
 
-    $(document).on('click', '.cont_2 .bg .next', function(){
-        nowIdx = (nowIdx < 3) ? nowIdx + 1 : 0;
-        frameMove(nowIdx);
-    });
-
-    // Legacy Gallery (cont_4: 유산 갤러리)
+    // Legacy Gallery (cont_4) - This is a thumbnail click gallery, not a slider
     $(document).on('click', '.cont_4 .bg .thumb li a', function(event){
         event.preventDefault();
         var src = $(this).attr('href');
@@ -109,9 +89,7 @@ $(function(){
         $('.cont_4 .bg .legacy-image-display img.main-legacy-image').attr('src', src);
         $('.cont_4 .bg .legacy-image-display p.legacy-caption').text(cont);
 
-        $('.cont_4 .bg .thumb li a').removeClass('active');
-        $(this).addClass('active');
+        $('.cont_4 .bg .thumb li').removeClass('on');
+        $(this).parent('li').addClass('on');
     });
-
-    // (주의) $(window).on('load') 부분도 삭제했습니다. (FullPage가 알아서 처리함)
 });

@@ -1,5 +1,5 @@
 /* ================================================= */
-/* The Beatles Website Redesign V6 (Definitive)    */
+/* The Beatles Website Redesign V7                   */
 /* ================================================= */
 
 /* 1. Root Variables & Font Import */
@@ -17,10 +17,7 @@
 }
 
 /* 2. Global Styles */
-* {
-    box-sizing: border-box;
-}
-
+* { box-sizing: border-box; }
 body {
     font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
     background-color: var(--background-dark);
@@ -30,49 +27,25 @@ body {
 
 /* 3. Header - FIXED TRANSPARENT */
 header {
-    position: fixed; /* Changed back to fixed for overlay */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: transparent; /* Transparent as requested */
+    background-color: transparent;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
     transition: background-color var(--transition-speed) ease;
-    border-bottom: none; /* Remove border */
 }
+body.fp-viewing-0 header { background-color: transparent; }
+body:not(.fp-viewing-0) header { background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); }
+header nav ul { display: flex; flex-direction: row; list-style: none; padding: 0; margin: 0; gap: 15px; }
+header nav ul li a { color: var(--background-light) !important; font-size: 16px; font-weight: 500; padding: 10px 15px; border-radius: 8px; transition: all var(--transition-speed) ease; }
+header nav ul li a:hover { background-color: var(--accent-color); color: var(--background-dark) !important; }
 
-/* Optional: Add background on scroll */
-body.fp-viewing-1 header,
-body.fp-viewing-2 header,
-body.fp-viewing-3 header,
-body.fp-viewing-4 header,
-body.fp-viewing-5 header,
-body.fp-viewing-6 header {
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-}
-
-header nav ul {
-    display: flex;
-    flex-direction: row; /* Ensure horizontal alignment */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 15px;
-}
-
-header nav ul li a {
-    color: var(--background-light) !important;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-}
 
 /* 4. Fullpage.js Section & Centering Fix */
 .section .cont {
@@ -81,19 +54,29 @@ header nav ul li a {
     align-items: center !important;
     height: 100%;
     width: 100%;
-    padding: 80px 20px; /* Padding for header */
+    padding: 80px 20px;
+}
+.cont_home .main-hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.5); }
+.cont_home .text-overlay { position: relative; z-index: 2; text-align: center; }
+
+/* HERO TEXT STYLE */
+.hero-main-text {
+    font-size: 10vw;
+    font-weight: 900;
+    color: var(--background-light);
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+.hero-sub-text span {
+    display: block;
+    font-size: 2.5vw;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
-.fp-section {
-    padding: 0 !important; /* Override any inline padding from fullpage */
-}
-
-.cont_home .text-overlay {
-    position: relative;
-    z-index: 2;
-}
-
-/* 5. General Content Box (.bg) for all pages */
+/* 5. General Content Box (.bg) */
 .bg {
     background-color: var(--content-box);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -103,74 +86,41 @@ header nav ul li a {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    position: relative; /* For prev/next buttons */
 }
 
-/* COLOR AND ALIGNMENT FIXES */
-.bg h2 {
-    color: var(--accent-color) !important;
-    text-align: center !important;
-    font-size: 42px;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-.bg h3, .bg .text-content h3 {
-    color: var(--text-primary) !important;
-    text-align: center !important;
-    font-weight: 500;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-.bg p, .bg li, .bg span, .bg .txt, .bg label {
-    color: var(--text-secondary) !important;
-    text-align: center !important;
-}
+/* GLOBAL COLOR/ALIGNMENT FIXES */
+.bg > h2 { color: var(--accent-color) !important; text-align: center !important; font-size: 42px; margin-top: 0; margin-bottom: 10px; }
+.bg > h3 { color: var(--text-primary) !important; text-align: center !important; font-weight: 400; font-size: 18px; margin-bottom: 30px; }
+.bg p, .bg li, .bg span, .bg .txt, .bg label { color: var(--text-secondary) !important; text-align: center !important; }
+.bg .text-content h3 { color: var(--text-primary) !important; font-size: 28px; text-align: left !important; }
+.bg .text-content p { text-align: left !important; }
+.bg .text-info { text-align: left !important; }
+.bg .text-info > * { text-align: left !important; }
 
-/* Override for specific layouts where left-align is better */
-.bg .text-info p, .bg .text-content p {
-    text-align: left !important;
-}
-.bg .text-info h2, .bg .text-info h3 {
-    text-align: left !important;
-}
+/* 6. All Sliders General Styles */
+.slides, .album-slider, .member-slider { width: 100%; margin: 20px 0; }
+.bg > .prev, .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; padding: 12px; }
+.bg > .prev { left: 10px; }
+.bg > .next { right: 10px; }
 
-/* 6. History Slider (.cont_0) FIX */
-.cont_0 .bg { position: relative; }
-.cont_0 .slides {
-    overflow: hidden !important;
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
-}
-.cont_0 .slides ul {
-    display: flex !important;
-    width: 300% !important; /* 3 slides */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    transition: transform 0.5s ease-in-out;
-}
-.cont_0 .slides ul li {
-    width: calc(100% / 3) !important;
-    flex-shrink: 0 !important;
-    display: flex !important;
-    gap: 30px;
-    padding: 20px;
-    align-items: center;
-}
-.cont_0 .slides .image-content .img {
-    width: 100%;
-    height: 300px;
-    background-size: contain !important; /* Do not crop image */
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 10px;
-}
-.cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
-.cont_0 .bg > .prev { left: 20px; }
-.cont_0 .bg > .next { right: 20px; }
+/* 7. History Slider (.cont_0) IMAGE SIZE FIX */
+.cont_0 .slides { overflow: hidden !important; max-width: 100%; }
+.cont_0 .slides ul { display: flex !important; width: 300% !important; transition: transform 0.5s ease-in-out; }
+.cont_0 .slides ul li { width: calc(100% / 3) !important; flex-shrink: 0 !important; display: flex !important; gap: 40px; padding: 20px; align-items: center; }
+.cont_0 .slides .text-content { flex: 1; }
+.cont_0 .slides .image-content { flex: 1.5; } /* Give more space to image */
+.cont_0 .slides .image-content .img { width: 100%; height: 450px; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
 
-/* 7. Member Slider (.cont_2) NAV FIX */
-.member-intro-wrapper { position: relative; padding: 0 80px; width: 100%; }
+/* 8. Iconic Album Slider (.cont_1) NEW SLIDER */
+.cont_1 .album-slider { overflow: hidden; max-width: 400px; margin: 30px auto; }
+.cont_1 .album-slider ul { display: flex; width: 500%; transition: transform 0.5s ease-in-out; padding: 0; list-style: none; }
+.cont_1 .album-slider li { width: calc(100% / 5); flex-shrink: 0; padding: 10px; text-align: center; }
+.cont_1 .album-slider img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1/1; border-radius: 15px; }
+.cont_1 .album-slider .album-title { font-size: 18px; font-weight: bold; margin-top: 15px; color: var(--text-primary) !important; }
+
+/* 9. Member Slider (.cont_2) */
+.member-intro-wrapper { position: relative; padding: 0 80px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 40px; }
 .my-member-name { margin-top: 20px; font-size: 24px; font-weight: bold; color: var(--text-primary) !important; }
 .cont_2 .bg .frame { overflow: hidden; width: 350px; height: 500px; border-radius: 15px; margin: 0 auto; }
 .cont_2 .bg .frame .frame_img ul { display: flex; width: calc(350px * 4); transition: transform 0.5s ease-in-out; }
@@ -179,4 +129,4 @@ header nav ul li a {
 .member-intro-wrapper > .prev, .member-intro-wrapper > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .member-intro-wrapper > .prev { left: 0; }
 .member-intro-wrapper > .next { right: 0; }
-.cont_2 .member-slider > .prev, .cont_2 .member-slider > .next { display: none; } /* Hide misplaced buttons */
+.cont_2 .member-slider > .prev, .cont_2 .member-slider > .next { display: none; }
