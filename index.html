@@ -41,7 +41,7 @@
     }
 
     /* ========================================= */
-    /* [수정됨] 3. 멤버 소개(cont_2) 버튼 -> 회색 박스 화살표로 변경 */
+    /* 3. 멤버 소개(cont_2) 버튼 -> 회색 박스 화살표로 변경 */
     /* ========================================= */
     .cont_2 .bg, .cont_2 .member-intro-wrapper {
         position: relative; 
@@ -49,38 +49,31 @@
 
     .cont_2 .prev, 
     .cont_2 .next {
-        display: flex !important;          /* 내부 텍스트(< >) 중앙 정렬용 */
+        display: flex !important;          
         justify-content: center !important;
         align-items: center !important;
-        
         position: absolute !important;
-        top: 50% !important;               /* 화면 세로 중앙 */
+        top: 50% !important;               
         transform: translateY(-50%) !important;
-        z-index: 99999 !important;         /* 최상단 노출 */
-        
-        /* [디자인] 회색 박스 버튼 */
-        width: 50px !important;            /* 박스 너비 */
-        height: 50px !important;           /* 박스 높이 */
-        background-color: #666 !important; /* 진한 회색 배경 */
-        color: #fff !important;            /* 화살표 색상(흰색) */
-        font-size: 24px !important;        /* 화살표 크기 */
+        z-index: 99999 !important;         
+        width: 50px !important;            
+        height: 50px !important;           
+        background-color: #666 !important; 
+        color: #fff !important;            
+        font-size: 24px !important;        
         font-weight: bold !important;
-        border-radius: 5px !important;     /* 모서리 살짝 둥글게 */
+        border-radius: 5px !important;     
         cursor: pointer;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* 입체감 그림자 */
-        
-        /* 기존 스타일 초기화 */
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
         padding: 0 !important;
         border: none !important;
         text-decoration: none !important;
     }
 
-    /* 마우스 올렸을 때 색상 변경 */
     .cont_2 .prev:hover, .cont_2 .next:hover {
-        background-color: #333 !important; /* 더 진한 회색 */
+        background-color: #333 !important; 
     }
 
-    /* 위치 배치 (화면 양 끝에서 20px 안쪽) */
     .cont_2 .prev {
         left: 20px !important;
         right: auto !important;
@@ -91,7 +84,6 @@
         left: auto !important;
     }
 
-    /* 모바일에서는 버튼 크기 조금 줄임 */
     @media (max-width: 768px) {
         .cont_2 .prev, .cont_2 .next {
             width: 40px !important;
@@ -103,21 +95,27 @@
     }
 
     /* ========================================= */
-    /* 4. 아이코닉 앨범(cont_1) 이미지 크기 통일 */
+    /* [수정됨] 4. 유명한 노래들(cont_3) 썸네일 크기 통일 */
     /* ========================================= */
-    .cont_1 .album-slider img {
-        width: 300px !important; 
-        height: 300px !important;
-        object-fit: cover !important;
-        display: block;
-        margin: 0 auto 15px auto;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    .cont_3 .song-gallery .song-item .song-thumbnail {
+        width: 250px !important;   /* 고정된 너비 (원하는 크기로 조절 가능) */
+        height: 250px !important;  /* 고정된 높이 (정사각형) */
+        object-fit: cover !important; /* 비율 유지하며 꽉 채우기 (핵심) */
+        border-radius: 15px;          /* 모서리 둥글게 예쁘게 */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 그림자 효과 */
+        transition: transform 0.3s ease; /* 마우스 올렸을 때 부드럽게 */
     }
+
+    /* 마우스 올리면 살짝 커지는 효과 (선택사항) */
+    .cont_3 .song-gallery .song-item:hover .song-thumbnail {
+        transform: scale(1.05);
+    }
+
+    /* 모바일 화면 대응 */
     @media (max-width: 768px) {
-        .cont_1 .album-slider img {
-            width: 220px !important;
-            height: 220px !important;
+        .cont_3 .song-gallery .song-item .song-thumbnail {
+            width: 150px !important;
+            height: 150px !important;
         }
     }
 </style>
