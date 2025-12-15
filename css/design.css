@@ -91,13 +91,65 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_1 .album-slider .album-title { font-size: 18px; font-weight: bold; margin-top: 15px; color: var(--text-primary) !important; }
 .cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55%; }
 
-/* 10. Member Slider (.cont_2) */
-.cont_2 .bg { display: block; }
-.member-intro-wrapper { position: relative; width: 100%; display: flex; justify-content: center; align-items: center; gap: 40px; }
-.member-intro-wrapper > .prev, .member-intro-wrapper > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
-.member-intro-wrapper > .prev { left: -60px; }
-.member-intro-wrapper > .next { right: -60px; }
-.cont_2 .bg .frame .frame_img img { width: 100%; height: 100%; object-fit: contain !important; }
+/* 10. Member Slider (.cont_2) - ISOLATED & REBUILT */
+.cont_2 .bg {
+    display: block !important;
+}
+.cont_2 .member-intro-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+.cont_2 .member-intro-wrapper .text-info {
+    flex: 1 !important;
+}
+.cont_2 .member-intro-wrapper .member-slider {
+    flex: 1 !important;
+    text-align: center;
+}
+.cont_2 .member-intro-wrapper > .prev,
+.cont_2 .member-intro-wrapper > .next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+}
+.cont_2 .member-intro-wrapper > .prev { left: -80px !important; }
+.cont_2 .member-intro-wrapper > .next { right: -80px !important; }
+
+.cont_2 .my-member-name {
+    margin-top: 20px !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: var(--text-primary) !important;
+}
+.cont_2 .frame {
+    overflow: hidden !important;
+    width: 350px !important;
+    height: 500px !important;
+    border-radius: 15px !important;
+    margin: 0 auto !important;
+}
+.cont_2 .frame_img ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: calc(350px * 4) !important;
+    transition: transform var(--transition-speed) ease-in-out !important;
+    padding: 0 !important; margin: 0 !important; list-style: none !important;
+}
+.cont_2 .frame_img ul li {
+    width: 350px !important;
+    height: 500px !important;
+    flex-shrink: 0 !important;
+}
+.cont_2 .frame_img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
 
 /* 11. Famous Songs (.cont_3) */
 .cont_3 .song-gallery ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0; list-style: none;}
