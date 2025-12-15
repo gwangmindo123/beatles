@@ -1135,22 +1135,13 @@ header nav ul li a {
     transform: translateY(2px) !important;
 }
 /* ========================================= */
-/* ★ 긴급 수정: 가로 스크롤 제거 ★ */
+/* ★ PC 화면에서만 사진 위치 조정하기 ★ */
 /* ========================================= */
 
-/* 1. 화면 전체에서 가로로 튀어나온 건 무조건 숨기기 */
-html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-}
-
-/* 2. 멤버 소개 구역(.cont_2) 단속하기 */
-.cont_2 {
-    overflow: hidden !important; /* 이 구역 밖으로 나가는 건 자른다 */
-    width: 100% !important;
-}
-
-/* 3. 혹시 모를 멤버 사진 틀 단속 */
-.cont_2 .bg .frame {
-    overflow: hidden !important; /* 사진 틀 밖으로 넘치는 사진 숨김 */
+/* 화면 너비가 1024px 이상(노트북, 데스크탑)일 때만 실행해라! */
+@media (min-width: 1024px) {
+    .cont_home .main-hero-image {
+        /* 가로는 중앙, 세로는 위에서 20% 지점(눈 높이)을 기준으로! */
+        object-position: center 20% !important; 
+    }
 }
