@@ -1,5 +1,5 @@
 /* ================================================= */
-/* The Beatles Website Redesign V3                 */
+/* The Beatles Website Redesign V4                 */
 /* ================================================= */
 
 /* 1. Root Variables & Font Import */
@@ -9,10 +9,10 @@
     --background-dark: #121212;
     --background-light: #FFFFFF;
     --content-box: #1E1E1E;
-    --text-primary: #FFFFFF; /* Changed to pure white */
-    --text-secondary: #CCCCCC; /* Slightly lighter secondary text */
-    --accent-color: #C0E218; /* A brighter, more modern "Apple Green" */
-    --secondary-accent: #3A5A78; /* A slightly softer navy blue */
+    --text-primary: #FFFFFF;
+    --text-secondary: #CCCCCC;
+    --accent-color: #C0E218;
+    --secondary-accent: #3A5A78;
     --transition-speed: 0.3s;
 }
 
@@ -35,17 +35,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--accent-color);
     font-weight: 700;
     letter-spacing: -0.5px;
-    text-align: center; /* Default to center alignment for headings */
-}
-
-p, li, span, label, .txt {
-    color: var(--text-secondary);
-    font-weight: 400;
-    line-height: 1.7;
-    text-align: center; /* Default to center alignment for paragraphs and lists */
 }
 
 a {
@@ -80,7 +71,7 @@ header h1 {
 }
 
 header h1 a {
-    color: var(--background-light); /* Changed to pure white */
+    color: var(--background-light) !important; /* Force white */
     font-weight: 800;
 }
 
@@ -93,7 +84,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: var(--background-light); /* Changed to pure white */
+    color: var(--background-light) !important; /* Force white */
     font-size: 16px;
     font-weight: 500;
     padding: 10px 15px;
@@ -103,34 +94,28 @@ header nav ul li a {
 
 header nav ul li a:hover {
     background-color: var(--accent-color);
-    color: var(--background-dark);
+    color: var(--background-dark) !important;
 }
 
 body.quiz-page header nav ul li:nth-child(2) a,
 body.recommend-page header nav ul li:nth-child(3) a,
 body.music-page header nav ul li:nth-child(4) a {
     background-color: var(--accent-color);
-    color: var(--background-dark);
+    color: var(--background-dark) !important;
     font-weight: 700;
 }
 
 /* 4. Fullpage.js Section & Hero */
-.section {
-    padding-top: 0;
-}
-
 .fp-section:first-child {
     padding-top: 80px;
 }
 .cont {
     padding-top: 120px;
+    display: flex; /* This will help center the .bg on non-fullpage pages */
+    align-items: center;
+    justify-content: center;
 }
 
-
-.cont_home {
-    position: relative;
-    overflow: hidden;
-}
 
 .cont_home .main-hero-image {
     position: absolute;
@@ -149,117 +134,51 @@ body.music-page header nav ul li:nth-child(4) a {
     text-align: center;
 }
 
-.cont_home .text-overlay h2 {
-    font-size: 7vw;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.cont_home .text-overlay h3 {
-    font-size: 2.5vw;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin: 0;
-}
-
-/* 5. General Content Box (.bg) for all pages */
+/* 5. General Content Box (.bg) for all pages - CENTERING FIX */
 .bg {
     background-color: var(--content-box);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     padding: 40px;
-    width: 100%;
+    width: 90%; /* Use percentage width */
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center aligning content */
+    margin: 0 auto; /* Horizontal centering */
 }
 
-/* Explicitly set text colors inside content boxes */
-/* Global text-align: center for p, li, span, label, .txt */
-.bg h1, .bg h2, .bg h3, .bg h4 {
-    color: var(--text-primary);
-    text-align: center;
-}
-.bg p, .bg li, .bg span, .bg .txt {
-    color: var(--text-secondary);
-    text-align: center;
+/* COLOR AND ALIGNMENT FIXES */
+.bg > h2 {
+    color: var(--accent-color) !important;
+    text-align: center !important;
+    margin-bottom: 30px;
 }
 
-/* Override for specific elements if needed */
-.cont_0 .slides .text-content p {
-    text-align: left; /* Keep slide text left-aligned in its box */
-}
-.cont_1 .bg .text-info p {
-    text-align: left; /* Album intro text left-aligned */
-}
-.cont_2 .bg .text-info p {
-    text-align: left; /* Member intro text left-aligned */
-}
-.cont_3 .bg .text-info p {
-    text-align: left; /* Songs intro text left-aligned */
-}
-.cont_4 .bg .text-info p {
-    text-align: left; /* Legacy intro text left-aligned */
+.bg h3 {
+    color: var(--text-primary) !important;
+    text-align: center !important;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
-/* Inner content wrappers should also be centered if they are direct children of .bg */
-.album-content-wrapper,
-.member-intro-wrapper,
-.famous-songs-wrapper,
-.legacy-content-wrapper {
-    width: 100%;
-    max-width: 1000px; /* Adjust as needed */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center its children */
-    text-align: center; /* Fallback for text */
+.bg p, .bg li, .bg span, .bg .txt, .bg label {
+    color: var(--text-secondary) !important;
+    text-align: center !important;
 }
 
-/* For multi-column layouts within wrappers */
-.album-content-wrapper,
-.member-intro-wrapper,
-.famous-songs-wrapper,
-.legacy-content-wrapper {
-    flex-direction: row; /* Re-enable row direction for these */
-    justify-content: center;
-    align-items: flex-start; /* Align items to top within row */
-    text-align: left; /* Reset text align for their content */
-}
-.album-content-wrapper > div,
-.member-intro-wrapper > div,
-.famous-songs-wrapper > div,
-.legacy-content-wrapper > div {
-    flex: 1; /* Distribute space */
-    text-align: center; /* Center content within these sub-divisions */
-}
-.album-content-wrapper .text-info,
-.member-intro-wrapper .text-info,
-.famous-songs-wrapper .text-info,
-.legacy-content-wrapper .text-info {
-    text-align: left; /* Specific override for text-info */
-}
-.album-content-wrapper .text-info h2,
-.member-intro-wrapper .text-info h2,
-.famous-songs-wrapper .text-info h2,
-.legacy-content-wrapper .text-info h2 {
-    text-align: left;
-}
-.album-content-wrapper .text-info h3,
-.member-intro-wrapper .text-info h3,
-.famous-songs-wrapper .text-info h3,
-.legacy-content-wrapper .text-info h3 {
-    text-align: left;
-}
-.album-content-wrapper .text-info p,
-.member-intro-wrapper .text-info p,
-.famous-songs-wrapper .text-info p,
-.legacy-content-wrapper .text-info p {
-    text-align: left;
+.bg a {
+    color: var(--accent-color) !important;
 }
 
+/* Override for specific layouts where left-align is better */
+.bg .text-content p {
+    text-align: left !important;
+}
+.bg .text-info {
+    text-align: left !important;
+}
+.bg .text-info h2, .bg .text-info h3, .bg .text-info p {
+    text-align: left !important;
+}
 
 /* 6. Button Styles */
 .prev, .next, button {
@@ -286,118 +205,70 @@ body.music-page header nav ul li:nth-child(4) a {
     box-shadow: 0 2px 0 #20364A;
 }
 
-/* 7. Quiz & Recommend Page Styles */
-.quiz-container, .recommend-container {
-    max-width: 800px;
-    margin: 0 auto;
+/* 7. Specific Component Fixes */
+.slides, .album-content-wrapper, .member-intro-wrapper, .famous-songs-wrapper, .legacy-content-wrapper {
     width: 100%;
+    margin: 20px 0;
 }
 
-.quiz-question, #recommend-questions p {
-    font-size: 20px;
-    color: var(--text-primary);
-    margin-bottom: 20px;
-    text-align: center;
+.member-slider, .album-gallery, .song-gallery, .legacy-image-display {
+    margin: 0 auto; /* Center these components */
 }
 
-.quiz-answers label {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 15px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    transition: background-color var(--transition-speed) ease;
-    color: var(--text-secondary);
-}
-
-.quiz-answers label:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.quiz-answers input[type="radio"] {
-    margin-right: 12px;
-    accent-color: var(--accent-color);
-    transform: scale(1.2);
-}
-
-#quiz-results, #recommend-result {
-    margin-top: 30px;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-#mood {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(18, 18, 18, 0.8);
-    color: var(--text-primary);
-    margin-bottom: 20px;
-}
-
-/* 8. Music Page */
-.music-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-    width: 100%;
-}
-
-.music-player {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.music-player h4 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: var(--accent-color);
-}
-
-iframe {
-    border-radius: 8px;
-    border: none;
-    width: 100%;
-    height: 152px; /* Standard compact embed height */
-}
-
-/* 9. Footer */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* 10. Specific Component Fixes */
-.cont_0 .bg .slides ul li {
-    align-items: flex-start; /* Align slide items to the top */
-}
-
-.member-slider {
+/* History Slider (.cont_0) */
+.cont_0 .bg {
     position: relative;
 }
+.cont_0 .slides {
+    overflow: hidden;
+    max-width: 900px;
+    margin: 40px auto;
+}
+.cont_0 .slides ul {
+    display: flex;
+    width: 300%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+}
+.cont_0 .slides ul li {
+    width: calc(100% / 3);
+    flex-shrink: 0;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    align-items: center;
+}
+.cont_0 .slides .image-content .img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+.cont_0 .bg > .prev, .cont_0 .bg > .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.cont_0 .bg > .prev { left: 20px; }
+.cont_0 .bg > .next { right: 20px; }
+
+/* Member Slider (.cont_2) */
 .my-member-name {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 .cont_2 .bg .frame {
     overflow: hidden;
     width: 350px;
     height: 500px;
     border-radius: 15px;
+    margin: 0 auto;
 }
 .cont_2 .bg .frame .frame_img ul {
     display: flex;
@@ -413,86 +284,18 @@ footer {
     height: 100%;
     object-fit: cover;
 }
-.member-slider .prev {
-    position: absolute;
-    left: -80px;
-    top: 50%;
-    transform: translateY(-50%);
+.member-slider .prev, .member-slider .next {
+    position: static; /* Let them be part of the flex layout */
+    margin: 10px;
 }
-.member-slider .next {
-    position: absolute;
-    right: -80px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* 11. History Slider (.cont_0) */
-.cont_0 .bg {
-    position: relative; /* For positioning prev/next buttons */
-}
-
-.cont_0 .slides {
-    overflow: hidden;
-    width: 100%;
-    max-width: 900px;
-    margin: 40px auto; /* Center the slides container itself */
-}
-
-.cont_0 .slides ul {
+.member-slider {
     display: flex;
-    width: 300%; /* 3 slides */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    transition: transform 0.5s ease-in-out;
-}
-
-.cont_0 .slides ul li {
-    width: calc(100% / 3);
-    flex-shrink: 0;
-    display: flex;
-    gap: 30px;
-    padding: 20px;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content within each slide item */
-    flex-direction: column; /* Stack text and image vertically if needed */
 }
-
-.cont_0 .slides .text-content {
-    flex: 1;
-    text-align: center; /* Ensure text content is centered */
-}
-
-.cont_0 .slides .text-content p {
-    text-align: center; /* Explicitly center paragraphs in history */
-}
-
-.cont_0 .slides .image-content {
-    flex: 1;
-    text-align: center;
-}
-
-.cont_0 .slides .image-content .img {
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.cont_0 .bg > .prev,
-.cont_0 .bg > .next {
-    position: absolute;
-    top: 60%; /* Adjusted for vertical centering on the slide area */
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.cont_0 .bg > .prev {
-    left: 20px;
-}
-
-.cont_0 .bg > .next {
-    right: 20px;
+.member-slider .nav-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
