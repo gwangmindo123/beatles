@@ -1,5 +1,5 @@
 /* =================================================== */
-/* The Beatles Website Redesign V19 (Final Attempt)  */
+/* The Beatles Website Redesign V21 (Legacy Buttons Horizontal) */
 /* =================================================== */
 
 /* 1. Root Variables & Font Import */
@@ -54,40 +54,11 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .prev:hover, .next:hover, button:hover, .listen-btn:hover, .cont_4 .bg ul.thumb li a:hover { background-color: #555555 !important; transform: translateY(-2px); }
 
-/* 8. History Slider (.cont_0) FINAL IMAGE FIX */
+/* 8. History Slider (.cont_0) */
 .cont_0 .bg { padding-left: 80px; padding-right: 80px; }
-.cont_0 .slides { overflow: hidden !important; width: 100%; position: relative; }
-.cont_0 .slides ul {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    width: 300% !important;
-    position: relative;
-    left: 0;
-    transition: transform var(--transition-speed) ease-in-out;
-    padding: 0; margin: 0; list-style: none;
-}
-.cont_0 .slides ul li {
-    width: calc(100% / 3) !important;
-    flex-shrink: 0 !important;
-    display: flex !important;
-    gap: 40px; padding: 20px; align-items: center;
-    list-style-type: none;
-    height: 700px; /* Make the slide taller */
-}
-.cont_0 .slides .text-content {
-    flex: 1;
-}
-.cont_0 .slides .image-content {
-    flex: 2; /* Give more space to the image */
-    height: 100%;
-}
-.cont_0 .slides .image-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fill the container, cropping if necessary */
-    border-radius: 10px;
-}
+.cont_0 .slides ul li { height: 700px; } /* Set slide item height */
+.cont_0 .slides .image-content { flex: 2; /* Give more space to the image */ height: 100%; }
+.cont_0 .slides .image-content img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 .cont_0 .slides .image-content .txt { margin-top: 15px; font-style: italic; }
 .cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .cont_0 .bg > .prev { left: 20px; }
@@ -102,12 +73,11 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55%; }
 
 /* 10. Member Slider (.cont_2) */
-.cont_2 .bg { display: block; }
+.cont_2 .bg { display: block; } /* Override grid centering for this specific complex section */
 .member-intro-wrapper { position: relative; width: 100%; display: flex; justify-content: center; align-items: center; gap: 40px; }
 .member-intro-wrapper > .prev, .member-intro-wrapper > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .member-intro-wrapper > .prev { left: -60px; }
 .member-intro-wrapper > .next { right: -60px; }
-.cont_2 .bg .frame { overflow: hidden; width: 350px; height: 500px; border-radius: 15px; margin: 0 auto; }
 .cont_2 .bg .frame .frame_img ul { display: flex; flex-wrap: nowrap !important; width: calc(350px * 4); transition: transform var(--transition-speed) ease-in-out; }
 .cont_2 .bg .frame .frame_img ul li { width: 350px; flex-shrink: 0; }
 .cont_2 .bg .frame .frame_img img { width: 100%; height: 100%; object-fit: contain !important; }
@@ -116,8 +86,14 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_3 .song-gallery ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0; list-style: none;}
 .cont_3 .song-gallery ul li { width: calc(33.333% - 20px); }
 
-/* 12. Legacy Section (.cont_4) */
-.cont_4 .bg ul.thumb li a { width: 120px !important; height: 50px !important; }
+/* 12. Legacy Section (.cont_4) FIXES */
+.cont_4 .bg ul.thumb {
+    display: flex !important;
+    flex-direction: row !important; /* Ensure horizontal alignment */
+    flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0; list-style: none; margin: 20px 0;
+}
+.cont_4 .bg ul.thumb li { flex-shrink: 0; width: auto !important; }
+.cont_4 .bg ul.thumb li a { width: 100px !important; height: 100px !important; padding: 8px 16px !important; background-image: none !important; color: var(--background-light) !important; font-size: 14px; }
 .cont_4 .bg .legacy-image-display { margin: 0 auto 20px auto; width: 100%; max-width: 600px; height: 400px; }
 .cont_4 .bg .legacy-image-display img.main-legacy-image { display: block; margin: 0 auto; width: 100%; height: 100%; object-fit: cover;}
 
