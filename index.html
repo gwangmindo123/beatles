@@ -6,7 +6,6 @@
   <link rel="icon" type="image/jpeg" href="images/content_2_thumb_1.jpg">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/fullpage.css">
-  <link rel="stylesheet" href="css/style.css?v=1.1">
   <link rel="stylesheet" href="css/active.css?v=1.1">
   <script src="js/jquery-1.12.3.js"></script>
   <script src="js/jquery.easing.min.js"></script>
@@ -271,37 +270,5 @@
       </div>
     </div><!--end of fullpage-->
   </div><!--end of wrap-->
-  <script>
-    $(document).ready(function() {
-        // 1. 멤버 이름 명단 (순서대로)
-        var names = ["존 레논", "폴 매카트니", "조지 해리슨", "링고 스타"];
-        var idx = 0; // 시작 번호 (0번 = 존 레논)
-
-        // 2. 화살표 누르면 이름 바꾸는 기능
-        // [다음] 버튼 클릭
-        $(".next").on("click", function() {
-            idx++; 
-            if(idx > 3) idx = 0; // 마지막 사람이면 다시 처음으로
-            $(".my-member-name").text(names[idx]);
-        });
-
-        // [이전] 버튼 클릭
-        $(".prev").on("click", function() {
-            idx--; 
-            if(idx < 0) idx = 3; // 첫번째 사람이면 다시 마지막으로
-            $(".my-member-name").text(names[idx]);
-        });
-        
-        // 3. 사진을 직접 클릭해도 이름 바뀌게 하기 (보너스)
-        $(".frame_img ul li a").on("click", function() {
-            var title = $(this).attr("title"); // 사진에 붙은 이름표 읽기
-            if(title) {
-                // 이름 명단에서 찾아서 번호 맞추기
-                idx = names.indexOf(title); 
-                $(".my-member-name").text(names[idx]);
-            }
-        });
-    });
-</script>
 </body>
 </html>

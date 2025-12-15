@@ -47,7 +47,7 @@ $(function(){
         var frameWidth = $frame.find('li').outerWidth(true);
         var txt = $('.cont_2 .bg .frame .frame_img li').eq(index).find('a').attr('title');
 
-        $('.cont_2 .bg .frame .current-member-name').text(txt);
+        $('.cont_2 .bg .my-member-name').text(txt);
         $frame.stop().css('transform', 'translateX(' + (-(index * frameWidth)) + 'px)');
     }
 
