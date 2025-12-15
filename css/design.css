@@ -124,7 +124,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 40px !important;
+    gap: 20px !important; /* Reduced from 40px */
 }
 .cont_2 .member-intro-wrapper .text-info {
     flex: 1 !important;
@@ -157,12 +157,12 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     font-size: 16px !important;
 }
 .cont_2 .text-info p {
-    font-size: 14px !important;
+    font-size: 12px !important; /* Reduced from 14px */
 }
 .cont_2 .frame {
     overflow: hidden !important;
     width: 350px !important;
-    max-height: 35vh; /* Aggressively reduced from 40vh */
+    max-height: 30vh; /* Further aggressively reduced from 35vh */
     border-radius: 15px !important;
     margin: 0 auto !important;
 }
@@ -175,7 +175,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .cont_2 .frame_img ul li {
     width: 350px !important;
-    max-height: 35vh; /* Aggressively reduced from 40vh */
+    max-height: 30vh; /* Further aggressively reduced from 35vh */
     flex-shrink: 0 !important;
 }
 .cont_2 .frame_img img {
