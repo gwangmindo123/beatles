@@ -1,5 +1,5 @@
 /* ================================================= */
-/* The Beatles Website Redesign V7                   */
+/* The Beatles Website Redesign V8 (Final)         */
 /* ================================================= */
 
 /* 1. Root Variables & Font Import */
@@ -13,6 +13,7 @@
     --text-secondary: #CCCCCC;
     --accent-color: #C0E218;
     --secondary-accent: #3A5A78;
+    --button-gray-bg: #444444; /* New variable for gray buttons */
     --transition-speed: 0.3s;
 }
 
@@ -32,16 +33,15 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: transparent;
+    background-color: transparent !important; /* Always transparent */
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
     transition: background-color var(--transition-speed) ease;
+    border-bottom: none; /* Remove border */
 }
-body.fp-viewing-0 header { background-color: transparent; }
-body:not(.fp-viewing-0) header { background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); }
 header nav ul { display: flex; flex-direction: row; list-style: none; padding: 0; margin: 0; gap: 15px; }
 header nav ul li a { color: var(--background-light) !important; font-size: 16px; font-weight: 500; padding: 10px 15px; border-radius: 8px; transition: all var(--transition-speed) ease; }
 header nav ul li a:hover { background-color: var(--accent-color); color: var(--background-dark) !important; }
@@ -54,12 +54,16 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     align-items: center !important;
     height: 100%;
     width: 100%;
-    padding: 80px 20px;
+    padding-top: 80px; /* Padding for header */
 }
+
+.fp-section {
+    padding: 0 !important; /* Override any inline padding from fullpage */
+}
+
+/* Hero Section Specifics */
 .cont_home .main-hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.5); }
 .cont_home .text-overlay { position: relative; z-index: 2; text-align: center; }
-
-/* HERO TEXT STYLE */
 .hero-main-text {
     font-size: 10vw;
     font-weight: 900;
@@ -76,6 +80,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     line-height: 1.5;
 }
 
+
 /* 5. General Content Box (.bg) */
 .bg {
     background-color: var(--content-box);
@@ -85,41 +90,68 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     padding: 40px;
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0 auto; /* Ensures horizontal centering */
     position: relative; /* For prev/next buttons */
 }
 
 /* GLOBAL COLOR/ALIGNMENT FIXES */
-.bg > h2 { color: var(--accent-color) !important; text-align: center !important; font-size: 42px; margin-top: 0; margin-bottom: 10px; }
-.bg > h3 { color: var(--text-primary) !important; text-align: center !important; font-weight: 400; font-size: 18px; margin-bottom: 30px; }
+.bg h2 { color: var(--accent-color) !important; text-align: center !important; font-size: 42px; margin-top: 0; margin-bottom: 10px; }
+.bg h3, .bg .text-content h3 { color: var(--text-primary) !important; text-align: center !important; font-weight: 500; font-size: 22px; margin-bottom: 20px; }
 .bg p, .bg li, .bg span, .bg .txt, .bg label { color: var(--text-secondary) !important; text-align: center !important; }
-.bg .text-content h3 { color: var(--text-primary) !important; font-size: 28px; text-align: left !important; }
 .bg .text-content p { text-align: left !important; }
 .bg .text-info { text-align: left !important; }
 .bg .text-info > * { text-align: left !important; }
 
-/* 6. All Sliders General Styles */
-.slides, .album-slider, .member-slider { width: 100%; margin: 20px 0; }
-.bg > .prev, .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; padding: 12px; }
-.bg > .prev { left: 10px; }
-.bg > .next { right: 10px; }
+/* 6. Button Styles - Gray Box Styling */
+.prev, .next, button, .listen-btn, .cont_4 .bg ul.thumb li a {
+    background-color: var(--button-gray-bg) !important;
+    color: var(--background-light) !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    box-shadow: 0 4px 0 #20364A !important; /* Keep a consistent shadow for depth */
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    text-indent: 0 !important; /* Ensure text is visible */
+    display: inline-flex; /* For centering text */
+    justify-content: center; /* For centering text */
+    align-items: center; /* For centering text */
+}
 
-/* 7. History Slider (.cont_0) IMAGE SIZE FIX */
+.prev:hover, .next:hover, button:hover, .listen-btn:hover, .cont_4 .bg ul.thumb li a:hover {
+    background-color: #555555 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #20364A !important;
+}
+.prev:active, .next:active, button:active, .listen-btn:active, .cont_4 .bg ul.thumb li a:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #20364A !important;
+}
+
+
+/* 7. Specific Component Layouts */
+.slides, .album-slider, .member-slider { width: 100%; margin: 20px 0; }
+
+/* History Slider (.cont_0) */
 .cont_0 .slides { overflow: hidden !important; max-width: 100%; }
 .cont_0 .slides ul { display: flex !important; width: 300% !important; transition: transform 0.5s ease-in-out; }
 .cont_0 .slides ul li { width: calc(100% / 3) !important; flex-shrink: 0 !important; display: flex !important; gap: 40px; padding: 20px; align-items: center; }
 .cont_0 .slides .text-content { flex: 1; }
-.cont_0 .slides .image-content { flex: 1.5; } /* Give more space to image */
+.cont_0 .slides .image-content { flex: 1.5; }
 .cont_0 .slides .image-content .img { width: 100%; height: 450px; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
+.cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
+.cont_0 .bg > .prev { left: 10px; }
+.cont_0 .bg > .next { right: 10px; }
 
-/* 8. Iconic Album Slider (.cont_1) NEW SLIDER */
-.cont_1 .album-slider { overflow: hidden; max-width: 400px; margin: 30px auto; }
+/* Iconic Album Slider (.cont_1) */
+.cont_1 .album-slider { overflow: hidden; max-width: 800px; margin: 30px auto; } /* Increased max-width */
 .cont_1 .album-slider ul { display: flex; width: 500%; transition: transform 0.5s ease-in-out; padding: 0; list-style: none; }
 .cont_1 .album-slider li { width: calc(100% / 5); flex-shrink: 0; padding: 10px; text-align: center; }
-.cont_1 .album-slider img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1/1; border-radius: 15px; }
+.cont_1 .album-slider img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1/1; border-radius: 15px; margin: 0 auto; display: block; }
 .cont_1 .album-slider .album-title { font-size: 18px; font-weight: bold; margin-top: 15px; color: var(--text-primary) !important; }
 
-/* 9. Member Slider (.cont_2) */
+/* Member Slider (.cont_2) */
 .member-intro-wrapper { position: relative; padding: 0 80px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 40px; }
 .my-member-name { margin-top: 20px; font-size: 24px; font-weight: bold; color: var(--text-primary) !important; }
 .cont_2 .bg .frame { overflow: hidden; width: 350px; height: 500px; border-radius: 15px; margin: 0 auto; }
@@ -129,4 +161,17 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .member-intro-wrapper > .prev, .member-intro-wrapper > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .member-intro-wrapper > .prev { left: 0; }
 .member-intro-wrapper > .next { right: 0; }
-.cont_2 .member-slider > .prev, .cont_2 .member-slider > .next { display: none; }
+
+/* Legacy Section (.cont_4) */
+.cont_4 .bg .legacy-image-display img.main-legacy-image { margin: 0 auto; display: block; }
+.cont_4 .bg ul.thumb li a {
+    /* Existing button styles apply now */
+    background-image: none !important; /* Remove background image */
+    text-indent: 0 !important; /* Show text */
+    color: var(--background-light) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
