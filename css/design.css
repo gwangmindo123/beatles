@@ -227,6 +227,11 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 /* 11. Famous Songs (.cont_3) */
 .cont_3 .song-gallery ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0; list-style: none;}
 .cont_3 .song-gallery ul li { width: calc(33.333% - 20px); }
+.cont_3 .song-gallery .song-item img.song-thumbnail {
+    width: 174px;
+    height: 174px;
+    object-fit: cover; /* Ensure image covers the area without distortion */
+}
 
 /* 12. Legacy Section (.cont_4) */
 .cont_4 .bg ul.thumb { text-align: center; padding: 0; list-style: none; margin: 20px 0; }
