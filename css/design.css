@@ -233,6 +233,10 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     object-fit: cover; /* Ensure image covers the area without distortion */
 }
 
+.cont_3 .famous-songs-wrapper .text-info {
+    margin-bottom: 15px !important;
+}
+
 /* 12. Legacy Section (.cont_4) */
 .cont_4 .bg ul.thumb { text-align: center; padding: 0; list-style: none; margin: 20px 0; }
 .cont_4 .bg ul.thumb li { display: inline-block !important; margin: 5px; }
