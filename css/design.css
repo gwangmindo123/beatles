@@ -109,13 +109,19 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     justify-content: center !important;
     align-items: center !important;
     gap: 40px !important;
+    padding: 0 !important; /* Reset padding from global bg */
 }
 .cont_2 .member-intro-wrapper .text-info {
     flex: 1 !important;
+    text-align: left !important;
 }
+.cont_2 .member-intro-wrapper .text-info h2 { text-align: left !important; }
+.cont_2 .member-intro-wrapper .text-info h3 { text-align: left !important; }
+.cont_2 .member-intro-wrapper .text-info p { text-align: left !important; }
+
 .cont_2 .member-intro-wrapper .member-slider {
     flex: 1 !important;
-    text-align: center;
+    text-align: center !important;
 }
 .cont_2 .member-intro-wrapper > .prev,
 .cont_2 .member-intro-wrapper > .next {
