@@ -90,7 +90,8 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_0 .slides ul { display: flex !important; width: 300% !important; transition: transform 0.5s ease-in-out; }
 .cont_0 .slides ul li { width: calc(100% / 3) !important; flex-shrink: 0 !important; display: flex !important; gap: 40px; padding: 20px; align-items: center; }
 .cont_0 .slides .image-content { flex: 1.5; }
-.cont_0 .slides .image-content .img { width: 100%; height: 500px !important; min-height: 500px !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
+.cont_0 .slides .image-content .img { width: 100%; height: 600px !important; min-height: 600px !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
+.cont_0 .slides .image-content .txt { font-size: 16px; font-style: italic; margin-top: 15px; }
 .cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .cont_0 .bg > .prev { left: 20px; }
 .cont_0 .bg > .next { right: 20px; }
