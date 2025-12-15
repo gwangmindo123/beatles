@@ -13,7 +13,7 @@ $(function(){
         navigationPosition: 'right',
         responsiveWidth: 0,
         responsiveHeight: 0,
-        scrollOverflow: false, 
+        scrollOverflow: true, 
         verticalCentered: true,
         afterRender: function(){
             // 슬라이드 초기화: 각 슬라이더의 현재 인덱스를 0으로 설정
