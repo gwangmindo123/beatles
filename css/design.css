@@ -113,6 +113,10 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55% !important; }
 
 /* 10. Member Slider (.cont_2) */
+.cont_2 .bg {
+    padding: 20px 40px; /* Reduced vertical padding for member section */
+}
+
 /* The block for .cont_2 .member-intro-wrapper and its children needs to be fully specified and isolated */
 .cont_2 .member-intro-wrapper {
     position: relative !important;
@@ -140,7 +144,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .member-intro-wrapper > .next { right: -80px !important; }
 
 .cont_2 .my-member-name {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     font-size: 24px !important;
     font-weight: bold !important;
     color: var(--text-primary) !important;
