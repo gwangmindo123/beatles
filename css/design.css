@@ -132,6 +132,8 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .member-intro-wrapper .member-slider {
     flex: 1 !important;
     text-align: center;
+    margin: 0 !important; /* Eliminate all margins */
+    padding: 0 !important; /* Eliminate all paddings */
 }
 .cont_2 .member-intro-wrapper > .prev,
 .cont_2 .member-intro-wrapper > .next {
@@ -162,7 +164,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .frame {
     overflow: hidden !important;
     width: 350px !important;
-    max-height: 30vh; /* Further aggressively reduced from 35vh */
+    max-height: 25vh; /* Further aggressively reduced from 30vh */
     border-radius: 15px !important;
     margin: 0 auto !important;
 }
@@ -175,7 +177,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .cont_2 .frame_img ul li {
     width: 350px !important;
-    max-height: 30vh; /* Further aggressively reduced from 35vh */
+    max-height: 25vh; /* Further aggressively reduced from 30vh */
     flex-shrink: 0 !important;
 }
 .cont_2 .frame_img img {
