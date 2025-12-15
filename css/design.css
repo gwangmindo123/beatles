@@ -1,5 +1,5 @@
 /* ================================================= */
-/* The Beatles Website Redesign V2                 */
+/* The Beatles Website Redesign V3                 */
 /* ================================================= */
 
 /* 1. Root Variables & Font Import */
@@ -9,8 +9,8 @@
     --background-dark: #121212;
     --background-light: #FFFFFF;
     --content-box: #1E1E1E;
-    --text-primary: #EAEAEA;
-    --text-secondary: #AAAAAA;
+    --text-primary: #FFFFFF; /* Changed to pure white */
+    --text-secondary: #CCCCCC; /* Slightly lighter secondary text */
     --accent-color: #C0E218; /* A brighter, more modern "Apple Green" */
     --secondary-accent: #3A5A78; /* A slightly softer navy blue */
     --transition-speed: 0.3s;
@@ -38,12 +38,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-color);
     font-weight: 700;
     letter-spacing: -0.5px;
+    text-align: center; /* Default to center alignment for headings */
 }
 
 p, li, span, label, .txt {
     color: var(--text-secondary);
     font-weight: 400;
     line-height: 1.7;
+    text-align: center; /* Default to center alignment for paragraphs and lists */
 }
 
 a {
@@ -58,12 +60,12 @@ a:hover {
 
 /* 3. Header - Now Static */
 header {
-    position: absolute; /* Changed from fixed */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: var(--background-dark); /* Solid background */
+    background-color: var(--background-dark);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -78,7 +80,7 @@ header h1 {
 }
 
 header h1 a {
-    color: var(--accent-color);
+    color: var(--background-light); /* Changed to pure white */
     font-weight: 800;
 }
 
@@ -91,7 +93,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: var(--text-primary);
+    color: var(--background-light); /* Changed to pure white */
     font-size: 16px;
     font-weight: 500;
     padding: 10px 15px;
@@ -114,14 +116,12 @@ body.music-page header nav ul li:nth-child(4) a {
 
 /* 4. Fullpage.js Section & Hero */
 .section {
-    padding-top: 0; /* Removed padding */
+    padding-top: 0;
 }
 
-/* Specific fix for the first section to account for the absolute header */
 .fp-section:first-child {
     padding-top: 80px;
 }
-/* For non-fullpage pages */
 .cont {
     padding-top: 120px;
 }
@@ -176,18 +176,88 @@ body.music-page header nav ul li:nth-child(4) a {
     align-items: center; /* Center aligning content */
 }
 
-/* Explicitly set light text colors inside content boxes */
-.bg h1, .bg h2, .bg h3, .bg h4, .bg p, .bg li, .bg .txt, .bg span {
+/* Explicitly set text colors inside content boxes */
+/* Global text-align: center for p, li, span, label, .txt */
+.bg h1, .bg h2, .bg h3, .bg h4 {
     color: var(--text-primary);
+    text-align: center;
 }
-.bg p, .bg li, .bg .txt, .bg span {
-     color: var(--text-secondary);
+.bg p, .bg li, .bg span, .bg .txt {
+    color: var(--text-secondary);
+    text-align: center;
 }
-.bg h2, .bg h3 {
-     text-align: center;
+
+/* Override for specific elements if needed */
+.cont_0 .slides .text-content p {
+    text-align: left; /* Keep slide text left-aligned in its box */
 }
-.bg .text-content p {
-    text-align: left; /* Keep slide text left-aligned */
+.cont_1 .bg .text-info p {
+    text-align: left; /* Album intro text left-aligned */
+}
+.cont_2 .bg .text-info p {
+    text-align: left; /* Member intro text left-aligned */
+}
+.cont_3 .bg .text-info p {
+    text-align: left; /* Songs intro text left-aligned */
+}
+.cont_4 .bg .text-info p {
+    text-align: left; /* Legacy intro text left-aligned */
+}
+
+/* Inner content wrappers should also be centered if they are direct children of .bg */
+.album-content-wrapper,
+.member-intro-wrapper,
+.famous-songs-wrapper,
+.legacy-content-wrapper {
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center its children */
+    text-align: center; /* Fallback for text */
+}
+
+/* For multi-column layouts within wrappers */
+.album-content-wrapper,
+.member-intro-wrapper,
+.famous-songs-wrapper,
+.legacy-content-wrapper {
+    flex-direction: row; /* Re-enable row direction for these */
+    justify-content: center;
+    align-items: flex-start; /* Align items to top within row */
+    text-align: left; /* Reset text align for their content */
+}
+.album-content-wrapper > div,
+.member-intro-wrapper > div,
+.famous-songs-wrapper > div,
+.legacy-content-wrapper > div {
+    flex: 1; /* Distribute space */
+    text-align: center; /* Center content within these sub-divisions */
+}
+.album-content-wrapper .text-info,
+.member-intro-wrapper .text-info,
+.famous-songs-wrapper .text-info,
+.legacy-content-wrapper .text-info {
+    text-align: left; /* Specific override for text-info */
+}
+.album-content-wrapper .text-info h2,
+.member-intro-wrapper .text-info h2,
+.famous-songs-wrapper .text-info h2,
+.legacy-content-wrapper .text-info h2 {
+    text-align: left;
+}
+.album-content-wrapper .text-info h3,
+.member-intro-wrapper .text-info h3,
+.famous-songs-wrapper .text-info h3,
+.legacy-content-wrapper .text-info h3 {
+    text-align: left;
+}
+.album-content-wrapper .text-info p,
+.member-intro-wrapper .text-info p,
+.famous-songs-wrapper .text-info p,
+.legacy-content-wrapper .text-info p {
+    text-align: left;
 }
 
 
@@ -365,7 +435,7 @@ footer {
     overflow: hidden;
     width: 100%;
     max-width: 900px;
-    margin: 40px 0;
+    margin: 40px auto; /* Center the slides container itself */
 }
 
 .cont_0 .slides ul {
@@ -384,10 +454,17 @@ footer {
     gap: 30px;
     padding: 20px;
     align-items: center;
+    justify-content: center; /* Center content within each slide item */
+    flex-direction: column; /* Stack text and image vertically if needed */
 }
 
 .cont_0 .slides .text-content {
     flex: 1;
+    text-align: center; /* Ensure text content is centered */
+}
+
+.cont_0 .slides .text-content p {
+    text-align: center; /* Explicitly center paragraphs in history */
 }
 
 .cont_0 .slides .image-content {
