@@ -127,7 +127,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     gap: 40px !important; /* Restored from 20px */
 }
 .cont_2 .member-intro-wrapper .text-info {
-    flex: 1.5 !important;
+    flex: 2 !important;
 }
 .cont_2 .member-intro-wrapper .member-slider {
     flex: 1 !important;
