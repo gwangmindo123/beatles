@@ -43,7 +43,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .cont_0 .bg, .cont_2 .bg {
     margin: auto; /* Center bg within cont */
-    max-height: 90vh; /* Add a max-height */
+    max-height: 95vh; /* Increased from 90vh */
     overflow-y: auto; /* Allow internal scrolling */
 }
 
@@ -114,7 +114,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 
 /* 10. Member Slider (.cont_2) */
 .cont_2 .bg {
-    padding: 20px 40px; /* Reduced vertical padding for member section */
+    padding: 40px 40px; /* Restored vertical padding */
 }
 
 /* The block for .cont_2 .member-intro-wrapper and its children needs to be fully specified and isolated */
@@ -124,7 +124,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 20px !important; /* Reduced from 40px */
+    gap: 40px !important; /* Restored from 20px */
 }
 .cont_2 .member-intro-wrapper .text-info {
     flex: 1 !important;
@@ -132,8 +132,6 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .member-intro-wrapper .member-slider {
     flex: 1 !important;
     text-align: center;
-    margin: 0 !important; /* Eliminate all margins */
-    padding: 0 !important; /* Eliminate all paddings */
 }
 .cont_2 .member-intro-wrapper > .prev,
 .cont_2 .member-intro-wrapper > .next {
@@ -146,25 +144,25 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .member-intro-wrapper > .next { right: -80px !important; }
 
 .cont_2 .my-member-name {
-    margin-top: 0 !important;
-    font-size: 18px !important;
+    margin-top: 20px !important; /* Restored from 0 */
+    font-size: 24px !important;
     font-weight: bold !important;
     color: var(--text-primary) !important;
     text-align: center !important;
 }
 .cont_2 .text-info h2 {
-    font-size: 32px !important;
+    font-size: 38px !important; /* Increased from 32px */
 }
 .cont_2 .text-info h3 {
-    font-size: 16px !important;
+    font-size: 20px !important; /* Increased from 16px */
 }
 .cont_2 .text-info p {
-    font-size: 12px !important; /* Reduced from 14px */
+    font-size: 16px !important; /* Increased from 12px */
 }
 .cont_2 .frame {
     overflow: hidden !important;
     width: 350px !important;
-    max-height: 25vh; /* Further aggressively reduced from 30vh */
+    max-height: 45vh; /* Increased from 25vh */
     border-radius: 15px !important;
     margin: 0 auto !important;
 }
@@ -177,7 +175,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .cont_2 .frame_img ul li {
     width: 350px !important;
-    max-height: 25vh; /* Further aggressively reduced from 30vh */
+    max-height: 45vh; /* Increased from 25vh */
     flex-shrink: 0 !important;
 }
 .cont_2 .frame_img img {
