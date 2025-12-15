@@ -244,6 +244,10 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_4 .bg .legacy-image-display { margin: 0 auto 20px auto; width: 100%; max-width: 600px; height: 400px; }
 .cont_4 .bg .legacy-image-display img.main-legacy-image { display: block; margin: 0 auto; width: 100% !important; height: 100% !important; object-fit: cover !important;}
 
+.cont_4 .legacy-content-wrapper .text-info {
+    margin-bottom: 15px !important;
+}
+
 /* 13. Footer Spacing */
 .cont_5 footer { margin-top: 200px !important; }
 
