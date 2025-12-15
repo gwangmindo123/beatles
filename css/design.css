@@ -284,3 +284,64 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     background-color: rgba(255, 82, 82, 0.1);
     border: 1px solid #ff5252;
 }
+
+/* 15. Recommendation Page Styles */
+.recommend-page .cont .bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px; /* header height */
+}
+
+.recommend-container {
+    background-color: #2a2a2e; /* Simple dark background */
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#recommend-questions {
+    margin-bottom: 25px;
+}
+
+#recommend-questions p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#mood {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--button-gray-bg);
+    background-color: var(--content-box);
+    color: var(--text-primary);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#recommend-btn {
+    margin-bottom: 30px;
+}
+
+#recommend-result h3 {
+    color: var(--accent-color);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#recommend-result p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#recommend-result iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    border-radius: 10px;
+}
