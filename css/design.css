@@ -1,5 +1,5 @@
 /* =================================================== */
-/* The Beatles Website Redesign V24 (History Fix)    */
+/* The Beatles Website Redesign V28 (Final Centering) */
 /* =================================================== */
 
 /* 1. Root Variables & Font Import */
@@ -27,9 +27,25 @@ header nav ul li a { color: var(--background-light) !important; font-size: 16px;
 header nav ul li a:hover { background-color: var(--accent-color); color: var(--background-dark) !important; }
 
 /* 4. Fullpage.js Section & Centering */
-.fp-tableCell { vertical-align: middle !important; }
-.fp-section, .fp-slide { padding: 80px 0; }
-.cont_1 .fp-tableCell, .cont_3 .fp-tableCell, .cont_4 .fp-tableCell { display: grid !important; place-items: center !important; }
+.fp-tableCell {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    vertical-align: top !important; /* To prevent weird behavior with flex and vertical-align */
+}
+.fp-section, .fp-slide { padding: 0 !important; }
+
+/* Override for complex sections */
+.cont_0, .cont_2 {
+    display: block !important; /* Override flex of fp-tableCell to allow internal flex to work */
+    width: 100%; /* Ensure they take full width */
+    height: 100%; /* Ensure they take full height */
+}
+.cont_0 .bg, .cont_2 .bg {
+    margin: auto; /* Center bg within cont */
+    max-height: 90vh; /* Add a max-height */
+    overflow-y: auto; /* Allow internal scrolling */
+}
 
 /* 5. HERO SECTION */
 .cont_home { padding: 0 !important; }
@@ -54,46 +70,51 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .prev:hover, .next:hover, button:hover, .listen-btn:hover, .cont_4 .bg ul.thumb li a:hover { background-color: #555555 !important; transform: translateY(-2px); }
 
-/* 8. History Slider (.cont_0) - RESTORED & ENLARGED */
-.cont_0 .bg { padding: 40px 80px; }
-.cont_0 .slides { overflow: hidden !important; width: 100%; position: relative; }
+/* 8. History Slider (.cont_0) - FINAL FIX */
+.cont_0 .bg { padding: 40px 80px !important; }
+.cont_0 .slides { overflow: hidden !important; width: 100% !important; position: relative !important; }
 .cont_0 .slides ul {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     width: 300% !important;
-    position: relative;
-    left: 0;
-    transition: transform var(--transition-speed) ease-in-out;
-    padding: 0; margin: 0; list-style: none;
+    position: relative !important;
+    left: 0 !important;
+    transition: transform var(--transition-speed) ease-in-out !important;
+    padding: 0 !important; margin: 0 !important; list-style: none !important;
 }
 .cont_0 .slides ul li {
     width: calc(100% / 3) !important;
     flex-shrink: 0 !important;
     display: flex !important;
-    gap: 40px; padding: 20px; align-items: center;
-    list-style-type: none;
-    height: 650px; /* Increased height */
+    gap: 40px !important; padding: 20px !important; align-items: center !important;
+    list-style-type: none !important;
+    height: 650px !important; /* Increased height */
 }
-.cont_0 .slides .text-content { flex: 1; }
-.cont_0 .slides .image-content { flex: 1.5; height: 100%; }
-.cont_0 .slides .image-content img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
-.cont_0 .slides .image-content .txt { margin-top: 15px; font-style: italic; font-size: 16px; }
-.cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
-.cont_0 .bg > .prev { left: 20px; }
-.cont_0 .bg > .next { right: 20px; }
+.cont_0 .slides .text-content { flex: 1 !important; }
+.cont_0 .slides .image-content { flex: 1.5 !important; height: 100% !important; }
+.cont_0 .slides .image-content img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 10px !important; }
+.cont_0 .slides .image-content .txt { margin-top: 15px !important; font-style: italic !important; font-size: 16px !important; }
+.cont_0 .bg > .prev, .cont_0 .bg > .next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+}
+.cont_0 .bg > .prev { left: 20px !important; }
+.cont_0 .bg > .next { right: 20px !important; }
 
 /* 9. Iconic Album Slider (.cont_1) */
 .cont_1 .album-slider { overflow: hidden; width: 100%; max-width: 400px; margin: 30px auto; }
-.cont_1 .album-slider ul { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; width: 500% !important; transition: transform var(--transition-speed) ease-in-out; padding: 0; list-style: none; }
-.cont_1 .album-slider li { width: 20% !important; flex-shrink: 0; padding: 10px; text-align: center; }
-.cont_1 .album-slider img { width: 100%; max-width: 350px; height: auto; aspect-ratio: 1/1; border-radius: 15px; display: block; margin: 0 auto; }
-.cont_1 .album-slider .album-title { font-size: 18px; font-weight: bold; margin-top: 15px; color: var(--text-primary) !important; }
-.cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55%; }
+.cont_1 .album-slider ul { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; width: 500% !important; transition: transform var(--transition-speed) ease-in-out !important; padding: 0 !important; list-style: none !important; }
+.cont_1 .album-slider li { width: 20% !important; flex-shrink: 0 !important; padding: 10px; text-align: center; }
+.cont_1 .album-slider img { width: 100% !important; max-width: 350px !important; height: auto !important; aspect-ratio: 1/1 !important; border-radius: 15px !important; display: block !important; margin: 0 auto !important; }
+.cont_1 .album-slider .album-title { font-size: 18px !important; font-weight: bold !important; margin-top: 15px !important; color: var(--text-primary) !important; }
+.cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55% !important; }
 
-/* 10. Member Slider (.cont_2) - ISOLATED & REBUILT */
+/* 10. Member Slider (.cont_2) */
 .cont_2 .bg {
-    display: block !important;
+    /* This was removed in V23, so it uses default flex rules for .centering-wrapper children */
 }
 .cont_2 .member-intro-wrapper {
     position: relative !important;
@@ -125,6 +146,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     font-size: 24px !important;
     font-weight: bold !important;
     color: var(--text-primary) !important;
+    text-align: center !important;
 }
 .cont_2 .frame {
     overflow: hidden !important;
@@ -160,7 +182,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_4 .bg ul.thumb li { display: inline-block !important; margin: 5px; }
 .cont_4 .bg ul.thumb li a { width: 120px !important; height: 50px !important; padding: 8px 16px !important; background-image: none !important; color: var(--background-light) !important; font-size: 14px; }
 .cont_4 .bg .legacy-image-display { margin: 0 auto 20px auto; width: 100%; max-width: 600px; height: 400px; }
-.cont_4 .bg .legacy-image-display img.main-legacy-image { display: block; margin: 0 auto; width: 100%; height: 100%; object-fit: cover;}
+.cont_4 .bg .legacy-image-display img.main-legacy-image { display: block; margin: 0 auto; width: 100% !important; height: 100% !important; object-fit: cover !important;}
 
 /* 13. Footer Spacing */
 .cont_5 footer { margin-top: 200px !important; }
