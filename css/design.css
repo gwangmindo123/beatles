@@ -390,3 +390,24 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     border: none;
     border-radius: 10px;
 }
+
+/* 16. Music Page Layout */
+.music-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+}
+
+.music-player {
+    flex: 1;
+    text-align: center;
+}
+
+.music-player iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px; /* Consistent styling */
+}
+
