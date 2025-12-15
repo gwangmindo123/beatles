@@ -1134,3 +1134,23 @@ header nav ul li a {
     background-color: #1a2b3c !important;
     transform: translateY(2px) !important;
 }
+/* ========================================= */
+/* ★ 긴급 수정: 가로 스크롤 제거 ★ */
+/* ========================================= */
+
+/* 1. 화면 전체에서 가로로 튀어나온 건 무조건 숨기기 */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+/* 2. 멤버 소개 구역(.cont_2) 단속하기 */
+.cont_2 {
+    overflow: hidden !important; /* 이 구역 밖으로 나가는 건 자른다 */
+    width: 100% !important;
+}
+
+/* 3. 혹시 모를 멤버 사진 틀 단속 */
+.cont_2 .bg .frame {
+    overflow: hidden !important; /* 사진 틀 밖으로 넘치는 사진 숨김 */
+}
