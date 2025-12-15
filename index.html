@@ -41,7 +41,7 @@
     }
 
     /* ========================================= */
-    /* 3. 멤버 소개(cont_2) 버튼 -> 회색 박스 화살표로 변경 */
+    /* [수정됨] 3. 멤버 소개(cont_2) 버튼: 박스 제거 & 안쪽 이동 */
     /* ========================================= */
     .cont_2 .bg, .cont_2 .member-intro-wrapper {
         position: relative; 
@@ -49,69 +49,73 @@
 
     .cont_2 .prev, 
     .cont_2 .next {
-        display: flex !important;          
-        justify-content: center !important;
-        align-items: center !important;
-        position: absolute !important;
-        top: 50% !important;               
-        transform: translateY(-50%) !important;
-        z-index: 99999 !important;         
-        width: 50px !important;            
-        height: 50px !important;           
-        background-color: #666 !important; 
-        color: #fff !important;            
-        font-size: 24px !important;        
-        font-weight: bold !important;
-        border-radius: 5px !important;     
-        cursor: pointer;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
-        padding: 0 !important;
+        /* 박스 스타일 제거 */
+        background: none !important;
         border: none !important;
+        box-shadow: none !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+
+        /* 텍스트(화살표) 스타일 */
+        display: block !important;
+        color: #fff !important;            /* 흰색 화살표 */
+        font-size: 60px !important;        /* 크기 키움 (배경이 없으므로 잘 보이게) */
+        font-weight: 100 !important;       /* 얇고 세련된 느낌 */
+        font-family: sans-serif;           /* 고딕 계열 폰트 */
+        text-shadow: 0 0 10px rgba(0,0,0,0.5); /* 잘 보이게 그림자 추가 */
+        
+        /* 위치 잡기 */
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important; /* 정확한 수직 중앙 */
+        z-index: 99999 !important;
+        cursor: pointer;
         text-decoration: none !important;
     }
 
+    /* 마우스 올렸을 때 효과 */
     .cont_2 .prev:hover, .cont_2 .next:hover {
-        background-color: #333 !important; 
+        color: #ddd !important; /* 살짝 회색으로 변함 */
+        background: none !important;
     }
 
+    /* [핵심] 위치를 화면 안쪽으로 10%씩 밀어넣음 (안 짤리게) */
     .cont_2 .prev {
-        left: 20px !important;
+        left: 10% !important;  
         right: auto !important;
     }
 
     .cont_2 .next {
-        right: 20px !important;
+        right: 10% !important;
         left: auto !important;
     }
 
+    /* 모바일 대응 */
     @media (max-width: 768px) {
         .cont_2 .prev, .cont_2 .next {
-            width: 40px !important;
-            height: 40px !important;
-            font-size: 20px !important;
-            left: 10px !important;
-            right: 10px !important;
+            font-size: 40px !important; /* 모바일은 너무 크지 않게 */
+            left: 5% !important;        /* 모바일은 공간이 좁으니 조금 덜 안쪽으로 */
+            right: 5% !important;
         }
     }
 
     /* ========================================= */
-    /* [수정됨] 4. 유명한 노래들(cont_3) 썸네일 크기 통일 */
+    /* 4. 유명한 노래들(cont_3) 썸네일 크기 통일 */
     /* ========================================= */
     .cont_3 .song-gallery .song-item .song-thumbnail {
-        width: 250px !important;   /* 고정된 너비 (원하는 크기로 조절 가능) */
-        height: 250px !important;  /* 고정된 높이 (정사각형) */
-        object-fit: cover !important; /* 비율 유지하며 꽉 채우기 (핵심) */
-        border-radius: 15px;          /* 모서리 둥글게 예쁘게 */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 그림자 효과 */
-        transition: transform 0.3s ease; /* 마우스 올렸을 때 부드럽게 */
+        width: 250px !important;   
+        height: 250px !important;  
+        object-fit: cover !important; 
+        border-radius: 15px;          
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+        transition: transform 0.3s ease; 
     }
 
-    /* 마우스 올리면 살짝 커지는 효과 (선택사항) */
     .cont_3 .song-gallery .song-item:hover .song-thumbnail {
         transform: scale(1.05);
     }
 
-    /* 모바일 화면 대응 */
     @media (max-width: 768px) {
         .cont_3 .song-gallery .song-item .song-thumbnail {
             width: 150px !important;
