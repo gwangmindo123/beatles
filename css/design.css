@@ -87,9 +87,9 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     width: calc(100% / 3) !important;
     flex-shrink: 0 !important;
     display: flex !important;
-    gap: 40px !important; padding: 20px !important; align-items: center !important;
+    gap: 40px !important; padding: 20px !important; align-items: center; /* Removed !important */
     list-style-type: none !important;
-    height: 650px !important; /* Increased height */
+    max-height: 50vh; /* Changed from fixed height */
 }
 .cont_0 .slides .text-content { flex: 1 !important; }
 .cont_0 .slides .image-content { flex: 1.5 !important; height: 100% !important; }
@@ -149,7 +149,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_2 .frame {
     overflow: hidden !important;
     width: 350px !important;
-    height: 500px !important;
+    max-height: 55vh; /* Changed from fixed height */
     border-radius: 15px !important;
     margin: 0 auto !important;
 }
@@ -162,7 +162,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .cont_2 .frame_img ul li {
     width: 350px !important;
-    height: 500px !important;
+    max-height: 55vh; /* Changed from fixed height */
     flex-shrink: 0 !important;
 }
 .cont_2 .frame_img img {
