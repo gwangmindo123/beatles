@@ -140,8 +140,36 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     transform: translateY(-50%) !important;
     z-index: 10 !important;
 }
-.cont_2 .member-intro-wrapper > .prev { left: -80px !important; }
-.cont_2 .member-intro-wrapper > .next { right: -80px !important; }
+.cont_2 .member-intro-wrapper > .prev {
+    left: 20px !important;
+}
+.cont_2 .member-intro-wrapper > .next {
+    right: 20px !important;
+}
+
+/* Style for the buttons themselves, moved from inline */
+.cont_2 .prev, 
+.cont_2 .next {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font-size: 60px !important;
+    font-weight: 100 !important;
+    font-family: sans-serif;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-decoration: none !important;
+}
+
+.cont_2 .prev:hover, 
+.cont_2 .next:hover {
+    color: #ddd !important;
+    background: none !important;
+    transform: translateY(-50%) !important; /* Keep vertical alignment on hover */
+}
 
 .cont_2 .my-member-name {
     margin-top: 10px !important; /* Increased from 5px for "이쁘게" */
