@@ -355,3 +355,67 @@ footer {
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* 11. History Slider (.cont_0) */
+.cont_0 .bg {
+    position: relative; /* For positioning prev/next buttons */
+}
+
+.cont_0 .slides {
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px 0;
+}
+
+.cont_0 .slides ul {
+    display: flex;
+    width: 300%; /* 3 slides */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cont_0 .slides ul li {
+    width: calc(100% / 3);
+    flex-shrink: 0;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    align-items: center;
+}
+
+.cont_0 .slides .text-content {
+    flex: 1;
+}
+
+.cont_0 .slides .image-content {
+    flex: 1;
+    text-align: center;
+}
+
+.cont_0 .slides .image-content .img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cont_0 .bg > .prev,
+.cont_0 .bg > .next {
+    position: absolute;
+    top: 60%; /* Adjusted for vertical centering on the slide area */
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.cont_0 .bg > .prev {
+    left: 20px;
+}
+
+.cont_0 .bg > .next {
+    right: 20px;
+}
