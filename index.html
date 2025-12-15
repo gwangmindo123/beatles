@@ -41,60 +41,79 @@
     }
 
     /* ========================================= */
-    /* 3. 멤버 소개(cont_2) 버튼 위치 및 크기 복구 */
+    /* [수정됨] 3. 멤버 소개(cont_2) 버튼 -> 회색 박스 화살표로 변경 */
     /* ========================================= */
     .cont_2 .bg, .cont_2 .member-intro-wrapper {
         position: relative; 
     }
+
     .cont_2 .prev, 
     .cont_2 .next {
-        display: block !important;
+        display: flex !important;          /* 내부 텍스트(< >) 중앙 정렬용 */
+        justify-content: center !important;
+        align-items: center !important;
+        
         position: absolute !important;
-        top: 50% !important;
-        bottom: auto !important;
-        transform: translateY(-50%);
-        z-index: 9999 !important;
-        cursor: pointer;
-        width: auto !important;
-        height: auto !important;
-        padding: 0 !important;
-        background: none !important;
-        border: none !important;
-        color: #fff !important;
-        font-size: 20px !important;
+        top: 50% !important;               /* 화면 세로 중앙 */
+        transform: translateY(-50%) !important;
+        z-index: 99999 !important;         /* 최상단 노출 */
+        
+        /* [디자인] 회색 박스 버튼 */
+        width: 50px !important;            /* 박스 너비 */
+        height: 50px !important;           /* 박스 높이 */
+        background-color: #666 !important; /* 진한 회색 배경 */
+        color: #fff !important;            /* 화살표 색상(흰색) */
+        font-size: 24px !important;        /* 화살표 크기 */
         font-weight: bold !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        border-radius: 5px !important;     /* 모서리 살짝 둥글게 */
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* 입체감 그림자 */
+        
+        /* 기존 스타일 초기화 */
+        padding: 0 !important;
+        border: none !important;
+        text-decoration: none !important;
     }
-    .cont_2 .prev { left: 5% !important; }
-    .cont_2 .next { right: 5% !important; }
+
+    /* 마우스 올렸을 때 색상 변경 */
+    .cont_2 .prev:hover, .cont_2 .next:hover {
+        background-color: #333 !important; /* 더 진한 회색 */
+    }
+
+    /* 위치 배치 (화면 양 끝에서 20px 안쪽) */
+    .cont_2 .prev {
+        left: 20px !important;
+        right: auto !important;
+    }
+
+    .cont_2 .next {
+        right: 20px !important;
+        left: auto !important;
+    }
+
+    /* 모바일에서는 버튼 크기 조금 줄임 */
     @media (max-width: 768px) {
         .cont_2 .prev, .cont_2 .next {
-            font-size: 16px !important;
-            left: 3% !important;
-            right: 3% !important;
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 20px !important;
+            left: 10px !important;
+            right: 10px !important;
         }
     }
 
     /* ========================================= */
-    /* [추가됨] 4. 아이코닉 앨범(cont_1) 이미지 크기 통일 */
+    /* 4. 아이코닉 앨범(cont_1) 이미지 크기 통일 */
     /* ========================================= */
-    /* 앨범 슬라이더 안의 모든 이미지 태그 대상 */
     .cont_1 .album-slider img {
-        /* 가로 세로를 300px 정사각형으로 고정 (원하는 크기로 조절 가능) */
         width: 300px !important; 
         height: 300px !important;
-        
-        /* 핵심: 비율이 다른 이미지도 찌그러지지 않고 영역을 꽉 채우게 자름 */
         object-fit: cover !important;
-        
-        /* 이미지 가운데 정렬 및 약간의 꾸밈 효과 */
         display: block;
-        margin: 0 auto 15px auto; /* 하단 여백 추가 */
-        border-radius: 5px;      /* 모서리 살짝 둥글게 */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 그림자 효과 */
+        margin: 0 auto 15px auto;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
-
-    /* 작은 화면에서는 앨범 크기를 조금 줄임 */
     @media (max-width: 768px) {
         .cont_1 .album-slider img {
             width: 220px !important;
@@ -247,8 +266,8 @@
                 </div>
                 <p class="my-member-name">존 레논</p>
             </div>
-            <span class="prev">이전</span>
-            <span class="next">다음</span>
+            <span class="prev">&lt;</span>
+            <span class="next">&gt;</span>
         </div>
     </div>
 </div>
