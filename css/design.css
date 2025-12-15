@@ -54,12 +54,13 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 }
 .prev:hover, .next:hover, button:hover, .listen-btn:hover, .cont_4 .bg ul.thumb li a:hover { background-color: #555555 !important; transform: translateY(-2px); }
 
-/* 8. History Slider (.cont_0) BULLETPROOF FIX */
+/* 8. History Slider (.cont_0) FINAL IMAGE FIX */
+.cont_0 .bg { padding-left: 80px; padding-right: 80px; }
 .cont_0 .slides { overflow: hidden !important; width: 100%; position: relative; }
 .cont_0 .slides ul {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* CRITICAL FIX */
+    flex-wrap: nowrap !important;
     width: 300% !important;
     position: relative;
     left: 0;
@@ -72,9 +73,21 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
     display: flex !important;
     gap: 40px; padding: 20px; align-items: center;
     list-style-type: none;
+    height: 700px; /* Make the slide taller */
 }
-.cont_0 .slides .image-content { flex: 1.5; }
-.cont_0 .slides .image-content img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.cont_0 .slides .text-content {
+    flex: 1;
+}
+.cont_0 .slides .image-content {
+    flex: 2; /* Give more space to the image */
+    height: 100%;
+}
+.cont_0 .slides .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the container, cropping if necessary */
+    border-radius: 10px;
+}
 .cont_0 .slides .image-content .txt { margin-top: 15px; font-style: italic; }
 .cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .cont_0 .bg > .prev { left: 20px; }
