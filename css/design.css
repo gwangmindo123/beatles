@@ -1,5 +1,5 @@
 /* =================================================== */
-/* The Beatles Website Redesign V12 (Final Polish)  */
+/* The Beatles Website Redesign V13 (Final Polish)  */
 /* =================================================== */
 
 /* 1. Root Variables & Font Import */
@@ -31,11 +31,11 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .fp-section, .fp-slide { padding: 0 !important; }
 
 /* 5. HERO SECTION FIX */
-.cont_home .home-content { position: relative; width: 100%; height: 100%; }
-.cont_home .main-hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover !important; /* Cover screen */ z-index: 1; }
-.cont_home .text-overlay { position: relative; z-index: 2; /* Ensure text is on top */ text-align: center; }
-.hero-main-text { font-size: 10vw; font-weight: 900; color: var(--background-light) !important; text-shadow: 0 0 30px rgba(0,0,0,0.7); }
-.hero-sub-text span { display: block; font-size: 2.5vw; font-weight: 400; color: var(--text-secondary) !important; }
+.cont_home .home-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; } /* Ensure flex to center text overlay */
+.cont_home .main-hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover !important; z-index: 1; }
+.cont_home .text-overlay { position: relative; z-index: 2; text-align: center; }
+.hero-main-text { font-size: 10vw; font-weight: 900; color: var(--background-light) !important; text-shadow: 0 0 30px rgba(0,0,0,0.7); line-height: 1; margin-bottom: 20px;}
+.hero-sub-text span { display: block; font-size: 2.5vw; font-weight: 400; color: var(--text-secondary) !important; line-height: 1.5; }
 
 /* 6. General Content Box (.bg) */
 .bg {
@@ -80,8 +80,9 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_0 .slides { overflow: hidden !important; width: 100%; }
 .cont_0 .slides ul { display: flex !important; width: 300% !important; transition: transform 0.5s ease-in-out; }
 .cont_0 .slides ul li { width: calc(100% / 3) !important; flex-shrink: 0 !important; display: flex !important; gap: 40px; padding: 20px; align-items: center; }
-.cont_0 .slides .image-content { flex: 1.5; }
-.cont_0 .slides .image-content .img { width: 100%; height: 500px !important; min-height: 500px !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
+.cont_0 .slides .text-content { flex: 1; }
+.cont_0 .slides .image-content { flex: 2; /* Increased flex ratio for image */ }
+.cont_0 .slides .image-content .img { width: 100%; height: 600px !important; min-height: 600px !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; border-radius: 10px; }
 .cont_0 .bg > .prev, .cont_0 .bg > .next { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .cont_0 .bg > .prev { left: 20px; }
 .cont_0 .bg > .next { right: 20px; }
@@ -100,6 +101,8 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .member-intro-wrapper > .prev { left: 20px; }
 .member-intro-wrapper > .next { right: 20px; }
 .my-member-name { margin-top: 20px; font-size: 24px; font-weight: bold; color: var(--text-primary) !important; }
+.cont_2 .bg .frame .frame_img ul { display: flex; width: calc(350px * 4); transition: transform 0.5s ease-in-out; }
+.cont_2 .bg .frame .frame_img ul li { width: 350px; flex-shrink: 0; }
 .cont_2 .bg .frame .frame_img img { width: 100%; height: 100%; object-fit: contain !important; /* NO CROP */ }
 
 /* 11. Famous Songs (.cont_3) */
@@ -109,11 +112,21 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 /* 12. Legacy Section (.cont_4) IMAGE SIZE FIX */
 .cont_4 .bg ul.thumb { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0; list-style: none; margin: 20px 0; }
 .cont_4 .bg ul.thumb li { flex-shrink: 0; }
-.cont_4 .bg ul.thumb li a { width: 150px; height: 60px; padding: 8px 16px !important; background-image: none !important; text-indent: 0 !important; color: var(--background-light) !important; font-size: 14px; }
+.cont_4 .bg ul.thumb li a {
+    width: 150px; height: 60px; /* Fixed size for buttons */
+    padding: 8px 16px !important;
+    background-image: none !important;
+    text-indent: 0 !important;
+    color: var(--background-light) !important;
+    font-size: 14px;
+    background-size: cover; /* Ensure background image fills */
+    background-position: center;
+    display: flex; justify-content: center; align-items: center; /* Center text/content within button */
+}
 .cont_4 .bg .legacy-image-display { margin: 0 auto 20px auto; width: 100%; max-width: 600px; height: 400px; }
 .cont_4 .bg .legacy-image-display img.main-legacy-image { display: block; margin: 0 auto; width: 100%; height: 100%; object-fit: cover;}
 
 /* 13. Footer Spacing Fix */
 .cont_5 footer {
-    margin-top: 100px;
+    margin-top: 150px; /* Increased margin */
 }
