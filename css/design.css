@@ -113,9 +113,7 @@ header nav ul li a:hover { background-color: var(--accent-color); color: var(--b
 .cont_1 .bg > .prev, .cont_1 .bg > .next { top: 55% !important; }
 
 /* 10. Member Slider (.cont_2) */
-.cont_2 .bg {
-    /* This was removed in V23, so it uses default flex rules for .centering-wrapper children */
-}
+/* The block for .cont_2 .member-intro-wrapper and its children needs to be fully specified and isolated */
 .cont_2 .member-intro-wrapper {
     position: relative !important;
     width: 100% !important;
